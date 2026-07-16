@@ -23,4 +23,4 @@ researcher.
 Looking ahead, we would also like to warmly receive Sean Chang who will be re-joining the lab as a full member in the coming weeks!
 
 The Austerweil lab formally welcomes all new members to the lab -- we look forward to an exciting season of research!
-Have a look at our updated [list of people](http://alab.psych.wisc.edu/people/) for more details.
+Have a look at our updated [list of people](/en/people/) for more details.

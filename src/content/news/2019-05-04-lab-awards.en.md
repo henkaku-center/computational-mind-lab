@@ -11,7 +11,7 @@ tags:
   - awards
 ---
 
-Echo-ing the excitement of our [previous post](http://alab.psych.wisc.edu/news/2019/05/01/new-members.html), 2019 is
+Echo-ing the excitement of our [previous post](/en/news/2019-05-01-new-members/), 2019 is
 again proving to be a fruitful year for the lab due to the sheer number of awards achieved by its members. Though we are
 not even halfway through the year, four members have already secured formal recognition of their amazing work:
 

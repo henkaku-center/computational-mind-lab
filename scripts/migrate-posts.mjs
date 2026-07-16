@@ -65,6 +65,14 @@ function migrateDir(kind) {
     if (data.excerpt) {
       body = body.replaceAll('{{page.excerpt}}', String(data.excerpt)).replaceAll('{{ page.excerpt }}', String(data.excerpt));
     }
+    // rewrite links to the dead UW lab server to their new local equivalents
+    body = body
+      .replace(/https?:\/\/alab\.psych\.wisc\.edu\/news\/(\d{4})\/(\d{2})\/(\d{2})\/([^)\s"']+)\.html/g, '/en/news/$1-$2-$3-$4/')
+      .replace(/https?:\/\/alab\.psych\.wisc\.edu\/papers\/files\//g, '/papers/files/')
+      .replace(/https?:\/\/alab\.psych\.wisc\.edu\/papers\/?(?=[)\s"'])/g, '/en/publications/')
+      .replace(/https?:\/\/alab\.psych\.wisc\.edu\/people\/?(?=[)\s"'])/g, '/en/people/')
+      .replace(/https?:\/\/alab\.psych\.wisc\.edu\/snafu\/snafu-[^)\s"']+/g, 'https://github.com/AusterweilLab/snafu-py/releases')
+      .replace(/https?:\/\/alab\.psych\.wisc\.edu\/?(?=[)\s"'])/g, '/en/');
     // strip leftover simple Liquid expressions, keep a warning
     if (/\{\{|\{%/.test(body)) {
       console.error(`  WARNING leftover Liquid in ${file}`);

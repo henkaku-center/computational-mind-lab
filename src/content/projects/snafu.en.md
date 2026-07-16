@@ -45,15 +45,15 @@ Or install directly using git (auxilliary files are not included):
 
 The Github repository contains several demo files. A tutorial is also available
 through [Zemla, Cao, Mueller, & Austerweil
-(2020)](http://alab.psych.wisc.edu/papers/files/Zemla2020.pdf)
+(2020)](/papers/files/Zemla2020.pdf)
 
 A graphical front-end is also available, though it does not contain as many
 features as the Python library. You can download it for macOS or Windows. Find
 it here:
 
-[SNAFU 2.4.1 for Windows](https://alab.psych.wisc.edu/snafu/snafu-2.4.1-win-x64.zip)
+[SNAFU 2.4.1 for Windows](https://github.com/AusterweilLab/snafu-py/releases)
 
-[SNAFU 2.4.1 for macOS](https://alab.psych.wisc.edu/snafu/snafu-2.4.1-mac-x64.dmg)
+[SNAFU 2.4.1 for macOS](https://github.com/AusterweilLab/snafu-py/releases)
 
 To install the Windows version, simply download and unzip the file above. To
 install the macOS version, download the dmg file above, and drag snafu.app to your
