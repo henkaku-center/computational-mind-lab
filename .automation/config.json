@@ -1,0 +1,12 @@
+{
+  "slack": {
+    "channelName": "accounthub_joe",
+    "maxChars": 20000
+  },
+  "papers": {
+    "openalexAuthorId": "",
+    "s2AuthorId": "",
+    "orcidId": ""
+  },
+  "_comment": "Fill papers IDs once: https://api.openalex.org/authors?search=Joseph%20Austerweil and https://api.semanticscholar.org/graph/v1/author/search?query=Joseph+Austerweil (verify affiliation history: Berkeley/Brown/UW-Madison)."
+}

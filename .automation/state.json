@@ -1,0 +1,11 @@
+{
+  "lastRun": null,
+  "slack": {
+    "channelId": null,
+    "lastTs": "0"
+  },
+  "papers": {
+    "seenDois": [],
+    "seenTitleKeys": []
+  }
+}

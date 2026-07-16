@@ -1,0 +1,83 @@
+name: Weekly site update proposals
+
+on:
+  # Enable after the dry-run verification pass (see .automation/README.md):
+  # uncomment the schedule block below.
+  # schedule:
+  #   - cron: '0 0 * * 1'   # 00:00 UTC Monday == 09:00 JST Monday
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: true
+        description: Plan only — print proposals, write nothing, no PR
+      only:
+        type: string
+        description: 'Limit sources: inbox,slack,papers,audit (empty = all)'
+      window:
+        type: string
+        description: 'Backfill: publications since YYYY-MM-DD + full Slack history'
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Collect, draft, apply
+        run: |
+          node scripts/weekly.mjs \
+            ${{ (github.event_name == 'schedule' || inputs.dry_run != true) && ' ' || '--dry-run' }} \
+            ${{ inputs.only && format('--only={0}', inputs.only) || '' }} \
+            ${{ inputs.window && format('--window={0}', inputs.window) || '' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5' }}
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Validate proposed content
+        if: ${{ github.event_name == 'schedule' || inputs.dry_run != true }}
+        run: node scripts/check-content.mjs
+
+      - name: Open / update proposal PR
+        if: ${{ github.event_name == 'schedule' || inputs.dry_run != true }}
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/weekly-proposals
+          title: 'Weekly site updates'
+          commit-message: 'weekly proposals [skip-translate]'
+          body-path: .automation/pr-body.md
+          labels: weekly-update
+          delete-branch: true
+          add-paths: |
+            src/content/**
+            src/i18n/**
+            _inbox/**
+            .automation/state.json
+
+      - name: File failure issue
+        if: failure()
+        run: |
+          existing=$(gh issue list --label automation-failure --state open --json number -q '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Weekly run failed again: $RUN_URL"
+          else
+            gh issue create --title "Automation failure: weekly update" --label automation-failure \
+              --body "The weekly update workflow failed. See $RUN_URL. Common causes and fixes are in .automation/README.md."
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
