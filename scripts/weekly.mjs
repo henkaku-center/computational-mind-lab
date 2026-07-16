@@ -12,6 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
 import { structuredCall, writeUsageSummary } from './lib/claude.mjs';
+import { polishJapanese } from './lib/polish.mjs';
 import { ROOT, writeEntry, sourceHash, readEntry } from './lib/content.mjs';
 import { resolveChannelId, fetchMessages } from './lib/slack.mjs';
 import { fetchCandidates, dedupe } from './lib/pubs.mjs';
@@ -58,7 +59,7 @@ if (on('inbox')) {
   }
 }
 
-if (on('slack')) {
+if (on('slack') && CONFIG.slack?.enabled !== false) {
   try {
     const channelId = state.slack?.channelId || (await resolveChannelId(CONFIG.slack.channelName));
     const oldest = windowArg ? '0' : state.slack?.lastTs || '0';
@@ -185,6 +186,12 @@ for (const post of proposals.newsPosts ?? []) {
   const base = { date: post.date, translationKey: post.translationKey, tags: post.tags ?? [] };
   const enData = { title: post.en.title, excerpt: post.en.excerpt, ...base, locale: 'en', translated: 'original' };
   if (!DRY_RUN) {
+    // fresh-session naturalness pass on the Japanese draft (no English context)
+    try {
+      post.ja = { ...post.ja, ...(await polishJapanese(post.ja)) };
+    } catch (err) {
+      console.error(`[polish] ${post.translationKey}: ${err.message} — keeping unpolished draft`);
+    }
     writeEntry(path.join(ROOT, `src/content/news/${post.translationKey}.en.md`), enData, post.en.body);
     const hash = sourceHash(enData, post.en.body);
     writeEntry(

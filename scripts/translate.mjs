@@ -20,6 +20,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { structuredCall, writeUsageSummary } from './lib/claude.mjs';
+import { polishJapanese } from './lib/polish.mjs';
 import {
   ROOT,
   TRANSLATABLE_FM,
@@ -156,7 +157,7 @@ async function translatePair(sourceFile) {
 
 async function generate(src, dstLocale, hash) {
   const fmValues = Object.fromEntries(TRANSLATABLE_FM.map((k) => [k, src.data[k] ?? '']));
-  const out = await structuredCall({
+  let out = await structuredCall({
     system: SYSTEM,
     user: [
       `Translate the following ${src.data.locale === 'en' ? 'English' : 'Japanese'} content to ${dstLocale === 'ja' ? 'Japanese' : 'English'}.`,
@@ -169,6 +170,17 @@ async function generate(src, dstLocale, hash) {
     schema: TRANSLATION_SCHEMA,
     effort: 'low',
   });
+
+  // Second pass for Japanese: a fresh session (no English context) edits the
+  // translation for naturalness.
+  if (dstLocale === 'ja') {
+    const polished = await polishJapanese(out);
+    out = {
+      ...out,
+      ...polished,
+      notes: [out.notes, polished.notes && `polish: ${polished.notes}`].filter(Boolean).join(' | '),
+    };
+  }
 
   const data = {
     ...src.data,

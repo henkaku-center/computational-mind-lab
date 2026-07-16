@@ -1,5 +1,7 @@
 {
   "slack": {
+    "enabled": false,
+    "_why": "Deferred: Slack app creation needs workspace-admin coordination. When ready: create the app (channels:history + channels:read, or groups:* if private), install, /invite the bot to #accounthub_joe, add SLACK_BOT_TOKEN secret, then set enabled: true.",
     "channelName": "accounthub_joe",
     "maxChars": 20000
   },

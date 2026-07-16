@@ -17,9 +17,11 @@ pay-per-token API key. Model from the `CLAUDE_MODEL` Actions variable
   long-lived), then `gh secret set CLAUDE_CODE_OAUTH_TOKEN`. Re-run setup-token
   and update the secret if it ever expires or is revoked.
   Note: automation usage shares your personal subscription rate limits.
-- Secret `SLACK_BOT_TOKEN` — Slack app with `channels:history` + `channels:read`
-  (or `groups:*` if the channel is private), installed in the JPCCA workspace and
-  invited to `#accounthub_joe` (`/invite @lab-site-bot`).
+- Secret `SLACK_BOT_TOKEN` — **not needed yet**: Slack ingestion is disabled in
+  `config.json` (`slack.enabled: false`) pending workspace-admin coordination.
+  When ready: Slack app with `channels:history` + `channels:read` (or `groups:*`
+  if private), install, `/invite` the bot to `#accounthub_joe`, add the secret,
+  flip `enabled: true`.
 - Variable `CLAUDE_MODEL` (optional) — model override (default `sonnet`).
 - Repo settings: Actions → General → Workflow permissions: **Read and write** +
   **Allow GitHub Actions to create and approve pull requests**.
