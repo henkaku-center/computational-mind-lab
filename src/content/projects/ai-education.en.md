@@ -54,25 +54,39 @@ skills; a student who iterates extensively may be doing the harder work of
 exploring alternatives and stress-testing what comes back. Treating token counts
 as a learning signal would be the easy mistake, and the wrong one.
 
-So the questions are shaped accordingly. How do interaction patterns shift across
-a project's phases — ideation, prototyping, debugging, refinement — as students
-internalize the concepts? Do students develop more *intentional* strategies over
-time, including knowing when more iteration is warranted? Does prior expertise
-change when and how people reach for the tool? Does iteration depth predict
-project quality — linearly, or not at all? A null result there would be just as
-informative.
+## What the studio is actually teaching
 
-## What students report
+**AI as a practice, not a subject.** Most graduate programs still teach AI as
+something to read about. Students here leave with explicit, transferable rules
+for working with it: state the intended behavior before you look at the code;
+test at the extremes; doubt comments and function names, because the tool will
+believe them over the code itself; decide *what* needs confirming and delegate
+only the confirmation legwork.
 
-The reflections coming out of the studio are more interesting than "AI helped."
-Students arrive independently at a working model of the collaboration: the AI
-does the mechanical work; the human supplies intent and verification. They
-describe learning concepts *through* dialogue rather than despite it — reaching a
-formula's meaning by arguing about it with a machine that will explain it five
-ways without getting impatient. And they learn where the partnership fails: an AI
-is a fluent translator and a poor judge; it will believe a function's name over
-the function's behavior. Holding expectations *before* you ask turns out to be
-the prerequisite skill.
+**Concept depth comes *through* AI dialogue, not despite it.** The moment a
+formula clicks — a decay rate understood as stubbornness, a parameter understood
+as the knob it actually turns rather than a symbol — repeatedly arrives in
+conversation. The AI does not replace the learning. It is the medium of it, and
+it will explain the same idea five ways without getting impatient.
+
+**An honest model of the limits, not an AI cheerleader.** A program that only
+shows AI as a great collaborator is marketing. The interesting result is that
+students converge on the harder edge too: where AI gets in the way, and what
+verification work the human still owes the system. Verification can easily cost
+more than writing the thing yourself — knowing when that is true is part of the
+literacy, not an objection to it.
+
+**It works for students who do not yet code.** A self-described non-mathematician
+can leave able to articulate Bayes' rule and debug a deliberately broken
+epsilon-greedy agent. That is not a lowered bar; it is what happens when the
+barrier was notation rather than the idea.
+
+**The collaboration deepens as the work does.** Early on, students describe AI as
+a translator. Later, as a fellow code-reader. Later still, as a Socratic
+questioner that is most useful when it asks the follow-up question instead of
+filling in the answer — and as a sparring partner for systems design. Same
+students, same tool, three working relationships, each suited to a different kind
+of problem. That progression is the thing we are trying to measure.
 
 ## Where this goes
 
