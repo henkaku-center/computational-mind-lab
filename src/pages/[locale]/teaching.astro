@@ -12,6 +12,15 @@ const locale = Astro.params.locale as Locale;
 const courses = [
   {
     term: { en: 'Spring 2026 · Chiba Tech SDS', ja: '2026年春学期 · 千葉工業大学 SDS' },
+    title: { en: 'Antidisciplinary Project Studio I (APS-I)', ja: '反領域的プロジェクトスタジオ I（APS-I）' },
+    body: {
+      en: 'The studio course where students work real problems — Bayesian inference, debugging a reinforcement learning agent, designing a cooperating agent — with AI as a working partner, and articulate what that partnership actually is.',
+      ja: 'ベイズ推論、強化学習エージェントのデバッグ、協調エージェントの設計といった実課題に、AIを協働のパートナーとして取り組み、その協働の実態を言語化するスタジオ科目。',
+    },
+    links: [{ label: 'aps-i.chibatech.dev', href: 'https://aps-i.chibatech.dev/' }],
+  },
+  {
+    term: { en: 'Spring 2026 · Chiba Tech SDS', ja: '2026年春学期 · 千葉工業大学 SDS' },
     title: { en: 'Human and Machine Learning', ja: '人間と機械の学習' },
     body: {
       en: 'Graduate course on how humans and machines learn — generalization, Monte Carlo approximation, MCMC, and reinforcement learning, with hands-on assignments.',

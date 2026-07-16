@@ -51,5 +51,13 @@
   "social learning": "#DCEDC8",
   "disease progression": "#CFD8DC",
   "deep learning": "#B2DFDB",
-  "decision making": "#F0F4C3"
+  "decision making": "#F0F4C3",
+  "talks": "#E1BEE7",
+  "conferences": "#C5CAE9",
+  "publications": "#B3E5FC",
+  "teaching": "#DCEDC8",
+  "events": "#FFE0B2",
+  "ai and education": "#B2EBF2",
+  "ai ethics": "#F8BBD0",
+  "sds": "#BFE2FE"
 }
