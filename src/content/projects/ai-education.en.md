@@ -1,8 +1,9 @@
 ---
 title: AI in education — learning to direct, not just to use
 excerpt: >-
-  What changes about teaching and learning when every student has an AI partner?
-  We build and study courses where working with AI is the method, not the topic.
+  Nearly every student uses AI; many programs effectively ban it. We are running
+  a multi-year study of what actually develops when AI collaboration is taught
+  as a skill rather than policed as a problem.
 date: 2026-04-01
 locale: en
 translationKey: ai-education
@@ -21,32 +22,66 @@ of what education has always been for: making implicit expertise explicit.
 Developers got good at AI first, not because programming is special, but because
 code demands that you say exactly what you want in enough detail that a machine
 can act on it. The habit transferred. Most people who work with knowledge for a
-living have never been trained that way. This project asks what happens when we
-train them — and what we learn about learning in the process.
+living have never been trained that way.
 
-## Antidisciplinary Project Studio I
+## The gap we are working in
 
-[APS-I](https://aps-i.chibatech.dev/) is the studio course where this plays out
-in practice at the [School of Design & Science](https://sds.chibatech.dev/).
-Students work real problems — Bayesian inference, debugging a reinforcement
-learning agent, designing a cooperating agent for a tournament — with AI as a
-working partner, and then write down what the partnership actually was.
+Roughly 95% of students use AI in their coursework. A large share of programs
+have effective bans on using it for any major assignment. Those two facts
+describe an educational system that has decided to have no position at all — and
+the resulting silence is itself a curriculum, teaching students that the tool
+they will use for the rest of their careers is something to hide.
 
-What comes back in their reflections is more interesting than "AI helped." Students
-arrive independently at a working model of the collaboration: the AI does the
-mechanical work; the human supplies intent and verification. They describe
-learning concepts *through* dialogue rather than despite it — reaching a formula's
-meaning by arguing about it with a machine that will happily explain it five ways.
-They also learn where the partnership fails: an AI is a fluent translator and a
-poor judge, and it will believe a function's name over the function's behavior.
-Learning to hold expectations *before* you ask is the prerequisite skill.
+We think the doom-and-gloom story is oversold, and we would rather be part of the
+alternative. The lab treats the [School of Design & Science](https://sds.chibatech.dev/)
+as a place to *prototype* curricular development for an AI-integrated program —
+built to be studied, and built so others can copy what works.
+
+## The longitudinal study
+
+We are running a multi-year study of AI-skill development across two very
+different courses: [APS-I](https://aps-i.chibatech.dev/), a small
+antidisciplinary studio, and a large online Web3/AI course spanning
+undergraduates, graduate students, and working professionals. Session logs,
+individual-differences measures, prompt snapshots taken at intervals across the
+term, and pre/post surveys accumulate for the year-1 pilot cohort.
+
+The methodological commitment that shapes everything else: **interaction patterns
+are data requiring interpretation, not outcomes in themselves.** More AI use does
+not imply better performance, and less does not imply worse. A student who
+reaches a strong outcome in few exchanges may have excellent specification
+skills; a student who iterates extensively may be doing the harder work of
+exploring alternatives and stress-testing what comes back. Treating token counts
+as a learning signal would be the easy mistake, and the wrong one.
+
+So the questions are shaped accordingly. How do interaction patterns shift across
+a project's phases — ideation, prototyping, debugging, refinement — as students
+internalize the concepts? Do students develop more *intentional* strategies over
+time, including knowing when more iteration is warranted? Does prior expertise
+change when and how people reach for the tool? Does iteration depth predict
+project quality — linearly, or not at all? A null result there would be just as
+informative.
+
+## What students report
+
+The reflections coming out of the studio are more interesting than "AI helped."
+Students arrive independently at a working model of the collaboration: the AI
+does the mechanical work; the human supplies intent and verification. They
+describe learning concepts *through* dialogue rather than despite it — reaching a
+formula's meaning by arguing about it with a machine that will explain it five
+ways without getting impatient. And they learn where the partnership fails: an AI
+is a fluent translator and a poor judge; it will believe a function's name over
+the function's behavior. Holding expectations *before* you ask turns out to be
+the prerequisite skill.
 
 ## Where this goes
 
-The studio is the first piece. The research questions it opens — how AI changes
-who can do intellectual work, how it supports different ways of learning, what
-literacy means when the tool is a conversationalist — are what the lab is
-building toward, including at
-[Make It So Camp](/en/news/2026-07-16-miso-camp/) in August.
+This year is a pilot. The point is to get the design right for the cohorts that
+follow, in conversation with learning scientists who do this for a living — and
+to keep the work in the open, since a prototype nobody can copy is not a
+prototype.
 
-More to come.
+Related: [Make It So Camp](/en/news/2026-07-16-miso-camp/) takes the same premise
+to practitioners outside the university, and the
+[probability tutorial](/en/projects/probability-tutorial/) is what happens when
+this way of thinking about explanation gets applied to a textbook.
