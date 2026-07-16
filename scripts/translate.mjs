@@ -62,8 +62,10 @@ function plan() {
   const conflicts = [];
 
   if (FULL_SCAN) {
-    // every EN/JA file whose counterpart is missing or hash-stale, preferring
-    // the 'original' side as source
+    // Every pair whose counterpart is missing or hash-stale, preferring the
+    // 'original' side as source. Already-synced pairs are filtered out HERE,
+    // before the MAX_FILES cap — otherwise a capped run would re-examine the
+    // same leading no-ops forever and never reach the deferred tail.
     const seen = new Set();
     for (const rel of listPairedFiles()) {
       const parsed = parsePairName(rel);
@@ -75,6 +77,13 @@ function plan() {
         entry.data.translated === 'original' || !fs.existsSync(cp)
           ? path.join(ROOT, rel)
           : cp;
+      // skip pairs already in sync
+      const cpPath = counterpartPath(source);
+      if (fs.existsSync(cpPath)) {
+        const src = readEntry(source);
+        const dst = readEntry(cpPath);
+        if (dst.data.sourceHash === sourceHash(src.data, src.body)) continue;
+      }
       jobs.push({ sourceFile: source, reason: 'full-scan' });
     }
     return { jobs, conflicts };
