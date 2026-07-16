@@ -1,0 +1,30 @@
+citekey: austerweil26shiritori
+title: Rule-ambiguity and distributional play in asynchronous L2 shiritori
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Nishikawa
+    given: J.
+  - family: Morita
+    given: J.
+year: 2026
+type: paper-conference
+venue: Proceedings of the 43rd Annual Meeting of the Japanese Cognitive Science Society (International Session)
+pdf: /papers/files/AusterweilNishikawaMorita2026Shiritori.pdf
+abstract: >-
+  Shiritori chains words so that each begins with the final mora of the previous
+  (e.g., sakura → rakuda → daikon); a word ending in n (ん) loses. The game imposes
+  a dynamic phonological constraint on lexical retrieval. We analyze 9,891 moves
+  from 568 second-language (L2) Japanese learners playing asynchronously on a
+  public web forum, and argue that the phonological constraint is processed at
+  three dissociable levels. At the level of content, higher-proficiency players
+  produce rarer words. At the level of strategy, avoidance of trap-ending morae is
+  individually learned from experience but unrelated to proficiency; in contrast,
+  vocabulary sophistication tracks the community, not personal history — a
+  community/individual dissociation. At the level of rule interpretation, players
+  differ in how they resolve formally ambiguous yōon cases.
+tags:
+  - language
+  - memory retrieval
+  - networks
+  - multilingualism
