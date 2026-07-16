@@ -26,18 +26,23 @@ const jsonLd = {
 <Base locale={locale} title={t(locale, 'papers.title')} jsonLd={jsonLd}>
   <h1>{t(locale, 'papers.title')}</h1>
 
-  <fieldset id="tag-filter">
-    <legend>{t(locale, 'papers.filterByTag')}</legend>
-    {
-      usedTags.map((tag) => (
-        <label class="tag-chip" style={`background:${colors[tag] ?? '#eee'}`}>
-          <input type="checkbox" value={tag} />
-          {tag}
-        </label>
-      ))
-    }
+  <details id="tag-filter">
+    <summary>
+      {t(locale, 'papers.filterByTag')}
+      <span id="active-tags" class="active-tags"></span>
+    </summary>
+    <div class="tag-list">
+      {
+        usedTags.map((tag) => (
+          <label class="tag-chip" style={`background:${colors[tag] ?? '#eee'}`}>
+            <input type="checkbox" value={tag} />
+            {tag}
+          </label>
+        ))
+      }
+    </div>
     <button type="button" id="clear-filter" hidden>{t(locale, 'papers.clearFilter')}</button>
-  </fieldset>
+  </details>
 
   {
     byYear.map(({ year, papers: yearPapers }) => (
@@ -58,9 +63,11 @@ const jsonLd = {
     // Progressive enhancement: tag filtering. Without JS everything is visible.
     const boxes = [...document.querySelectorAll<HTMLInputElement>('#tag-filter input')];
     const clear = document.getElementById('clear-filter')!;
+    const activeLabel = document.getElementById('active-tags')!;
     function apply() {
       const active = boxes.filter((b) => b.checked).map((b) => b.value);
       clear.hidden = active.length === 0;
+      activeLabel.textContent = active.length ? `— ${active.join(', ')}` : '';
       for (const li of document.querySelectorAll<HTMLElement>('li[data-tags]')) {
         const tags = (li.dataset.tags ?? '').split('|');
         li.hidden = active.length > 0 && !active.some((t) => tags.includes(t));
@@ -80,15 +87,28 @@ const jsonLd = {
 <style>
   #tag-filter {
     border: 2px solid var(--c-black);
-    padding: var(--grid);
     margin-block: var(--grid);
+  }
+  #tag-filter summary {
+    font-weight: 700;
+    padding: 0.75em var(--grid);
+  }
+  #tag-filter summary:hover {
+    background: var(--c-light-blue);
+  }
+  .active-tags {
+    font-weight: 400;
+    font-size: var(--text-s);
+    color: var(--c-dark-grey);
+  }
+  .tag-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5em;
+    padding: 0 var(--grid) var(--grid);
   }
-  #tag-filter legend {
-    font-weight: 700;
-    padding-inline: 0.4em;
+  #clear-filter {
+    margin: 0 var(--grid) var(--grid);
   }
   #tag-filter label {
     cursor: pointer;

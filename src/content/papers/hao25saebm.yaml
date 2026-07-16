@@ -1,0 +1,20 @@
+citekey: hao25saebm
+title: Stage-Aware Event-Based Modeling (SA-EBM) for Disease Progression
+authors:
+  - family: Hao
+    given: H.
+  - family: Prabhakaran
+    given: V.
+  - family: Nair
+    given: V. A.
+  - family: Adluru
+    given: N.
+  - family: Austerweil
+    given: J. L.
+year: 2025
+type: paper-conference
+venue: Machine Learning for Healthcare Conference (MLHC), Proceedings of Machine Learning Research
+abstract: "As diseases progress, they increasingly impact more cognitive and biological factors. By formulating probabilistic models with this basic assumption, Event-Based Models (EBMs) enable researchers to discover the progression of a disease that makes earlier diagnosis and effective clinical interventions possible. We build on prior EBMs with two major improvements: (1) dynamic estimation of healthy and pathological biomarker distributions, and (2) explicit modeling of disease stage distribution. We tested existing approaches and our novel approach on 9,000 synthetic datasets and also the real-world ADNI data. We found that our stage-aware EBM (SA-EBM) significantly outperforms prior methods, such as Gaussian Mixture Model (GMM) EBM, Kernel Density Estimation EBM and Discriminative EBM, in accurately recovering the order of disease events and assigning individual disease stages. Our package can be installed by pip install pysaebm. Source codes for the package, experiments, and visualizations are available in Appendix N, or at https://saebm.hongtaoh.com."
+tags:
+  - disease progression
+  - bayesian modeling

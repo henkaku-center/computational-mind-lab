@@ -11,6 +11,7 @@ tags:
   - slack
   - jarjar
 status: archived
+weight: 200
 ---
 
 Jarjar is a collection of scripts that lets you programmatically send notifications to your Slack team. 

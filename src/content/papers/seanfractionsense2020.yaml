@@ -16,7 +16,7 @@ publisherPlace: Toronto, Canada
 pdf: /papers/files/SeanFractionSense2020.pdf
 abstract: Fractions are a critical building block for the development of human mathematical cognition, but the origins of this concept are not well-understood. Recent work has found that a whole number sense is present in deep convolutional neural networks (DCNNs) pre-trained for object recognition and uses them as a model for investigating human numerical cognition. Do DCNNs also have a fraction sense? If so, is it dependent or independent of whole number processing? We investigated the neural sensitivity of a pretrained DCNN to both whole numbers and fractions. We replicated and extended previous research that the sense of whole number emerges in a different DCNN architecture. Further, we showed that DCNN is also sensitive to fraction value, i.e., the ratio of numerosities. Testing this model, our results suggest that the fraction sense relies on the whole number sense.
 tags:
-  - deep convolutional neural network
+  - deep learning
   - emergent sense of number
   - ratio-processing system
   - approximate number system

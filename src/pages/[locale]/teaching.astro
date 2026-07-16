@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t, localeStaticPaths, type Locale } from '../../i18n';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+const locale = Astro.params.locale as Locale;
+
+// TODO-review (TRANSITION.md): add the public course URL for the Spring 2026
+// course once it is live, and any Chiba Tech syllabus links.
+const courses = [
+  {
+    term: { en: 'Spring 2026 · Chiba Tech SDS', ja: '2026年春学期 · 千葉工業大学 SDS' },
+    title: { en: 'Human and Machine Learning', ja: '人間と機械の学習' },
+    body: {
+      en: 'Graduate course on how humans and machines learn — generalization, Monte Carlo approximation, MCMC, and reinforcement learning, with hands-on assignments.',
+      ja: '人間と機械がどのように学習するかを扱う大学院科目。汎化、モンテカルロ近似、MCMC、強化学習を、実習課題とともに学びます。',
+    },
+    links: [],
+  },
+  {
+    term: { en: '2025 · COSMOS Summer School', ja: '2025年 · COSMOS サマースクール' },
+    title: { en: 'Co-instructor, COSMOS', ja: 'COSMOS 共同講師' },
+    body: {
+      en: 'Co-instructed at the COSMOS summer school and led a six-student project on teaching by state intervention.',
+      ja: 'COSMOS サマースクールで共同講師を務め、状態介入による教示に関する6名の学生プロジェクトを指導しました。',
+    },
+    links: [
+      { label: 'COSMOS', href: 'https://cosmossummerschool.github.io/' },
+      {
+        label: { en: 'Talk slides: MCMC with People', ja: '講演スライド：MCMC with People' },
+        href: 'https://docs.google.com/presentation/d/13ZtSvVbZBdnX2xwlHv62y3uT2TyBpsSQBuf0dcCkfkg/edit?usp=sharing',
+      },
+    ],
+  },
+  {
+    term: { en: 'Ongoing', ja: '継続中' },
+    title: { en: 'A narrative introduction to probability', ja: '確率論への物語的入門' },
+    body: {
+      en: 'An open tutorial building from set-based probability to Bayesian nonparametric models, with interactive notebooks.',
+      ja: '集合に基づく確率からベイズ的ノンパラメトリックモデルまでを、インタラクティブなノートブックとともに学ぶ公開チュートリアル。',
+    },
+    links: [{ label: 'probintro', href: 'https://josephausterweil.github.io/probintro/' }],
+  },
+];
+
+const heading = { en: 'Teaching', ja: '教育' }[locale];
+const intro = {
+  en: 'Courses, summer schools, and open teaching materials.',
+  ja: '担当科目、サマースクール、公開教材。',
+}[locale];
+---
+
+<Base locale={locale} title={heading} description={intro}>
+  <h1>{heading}</h1>
+  <p>{intro}</p>
+  {
+    courses.map((c) => (
+      <article class="card">
+        <p class="term">{c.term[locale]}</p>
+        <h2>{c.title[locale]}</h2>
+        <p>{c.body[locale]}</p>
+        {c.links.length > 0 && (
+          <p class="links">
+            {c.links.map((l) => (
+              <a href={l.href}>{typeof l.label === 'string' ? l.label : l.label[locale]} →</a>
+            ))}
+          </p>
+        )}
+      </article>
+    ))
+  }
+</Base>
+
+<style>
+  .card {
+    margin-block: var(--grid);
+  }
+  .term {
+    font-size: var(--text-s);
+    color: var(--c-dark-grey);
+    margin: 0;
+  }
+  .card h2 {
+    margin: 0.2em 0 0.4em;
+    font-size: calc(var(--text-l) * var(--lang-scale) * 0.75);
+  }
+  .links a {
+    margin-right: 1.5em;
+    font-weight: 700;
+  }
+</style>

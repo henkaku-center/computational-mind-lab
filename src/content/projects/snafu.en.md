@@ -11,6 +11,7 @@ tags:
   - semantic networks
   - memory
 status: archived
+weight: 200
 ---
 
 # Overview

@@ -15,6 +15,7 @@ const nav = [
   { href: `${base}/publications/`, label: t(locale, 'nav.publications') },
   { href: `${base}/news/`, label: t(locale, 'nav.news') },
   { href: `${base}/projects/`, label: t(locale, 'nav.projects') },
+  { href: `${base}/teaching/`, label: t(locale, 'nav.teaching') },
   { href: `${base}/join/`, label: t(locale, 'nav.join') },
   { href: `${base}/contact/`, label: t(locale, 'nav.contact') },
 ];
@@ -23,7 +24,7 @@ const nav = [
 <header>
   {/* Brand rule: the SDS lockup is always left-aligned. */}
   <div class="brand-row">
-    <a href="https://www.it-chiba.ac.jp/" class="sds-lockup">
+    <a href="https://sds.chibatech.dev/" class="sds-lockup">
       <img src={sdsLogo.src} alt="Chiba Tech School of Design & Science" width="300" height="47" />
     </a>
     <LanguageToggle locale={locale} alternatePath={alternatePath} />

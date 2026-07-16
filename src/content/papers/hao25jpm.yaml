@@ -1,0 +1,15 @@
+citekey: hao25jpm
+title: "Joint Progression Modeling (JPM): A Probabilistic Framework for Mixed-Pathology Progression"
+authors:
+  - family: Hao
+    given: H.
+  - family: Austerweil
+    given: J. L.
+year: 2025
+type: paper-conference
+venue: Machine Learning for Health (ML4H), Proceedings of Machine Learning Research
+url: https://arxiv.org/abs/2512.03475
+abstract: "Event-based models (EBMs) infer disease progression from cross-sectional data, and standard EBMs assume a single underlying disease per individual. In contrast, mixed pathologies are common in neurodegeneration. We introduce the Joint Progression Model (JPM), a probabilistic framework that treats single-disease trajectories as partial rankings and builds a prior over joint progressions. We study several JPM variants (Pairwise, Bradley-Terry, Plackett-Luce, and Mallows) and analyze three properties: (i) calibration -- whether lower model energy predicts smaller distance to the ground truth ordering; (ii) separation -- the degree to which sampled rankings are distinguishable from random permutations; and (iii) sharpness -- the stability of sampled aggregate rankings. All variants are calibrated, and all achieve near-perfect separation; sharpness varies by variant and is well-predicted by simple features of the input partial rankings (number and length of rankings, conflict, and overlap). In synthetic experiments, JPM improves ordering accuracy by roughly 21 percent over a strong EBM baseline (SA-EBM) that treats the joint disease as a single condition. Finally, using NACC, we find that the Mallows variant of JPM and the baseline model (SA-EBM) have results that are more consistent with prior literature on the possible disease progression of the mixed pathology of AD and VaD."
+tags:
+  - disease progression
+  - bayesian modeling

@@ -22,9 +22,8 @@ pages: 1-7
 pdf: /papers/files/MalleCogSci2021.pdf
 abstract: "Norms are central to social life. They help people select actions that benefit the community and facilitate behavior prediction and coordination. However, little is known about the cognitive properties of norms. Here we focus on norm activation, context specificity, and how those properties differ for the two major types of norms: prescriptions and prohibitions. In two studies, participants are exposed to a variety of contexts by way of scene images and either (a) freely generate norms that apply to the context or (b) decide whether each of a series of candidate norms applies to a given context. Across both studies, people showed high levels of context specificity and fast norm activation, and these properties were substantially stronger for prescriptions than for prohibitions."
 tags:
-  - social norms
-  - moral norms
+  - norms
   - negation
   - cognitive structure
-  - network
+  - networks
   - deontics

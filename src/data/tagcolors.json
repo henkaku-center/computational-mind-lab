@@ -14,7 +14,6 @@
   "reasoning": "#FFF9C4",
   "reinforcement learning": "#FFECB3",
   "statistical methods": "#FFE0B2",
-  "Bayesian models": "#D1C4E9",
   "Hawkes process": "#C5CAE9",
   "aging": "#B3E5FC",
   "alzheimers": "#B2DFDB",
@@ -26,7 +25,6 @@
   "collaborative cognition": "#B3E5FC",
   "communication": "#B2DFDB",
   "contrast": "#DCEDC8",
-  "deep convolutional neural network": "#FFF9C4",
   "deontics": "#FFE0B2",
   "emergent sense of number": "#D1C4E9",
   "family resemblance": "#C5CAE9",
@@ -37,11 +35,8 @@
   "learning": "#FFE0B2",
   "memory retrieval": "#D1C4E9",
   "methodology": "#C5CAE9",
-  "moral norms": "#B3E5FC",
   "multilingualism": "#B2DFDB",
   "negation": "#DCEDC8",
-  "network": "#FFF9C4",
-  "network analysis": "#FFE0B2",
   "opponent modeling": "#D1C4E9",
   "organizational psychology": "#C5CAE9",
   "pattern recognition": "#B3E5FC",
@@ -54,5 +49,7 @@
   "reward": "#B3E5FC",
   "separable dimensions": "#B2DFDB",
   "social learning": "#DCEDC8",
-  "social norms": "#FFF9C4"
+  "disease progression": "#CFD8DC",
+  "deep learning": "#B2DFDB",
+  "decision making": "#F0F4C3"
 }
