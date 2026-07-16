@@ -1,0 +1,130 @@
+name: Auto-translate content
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'src/content/news/**'
+      - 'src/content/projects/**'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: true
+        description: Plan only, write nothing
+      full_scan:
+        type: boolean
+        default: false
+        description: Reconcile every pair (backfill)
+
+concurrency:
+  group: translate-master
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+jobs:
+  translate:
+    # Loop prevention layer 2: bot commits carry [skip-translate].
+    # (Layer 1: GITHUB_TOKEN pushes never retrigger workflows anyway.
+    #  Layer 3: sourceHash idempotency in the script.)
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip-translate]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Determine changed files
+        id: diff
+        if: github.event_name == 'push'
+        run: |
+          echo "files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} 2>/dev/null | tr '\n' ',' || echo '')" >> "$GITHUB_OUTPUT"
+
+      - name: Translate
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node scripts/translate.mjs \
+              ${{ inputs.full_scan && '--full-scan' || '' }} \
+              ${{ inputs.dry_run && '--dry-run' || '' }}
+          elif [ -z "${{ steps.diff.outputs.files }}" ]; then
+            # force-push or empty diff: fall back to full reconcile
+            node scripts/translate.mjs --full-scan
+          else
+            node scripts/translate.mjs --changed "${{ steps.diff.outputs.files }}"
+          fi
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5' }}
+
+      - name: Open refresh PRs for human-translated files
+        if: ${{ hashFiles('.automation/refresh-proposals/*') != '' }}
+        run: |
+          git config user.name "lab-site-bot"
+          git config user.email "actions@users.noreply.github.com"
+          for f in .automation/refresh-proposals/*; do
+            name=$(basename "$f" .md)
+            branch="translate/refresh-$name"
+            git checkout -B "$branch" origin/master
+            target=$(find src/content -name "$(basename "$f")" | head -1)
+            cp "$f" "$target"
+            git add "$target"
+            git commit -m "propose translation refresh: $name [skip-translate]"
+            git push -f origin "$branch"
+            gh pr create --head "$branch" --title "Translation refresh: $name" \
+              --body "The source changed but this translation is marked \`translated: human\`, so the update is proposed instead of applied. Review and merge or close." \
+              --label translation-refresh || true
+            git checkout -
+          done
+          rm -rf .automation/refresh-proposals
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: File conflict issue
+        if: ${{ hashFiles('.automation/translate-conflicts.txt') != '' }}
+        run: |
+          while read -r key; do
+            title="Translation conflict: $key"
+            existing=$(gh issue list --state open --search "$title in:title" --json number -q '.[0].number')
+            if [ -z "$existing" ]; then
+              gh issue create --title "$title" --label "site-update,translation-conflict" \
+                --body "Both locales of \`$key\` were edited in the same push, so auto-translation skipped the pair. Decide which side is authoritative and update \`sourceHash\`/\`translated\` accordingly (see CLAUDE.md)."
+            fi
+          done < .automation/translate-conflicts.txt
+          rm .automation/translate-conflicts.txt
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Commit generated counterparts
+        id: commit
+        run: |
+          git config user.name "lab-site-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout master
+          git add src/content src/i18n
+          if git diff --cached --quiet; then
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "auto-translate: sync locale counterparts [skip-translate]"
+            git push origin master
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Load-bearing: pushes made with GITHUB_TOKEN do NOT trigger on:push
+      # workflows, so the deploy must be dispatched explicitly.
+      - name: Trigger deploy
+        if: steps.commit.outputs.pushed == 'true'
+        run: gh workflow run deploy.yml --ref master
+        env:
+          GH_TOKEN: ${{ github.token }}
