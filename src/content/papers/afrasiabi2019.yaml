@@ -1,0 +1,29 @@
+citekey: afrasiabi2019
+title: Evaluating Theories of Collaborative Cognition Using the Hawkes Process and a Large Naturalistic Data Set
+authors:
+  - family: Afrasiabi
+    given: M.
+  - family: Orr
+    given: M. G.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Goel
+    given: A.
+  - family: Seifert
+    given: C.
+  - family: Freksa
+    given: C.
+year: 2019
+type: paper-conference
+venue: Proceedings of the 41st Annual Meeting of the Cognitive Science Society
+pages: xx-xx
+publisher: Cognitive Science Society
+publisherPlace: Montreal, Quebec, Canada
+pdf: /papers/files/Afrasiabi2019github.pdf
+abstract: People spontaneously collaborate to solve a common goal. What factors affect whether teams are successful? Due to lack of large-scale naturalistic data and methods for investigating scientific questions on such data, previous work has either focused on very concrete cases, such as surveys of business teams, or abstract cases, such as GridWorld games, where agents coordinate their movement so that each agent can get to their own goal without obstructing other agents. We propose a computational framework based on the multivariate Hawkes process and a novel algorithm for parameter estimation on large data sets. We demonstrate the potential of this method by applying it to a large database of programming teams, public GitHub repositories. We analyze factors known to influence team performance, such as leader organization style and team cognitive diversity, as well as other factors, such as the burstiness of effort, that are difficult to test using existing methods.
+tags:
+  - collaborative cognition
+  - Hawkes process
+  - organizational psychology
+  - bayesian nonparametrics

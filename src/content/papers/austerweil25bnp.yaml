@@ -1,0 +1,27 @@
+citekey: austerweil25bnp
+title: Capturing the growth of knowledge with nonparametric Bayesian models
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Sanborn
+    given: A. N.
+  - family: Lucas
+    given: C.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Griffiths
+    given: T. L.
+  - family: Chater
+    given: N.
+  - family: Tenenbaum
+    given: J. B.
+year: 2025
+type: chapter
+venue: "Bayesian Models of Cognition: Reverse Engineering the Mind"
+pages: 1-24
+publisher: MIT Press
+publisherPlace: Cambridge, MA
+pdf: /papers/files/AusterweilBNPBookChapter2025.pdf
+tags:
+  - bayesian nonparametrics

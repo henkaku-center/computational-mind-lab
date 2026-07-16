@@ -1,0 +1,35 @@
+citekey: charniak06naacl
+title: Multilevel coarse-to-fine PCFG parsing.
+authors:
+  - family: Charniak
+    given: E.
+  - family: Johnson
+    given: M.
+  - family: Elsner
+    given: M.
+  - family: Austerweil
+    given: J. L.
+  - family: Ellis
+    given: D.
+  - family: Haxton
+    given: I.
+  - family: Hill
+    given: C.
+  - family: Shrivaths
+    given: R.
+  - family: Moore
+    given: J.
+  - family: Pozar
+    given: M.
+  - family: Vu
+    given: T.
+year: 2006
+type: paper-conference
+venue: Proceedings of the main conference on Human Language Technology Conference of the North American Chapter of the Association of Computational Linguistics
+pages: 168-175
+publisher: Association for Computational Linguistics
+publisherPlace: New York City, NY, USA
+url: http://dl.acm.org/citation.cfm?id=1220857
+abstract: We present a PCFG parsing algorithm that uses a multilevel coarse-to-fine (MLCTF) scheme to improve the efficiency of search for the best parse. Our approach requires the user to specify a sequence of nested partitions or equivalence classes of the PCFG nonterminals. We define a sequence of PCFGs corresponding to each partition, where the nonterminals of each PCFG are clusters of nonterminals of the original source PCFG. We use the results of parsing at a coarser level (i.e., grammar defined in terms of a coarser partition) to prune the next finer level. We present experiments showing that with our algorithm the work load (as measured by the total number of constituents processed) is decreased by a factor of ten with no decrease in parsing accuracy compared to standard CKY parsing with the original PCFG. We suggest that the search space over mlctf algorithms is almost totally unexplored so that future work should be able to improve significantly on these results.
+tags:
+  - natural language processing

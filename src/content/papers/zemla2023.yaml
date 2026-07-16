@@ -1,0 +1,22 @@
+citekey: zemla2023
+title: Evidence for optimal semantic search throughout adulthood
+authors:
+  - family: Zemla
+    given: J. C.
+  - family: Gooding
+    given: D. C.
+  - family: Austerweil
+    given: J. L.
+year: 2023
+type: article-journal
+venue: "Nature: Scientific Communications"
+volume: "13"
+pages: "22528"
+pdf: /papers/files/Zemla2023.pdf
+abstract: As people age, they learn and store new knowledge in their semantic memory. Despite learning a tremendous amount of information, people can still recall information relevant to the current situation with ease. To accomplish this, the mind must efficiently organize and search a vast store of information. It also must continue to retrieve information effectively despite changes in cognitive mechanisms due to healthy aging, including a general slowing in information processing and a decline in executive functioning. How effectively does the mind of an individual adjust its search to account for changes due to aging? We tested 746 people ages 25 through 69 on a semantic fluency task (free listing animals) and found that, on average, retrieval follows an optimal path through semantic memory. Participants tended to list a sequence of semantically related animals (e.g., lion, tiger, puma) before switching to a semantically unrelated animal (e.g., whale). We found that the timing of these transitions to semantically unrelated animals was remarkably consistent with an optimal strategy for maximizing the overall rate of retrieval (i.e., the number of animals listed per unit time). Age did not affect an individual’s deviation from the optimal strategy given their general performance, suggesting that people adapt and continue to search memory optimally throughout their lives. We argue that this result is more likely due to compensating for a general slowing than a decline in executive functioning
+tags:
+  - memory retrieval
+  - networks
+  - fluency
+  - aging
+  - computational psychiatry

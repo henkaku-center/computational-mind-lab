@@ -1,0 +1,32 @@
+citekey: qian15
+title: Learning additive and substitutive features.
+authors:
+  - family: Qian
+    given: T.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Noelle
+    given: D. C.
+  - family: Dale
+    given: R.
+  - family: Warlaumont
+    given: A. S.
+  - family: Yoshimi
+    given: J.
+  - family: Matlock
+    given: T.
+  - family: Jennings
+    given: C. D.
+  - family: Maglio
+    given: P. P.
+year: 2015
+type: paper-conference
+venue: Proceedings of the 37th annual meeting of the cognitive science society
+pages: 1919-1924
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+url: https://mindmodeling.org/cogsci2015/papers/0332/paper0332.pdf
+abstract: To adapt in an ever-changing world, people infer what basic units should be used to form concepts. Recent computational models of representation learning have successfully predicted how people discover features (Austerweil & Griffiths, 2013), however, the learned features are assumed to be additive. This assumption is not always true in the real world. Sometimes a basic unit is substitutive (Garner, 1978) - for example, a cat is either furry or hairless, but not both. Here we explore how people form representations for substitutive features, and what computational principles guide such behavior. In an experiment, we show that not only are people capable of forming substitutive feature representations, but they also infer whether a feature should be additive or substitutive depending on the input. This learning behavior is predicted by our novel extension to the Austerweil and Griffiths (2011, 2013)’s feature construction framework, but not their original model.
+tags:
+  - feature inference

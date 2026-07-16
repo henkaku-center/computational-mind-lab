@@ -1,0 +1,26 @@
+citekey: abbott2012cogsci
+title: Constructing a hypothesis space from the web for large-scale bayesian word learning.
+authors:
+  - family: Abbott
+    given: J. T.
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Miyake
+    given: N.
+  - family: Peebles
+    given: D.
+  - family: Cooper
+    given: R. P.
+year: 2012
+type: paper-conference
+venue: Proceedings of the 34th annual meeting of the cognitive science society
+pages: 54-59
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+url: https://mindmodeling.org/cogsci2012/papers/0023/paper0023.pdf
+abstract: "The Bayesian generalization framework has been successful in explaining how people generalize a property from a few observed stimuli to novel stimuli, across several different domains. To create a successful Bayesian generalization model, modelers typically specify a hypothesis space and prior probability distribution for each specific domain. However, this raises two problems: the models do not scale beyond the (typically small-scale) domain that they were designed for, and the explanatory power of the models is reduced by their reliance on a hand-coded hypothesis space and prior. To solve these two problems, we propose a method for deriving hypothesis spaces and priors from large online databases. We evaluate our method by constructing a hypothesis space and prior for a Bayesian word learning model from WordNet, a large online database that encodes the semantic relationships between words as a network. After validating our approach by replicating a previous word learning study, we apply the same model to a new experiment featuring three additional taxonomic domains (clothing, containers, and seats). In both experiments, we found that the same automatically constructed hypothesis space explains the complex pattern of generalization behavior, producing accurate predictions across a total of six different domains."
+tags:
+  - statistical methods

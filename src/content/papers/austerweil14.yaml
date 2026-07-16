@@ -1,0 +1,24 @@
+citekey: austerweil14
+title: Testing the psychological validity of cluster construction biases.
+authors:
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Bello
+    given: P.
+  - family: Guarini
+    given: M.
+  - family: M. McShane
+    given: ""
+  - family: Scassellati
+    given: B.
+year: 2014
+type: paper-conference
+venue: Proceedings of the 36th Annual Meeting of the Cognitive Science Society
+pages: 122-127
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+url: https://mindmodeling.org/cogsci2014/papers/032/paper032.pdf
+abstract: To generalize from one experience to the next in a world where the underlying structures are ever-changing, people construct clusters that group their observations and enable information to be pooled within a cluster in an efficient and effective manner. Despite substantial computational work describing potential domain-general processes for how people construct these clusters, there has been little empirical progress comparing different proposals to each other and to human performance. In this article, I empirically test some popular computational proposals against each other and against human behavior using the Markov chain Monte Carlo with People methodology. The results support two popular Bayesian nonparametric processes, the Chinese Restaurant Process and the related Dirichlet Process Mixture Model.
+tags:
+  - categorization

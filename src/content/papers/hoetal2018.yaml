@@ -1,0 +1,32 @@
+citekey: hoetal2018
+title: Effectively Learning from Pedagogical Demonstrations.
+authors:
+  - family: Ho
+    given: M. K.
+  - family: Littman
+    given: M. L.
+  - family: Cushman
+    given: F.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Kalish
+    given: C.
+  - family: Rau
+    given: M.
+  - family: Rogers
+    given: T.
+  - family: Zhu
+    given: J.
+year: 2018
+type: paper-conference
+venue: Proceedings of the 40th Annual Meeting of the Cognitive Science Society
+pages: xx-xx
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/Hoetal2018.pdf
+abstract: When observing others’ behavior, people use Theory of Mind to infer unobservable beliefs, desires, and intentions. And when showing what activity one is doing, people will modify their behavior in order to facilitate more accurate interpretation and learning by an observer. Here, we present a novel model of how demonstrators act and observers interpret demonstrations corresponding to different levels of recursive social reasoning (i.e. a cognitive hierarchy) grounded in Theory of Mind. Our model can explain how demonstrators show others how to perform a task and makes predictions about how sophisticated observers can reason about communicative intentions. Additionally, we report an experiment that tests (1) how well an observer can learn from demonstrations that were produced with the intent to communicate, and (2) how an observer’s interpretation of demonstrations influences their judgments.
+tags:
+  - pedagogy
+  - reasoning
+  - reinforcement learning

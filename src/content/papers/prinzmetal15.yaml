@@ -1,0 +1,21 @@
+citekey: prinzmetal15
+title: Spatial attention and environmental information.
+authors:
+  - family: Prinzmetal
+    given: W.
+  - family: Whiteford
+    given: K.
+  - family: Austerweil
+    given: J. L.
+  - family: Landau
+    given: A. N.
+year: 2015
+type: article-journal
+venue: "Journal of Experimental Psychology: Human, Perception, & Performance"
+volume: "41"
+issue: "5"
+pages: 1396-1408
+url: http://www.researchgate.net/profile/Kelly_Whiteford/publication/280059493_Spatial_Attention_and_Environmental_Information/links/55ad0dd808aed614b09670b0.pdf
+abstract: Navigating through our perceptual environment requires constant selection of behaviorally relevant information and irrelevant information. Spatial cues guide attention to information in the environment that is relevant to the current task. How does the amount of information provided by a location cue and irrelevant information influence the deployment of attention and what are the processes underlying this effect? To address these questions, we used a spatial cueing paradigm to measure the relationship between cue predictability (measured in bits of information) and the voluntary attention effect, the benefit in reaction time (RT) because of cueing a target. We found a linear relationship between cue predictability and the attention effect. To analyze the cognitive processes producing this effect, we used a simple RT model, the Linear Ballistic Accumulator model. We found that informative cues reduced the amount of evidence necessary to make a response (the threshold), regardless of the presence of irrelevant information (i.e., distractors). However, a change in the rate of evidence accumulation occurred when distractors were present in the display. Thus, the mechanisms underlying the deployment of attention are exquisitely tuned to the amount and behavioral relevancy of statistical information in the environment.
+tags:
+  - perception

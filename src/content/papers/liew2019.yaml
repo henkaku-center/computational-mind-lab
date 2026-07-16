@@ -1,0 +1,22 @@
+citekey: liew2019
+title: "Creating Something Different: Similarity, Contrast, and Representativeness in Categorization"
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Liew
+    given: S. X.
+  - family: Conway
+    given: N.
+  - family: Kurtz
+    given: K. J.
+year: 2019
+type: article-journal
+venue: PsyArXiv
+pages: xx-xx
+publisher: PsyArXiv
+pdf: /papers/files/Liew2019Categorization.pdf
+abstract: "The ability to generate new concepts and ideas is among the most fascinating aspects of human cognition, but we do not have a strong understanding of the cognitive processes and representations underlying concept generation. In this paper, we study the generation of new categories using the computational and behavioral toolkit of traditional artificial category learning. Previous work in this domain has focused on how the statistical structure of known categories generalizes to generated categories, overlooking whether (and if so, how) contrast between the known and generated categories is a factor. We report three experiments demonstrating that contrast between what is known and what is created is of fundamental importance for categorization. We propose two novel approaches to modeling category contrast: one focused on exemplar dissimilarity and another on the representativeness heuristic. Our experiments and computational analyses demonstrate that both models capture different aspects of contrast’s role in categorization."
+tags:
+  - categorization
+  - contrast
+  - category learning

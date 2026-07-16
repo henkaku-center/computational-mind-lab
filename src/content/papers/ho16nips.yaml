@@ -1,0 +1,35 @@
+citekey: ho16nips
+title: "Showing versus doing: Teaching by demonstration."
+authors:
+  - family: Ho
+    given: M. K.
+  - family: Littman
+    given: M. L.
+  - family: MacGlashan
+    given: J.
+  - family: Cushman
+    given: F.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Lee
+    given: D. D.
+  - family: Sugiyama
+    given: M.
+  - family: Luxburg
+    given: U. V.
+  - family: Guyon
+    given: I.
+  - family: Garnett
+    given: R.
+year: 2016
+type: paper-conference
+venue: Advances in neural information processing systems
+pages: 3027-3035
+publisher: Curran Associates, Inc
+publisherPlace: Red Hook, NY
+pdf: /papers/files/Hoetal2016NIPS.pdf
+abstract: People often learn from others' demonstrations, and classic inverse reinforcement learning (IRL) algorithms have brought us closer to realizing this capacity in machines. In contrast, teaching by demonstration has been less well studied computationally. Here, we develop a novel Bayesian model for teaching by demonstration. Stark differences arise when demonstrators are intentionally teaching a task versus simply performing a task. In two experiments, we show that human participants systematically modify their teaching behavior consistent with the predictions of our model. Further, we show that even standard IRL algorithms benefit when learning from behaviors that are intentionally pedagogical. We conclude by discussing IRL algorithms that can take advantage of intentional pedagogy.
+tags:
+  - reinforcement learning
+  - pedagogy

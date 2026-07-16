@@ -1,0 +1,45 @@
+citekey: ho16
+title: Feature-based joint planning and norm learning in collaborative games.
+authors:
+  - family: Ho
+    given: M. K.
+  - family: MacGlashan
+    given: J.
+  - family: Hilliard
+    given: E.
+  - family: Trimbach
+    given: C.
+  - family: Brawner
+    given: S.
+  - family: Gopalan
+    given: N.
+  - family: Greenwald
+    given: A.
+  - family: Littman
+    given: M. L.
+  - family: Tenenbaum
+    given: J. B.
+  - family: Kleiman-Weiner
+    given: M.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Papafragou
+    given: A.
+  - family: Grodner
+    given: D.
+  - family: Mirman
+    given: D.
+  - family: Trueswell
+    given: J.
+year: 2016
+type: paper-conference
+venue: Proceedings of the 38th annual meeting of the cognitive science society
+pages: 1158-1163
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/Hoetalnormlearning2016.pdf
+abstract: People often use norms to coordinate behavior and accomplish shared goals. But how do people learn and represent norms? Here, we formalize the process by which collaborating individuals (1) reason about group plans during interaction, and (2) use task features to abstractly represent norms. In Experiment 1, we test the assumptions of our model in a gridworld that requires coordination and contrast it with a “best response” model. In Experiment 2, we use our model to test whether group members’ joint planning relies more on state features independent of other agents (landmark-based features) or state features determined by the configuration of agents (agent-relative features).
+tags:
+  - reinforcement learning
+  - norms

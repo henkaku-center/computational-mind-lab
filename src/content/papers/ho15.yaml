@@ -1,0 +1,37 @@
+citekey: ho15
+title: "Teaching with rewards and punishments: Reinforcement or communication?"
+authors:
+  - family: Ho
+    given: M. K.
+  - family: Littman
+    given: M. L.
+  - family: Cushman
+    given: F.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Noelle
+    given: D. C.
+  - family: Dale
+    given: R.
+  - family: Warlaumont
+    given: A. S.
+  - family: Yoshimi
+    given: J.
+  - family: Matlock
+    given: T.
+  - family: Jennings
+    given: C. D.
+  - family: Maglio
+    given: P. P.
+year: 2015
+type: paper-conference
+venue: Proceedings of the 37th annual meeting of the cognitive science society
+pages: 920-925
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+url: https://mindmodeling.org/cogsci2015/papers/0165/paper0165.pdf
+abstract: Teaching with evaluative feedback involves expectations about how a learner will interpret rewards and punishments. We formalize two hypotheses of how a teacher implicitly expects a learner to interpret feedback – a reward-maximizing model based on standard reinforcement learning and an action-feedback model based on research on communicative intent – and describe a virtual animal-training task that distinguishes the two. The results of two experiments in which people gave learners feedback for isolated actions (Exp. 1) or while learning over time (Exp. 2) support the action-feedback model over the reward-maximizing model.
+tags:
+  - reinforcement learning
+  - pedagogy

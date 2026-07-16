@@ -1,0 +1,16 @@
+citekey: sobel16
+title: Coding choices affect the analyses of a false belief measure.
+authors:
+  - family: Sobel
+    given: D. M.
+  - family: Austerweil
+    given: J. L.
+year: 2016
+type: article-journal
+venue: Cognitive Development
+volume: "40"
+pages: 9-23
+url: http://dx.doi.org/10.1016/j.cogdev.2016.08.002
+abstract: The unexpected contents task is a ubiquitous measure of false belief. Not only has this measure been used to study children’s developing knowledge of belief, it has impacted the study of atypical development, education, and many other facets of cognitive development. Based on a review of articles using this task, we show that there is no consensus regarding how to score this measure. Further, examining both a logit analysis of performance on this measure and performance of a large sample of preschoolers, we show that which coding scheme researchers used to analyze raw data from this measure has a reliable effect on results, particularly when smaller sample sizes are used. Integrating our results, we conclude that the most frequently used coding scheme is flawed. We recommend best practices for scoring the unexpected contents task, and that researchers examine how they analyze data from this measure to ensure the robustness of their effects.
+tags:
+  - statistical methods

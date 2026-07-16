@@ -1,0 +1,17 @@
+citekey: griffiths12bayesian
+title: Bayesian generalization with circular consequential regions.
+authors:
+  - family: Griffiths
+    given: T. L.
+  - family: Austerweil
+    given: J. L.
+year: 2012
+type: article-journal
+venue: Journal of Mathematical Psychology
+volume: "56"
+issue: "4"
+pages: 281-285
+url: http://www.sciencedirect.com/science/article/pii/S0022249612000740
+abstract: Generalization–deciding whether to extend a property from one stimulus to another stimulus–is a fundamental problem faced by cognitive agents in many different settings. Shepard (1987) provided a mathematical analysis of generalization in terms of Bayesian inference over the regions of psychological space that might correspond to a given property. He proved that in the unidimensional case, where regions are intervals of the real line, generalization will be a negatively accelerated function of the distance between stimuli, such as an exponential function. These results have been extended to rectangular consequential regions in multiple dimensions, but not for circular consequential regions, which play an important role in explaining generalization for stimuli that are not represented in terms of separable dimensions. We analyze Bayesian generalization with circular consequential regions, providing bounds on the generalization function and proving that this function is negatively accelerated.
+tags:
+  - categorization

@@ -1,0 +1,28 @@
+citekey: austerweil16
+title: The impact of other-regarding preferences in a collection of non-zero-sum grid games.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Brawner
+    given: S.
+  - family: Greenwald
+    given: A.
+  - family: Hilliard
+    given: E.
+  - family: Ho
+    given: M.
+  - family: Littman
+    given: M. L.
+  - family: MacGlashan
+    given: J.
+  - family: Trimbach
+    given: C.
+year: 2016
+type: paper-conference
+venue: AAAI spring symposium 2016 on challenges and opportunities in multiagent learning for the real world
+publisher: The AAAI Press
+publisherPlace: Palo Alto, CA
+pdf: /papers/files/Austerweiletal2016_MARL.pdf
+abstract: We examined the behavior of reinforcement-learning algorithms in a set of two-player stochastic games played on a grid. These games were selected because they include both cooperative and competitive elements, highlighting the importance of adaptive collaboration between the players. We found that pairs of learners were surprisingly good at discovering stable mutually beneficial behavior when such behaviors existed. However, the performance of learners was significantly impacted by their other-regarding preferences. We found similar patterns of results in games involving human–human and human–agent pairs.
+tags:
+  - reinforcement learning

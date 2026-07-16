@@ -1,0 +1,30 @@
+citekey: austerweil15bnp
+title: Structure and flexibility in Bayesian models of cognition.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Gershman
+    given: S. J.
+  - family: Tenenbaum
+    given: J. B.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Busemeyer
+    given: J. R.
+  - family: Wang
+    given: Z.
+  - family: Townsend
+    given: J. T.
+  - family: Eidels
+    given: A.
+year: 2015
+type: chapter
+venue: Oxford handbook of computational and mathematical psychology
+pages: 187-208
+publisher: Oxford University Press
+publisherPlace: New York, NY
+url: http://web.mit.edu/sjgershm/www/Austerweil15.pdf
+abstract: "Probability theory forms a natural framework for explaining the impressive success of people at solving many difficult inductive problems, such as learning words and categories, inferring the relevant features of objects, and identifying functional relationships. Probabilistic models of cognition use Bayes’ rule to identify probable structures or representations that could have generated a set of observations, whether the observations are sensory input or the output of other psychological processes. In this chapter we address an important question that arises within this framework: How do people infer representations that are complex enough to faithfully encode the world but not so complex that they “overfit” noise in the data? We discuss nonparametric Bayesian models as a potential answer to this question. To do so, first we present the mathematical background necessary to understand nonparametric Bayesian models. We then delve into nonparametric Bayesian models for three types of hidden structure: clusters, features, and functions. Finally, we conclude with a summary and discussion of open questions for future research."
+tags:
+  - bayesian nonparametrics

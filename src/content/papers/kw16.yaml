@@ -1,0 +1,32 @@
+citekey: kw16
+title: "Coordinate to cooperate or compete: Abstract goals and joint intentions in social interaction."
+authors:
+  - family: Kleiman-Weiner
+    given: M.
+  - family: Ho
+    given: M. K.
+  - family: Austerweil
+    given: J. L.
+  - family: Littman
+    given: M. L.
+  - family: Tenenbaum
+    given: J. B.
+editors:
+  - family: Papafragou
+    given: A.
+  - family: Grodner
+    given: D.
+  - family: Mirman
+    given: D.
+  - family: Trueswell
+    given: J.
+year: 2016
+type: paper-conference
+venue: Proceedings of the 38th annual meeting of the cognitive science society
+pages: 1679-1684
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/KW2016etal.pdf
+abstract: Successfully navigating the social world requires reasoning about both high-level strategic goals, such as whether to cooperate or compete, as well as the low-level actions needed to achieve those goals. We develop a hierarchical model of social agency that infers the intentions of other agents, strategically decides whether to cooperate or compete with them, and then executes either a cooperative or competitive planning program. Learning occurs across both high-level strategic decisions and low-level actions leading to the emergence of social norms. We test predictions of this model in multi-agent behavioral experiments using rich video-game like environments. By grounding strategic behavior in a formal model of planning, we develop abstract notions of both cooperation and competition and shed light on the computational nature of joint intentionality.
+tags:
+  - reinforcement learning

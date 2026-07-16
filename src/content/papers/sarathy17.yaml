@@ -1,0 +1,33 @@
+citekey: sarathy17
+title: Mental Representations and Computational Modeling of Context-Specific Human Norm Systems
+authors:
+  - family: Sarathy
+    given: V.
+  - family: Scheutz
+    given: M.
+  - family: Kenett
+    given: Y.
+  - family: Allaham
+    given: M. M.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Gunzelmann
+    given: G.
+  - family: Howes
+    given: A.
+  - family: Tenbrink
+    given: T.
+  - family: Davelaar
+    given: E.
+year: 2017
+type: paper-conference
+venue: Proceedings of the 39th annual meeting of the cognitive science society
+pages: X-X
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/Sarathy2017.pdf
+abstract: "Human behavior is frequently guided by social and moral norms; in fact, no societies, no social groups could exist without norms. However, there are few cognitive science approaches to this central phenomenon of norms. While there has been some progress in developing formal representations of norm systems (e.g., deontological approaches), we do not yet know basic properties of human norms: how they are represented, activated, and learned. Further, what computational models can capture these properties, and what algorithms could learn them? In this paper we describe initial experiments on human norm representations in which the context specificity of norms features prominently. We then provide a formal representation of norms using Dempster-Shafer Theory that allows a machine learning algorithm to learn norms under uncertainty from these human data, while preserving their context specificity."
+tags:
+  - norms
+  - fluency

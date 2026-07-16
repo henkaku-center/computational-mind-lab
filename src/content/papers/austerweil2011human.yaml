@@ -1,0 +1,18 @@
+citekey: austerweil2011human
+title: Human feature learning.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Seel
+    given: N. M.
+year: 2011
+type: chapter
+venue: Encyclopedia of the sciences of learning
+pages: 1456-1458
+publisher: Springer
+publisherPlace: New York, NY
+tags:
+  - feature inference

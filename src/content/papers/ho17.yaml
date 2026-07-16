@@ -1,0 +1,29 @@
+citekey: ho17
+title: "Teaching by intervention: Working backwards, undoing mistakes, or correcting mistakes?"
+authors:
+  - family: Ho
+    given: M. K.
+  - family: Littman
+    given: M. L.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Gunzelmann
+    given: G.
+  - family: Howes
+    given: A.
+  - family: Tenbrink
+    given: T.
+  - family: Davelaar
+    given: E.
+year: 2017
+type: paper-conference
+venue: Proceedings of the 39th annual meeting of the cognitive science society
+pages: X-X
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/Hoetal2017.pdf
+abstract: "When teaching, people often intentionally intervene on a learner while it is acting. For instance, a dog owner might move the dog so it eats out of the right bowl, or a coach might intervene while a tennis player is practicing to teach a skill. How do people teach by intervention? And how do these strategies interact with learning mechanisms? Here, we examine one global and two local strategies: working backwards from the end-goal of a task (backwards chaining), placing a learner in a previous state when an incorrect action was taken (undoing), or placing a learner in the state they would be in if they had taken the correct action (correcting). Depending on how the learner interprets an intervention, different teaching strategies result in better learning. We also examine how people teach by intervention in an interactive experiment and find a bias for using local strategies like undoing."
+tags:
+  - reinforcement learning
+  - pedagogy

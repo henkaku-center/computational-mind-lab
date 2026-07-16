@@ -1,0 +1,26 @@
+citekey: griffiths2012cogsci
+title: Comparing the inductive biases of simple neural networks and Bayesian models.
+authors:
+  - family: Griffiths
+    given: T. L.
+  - family: Austerweil
+    given: J. L.
+  - family: Berthiaume
+    given: V. G.
+editors:
+  - family: Miyake
+    given: N.
+  - family: Peebles
+    given: D.
+  - family: Cooper
+    given: R. P.
+year: 2012
+type: paper-conference
+venue: Proceedings of the 34th annual meeting of the cognitive science society
+pages: 402-407
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+url: https://mindmodeling.org/cogsci2012/papers/0081/paper0081.pdf
+abstract: Understanding the relationship between connectionist and probabilistic models is important for evaluating the compatibility of these approaches. We use mathematical analyses and computer simulations to show that a linear neural network can approximate the generalization performance of a probabilistic model of property induction, and that training this network by gradient descent with early stopping results in similar performance to Bayesian inference with a particular prior. However, this prior differs from distributions defined using discrete structure, suggesting that neural networks have inductive biases that can be differentiated from probabilistic models with structured representations.
+tags:
+  - networks

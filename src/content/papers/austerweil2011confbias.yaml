@@ -1,0 +1,18 @@
+citekey: austerweil2011confbias
+title: Seeking confirmation is rational for deterministic hypotheses.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+year: 2011
+type: article-journal
+venue: Cognitive Science
+volume: "35"
+issue: "3"
+pages: 499-526
+publisher: Blackwell Publishing Ltd
+url: http://onlinelibrary.wiley.com/doi/10.1111/j.1551-6709.2010.01161.x/full
+abstract: "The tendency to test outcomes that are predicted by our current theory (the confirmation bias) is one of the best-known biases of human decision making. We prove that the confirmation bias is an optimal strategy for testing hypotheses when those hypotheses are deterministic, each making a single prediction about the next event in a sequence. Our proof applies for two normative standards commonly used for evaluating hypothesis testing: maximizing expected information gain and maximizing the probability of falsifying the current hypothesis. This analysis rests on two assumptions: (a) that people predict the next event in a sequence in a way that is consistent with Bayesian inference; and (b) when testing hypotheses, people test the hypothesis to which they assign highest posterior probability. We present four behavioral experiments that support these assumptions, showing that a simple Bayesian model can capture people’s predictions about numerical sequences (Experiments 1 and 2), and that we can alter the hypotheses that people choose to test by manipulating the prior probability of those hypotheses (Experiments 3 and 4)."
+tags:
+  - reasoning

@@ -1,0 +1,24 @@
+citekey: ho2021
+title: "Communication in Action: Belief-directed Planning and Pragmatic Action Interpretation in Communicative Demonstrations"
+authors:
+  - family: Ho
+    given: M. K.
+  - family: Cushman
+    given: F. A.
+  - family: Littman
+    given: M. L.
+  - family: Austerweil
+    given: J. L.
+year: 2021
+type: article-journal
+venue: "Journal of Experimental Psychology: General"
+volume: "13"
+pages: 2246-2272
+pdf: /papers/files/HoCommunicativeDemonstrations2020.pdf
+abstract: "Theory of mind enables an observer to interpret others’ behavior in terms of unobservable beliefs, desires, intentions, feelings, and expectations about the world. This also empowers the person whose behavior is being observed: By intelligently modifying her actions, she can influence the mental representations that an observer ascribes to her, and by extension, what the observer comes to believe about the world. That is, she can engage in intentionally communicative demonstrations. Here, we develop a computational account of generating and interpreting communicative demonstrations by explicitly distinguishing between two interacting types of planning. Typically, instrumental planning aims to control states of the environment, whereas belief-directed planning aims to influence an observer’s mental representations. Our framework extends existing formal models of pragmatics and pedagogy to the setting of value-guided decision-making, captures how people modify their intentional behavior to show what they know about the reward or causal structure of an environment, and helps explain data on infant and child imitation in terms of literal versus pragmatic interpretation of adult demonstrators’ actions. Additionally, our analysis of belief-directed intentionality and mentalizing sheds light on the socio-cognitive mechanisms that underlie distinctly human forms of communication, culture, and sociality."
+tags:
+  - communication
+  - problem solving
+  - pragmatics
+  - planning
+  - social learning

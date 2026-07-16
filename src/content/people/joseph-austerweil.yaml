@@ -1,0 +1,9 @@
+# TODO-review: confirm title wording, add new Chiba Tech email, nameJa/titleJa/blurbJa
+name: Joseph Austerweil
+title: Professor & Academic Director, School of Design & Science
+group: pi
+era: chibatech
+blurb: As a computational cognitive psychologist, my research program explores questions at the intersection of perception and higher-level cognition. I use recent advances in statistics and computer science to formulate ideal learner models to see how they solve these problems and then test the model predictions using traditional behavioral experimentation. Ideal learner models help us understand the knowledge people use to solve problems because such knowledge must be made explicit for the ideal learner model to successfully produce human behavior. This method yields novel machine learning methods and leads to the discovery of new psychological principles.
+image: /img/people/joe.jpg
+weight: 10
+needsReview: true

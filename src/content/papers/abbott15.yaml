@@ -1,0 +1,20 @@
+citekey: abbott15
+title: Random walks on semantic networks can resemble optimal foraging.
+authors:
+  - family: Abbott
+    given: J. T.
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+year: 2015
+type: article-journal
+venue: Psychological Review
+volume: "122"
+issue: "3"
+pages: 558-569
+url: https://cocosci.berkeley.edu/papers/RandomWalksOptimalForaging.pdf
+abstract: When people are asked to retrieve members of a category from memory, clusters of semantically related items tend to be retrieved together. A recent article by Hills, Jones, and Todd (2012) argued that this pattern reflects a process similar to optimal strategies for foraging for food in patchy spatial environments, with an individual making a strategic decision to switch away from a cluster of related information as it becomes depleted. We demonstrate that similar behavioral phenomena also emerge from a random walk on a semantic network derived from human word-association data. Random walks provide an alternative account of how people search their memories, postulating an undirected rather than a strategic search process. We show that results resembling optimal foraging are produced by random walks when related items are close together in the semantic network. These findings are reminiscent of arguments from the debate on mental imagery, showing how different processes can produce similar results when operating on different representations.
+tags:
+  - networks
+  - fluency

@@ -1,0 +1,23 @@
+citekey: austerweil09cogsci
+title: The effect of distributional information on feature learning.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Taatgen
+    given: N. A.
+  - family: van Rijn
+    given: H.
+year: 2009
+type: paper-conference
+venue: Proceedings of the 31st annual conference of the cognitive science society
+pages: 2765-2770
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+url: http://csjarchive.cogsci.rpi.edu/proceedings/2009/papers/619/paper619.pdf
+abstract: A fundamental problem solved by the human mind is the formation of basic units to represent observed objects that support future decisions. We present an ideal observer model that infers features to represent the raw sensory data of a given set of objects. Based on our rational analysis of feature representation, we predict that the distribution of the parts that compose objects should affect the features people use to infer objects. We confirm this prediction in a behavioral experiment, suggesting that distributional information is one of the factors that determines how people identify the features of objects.
+tags:
+  - feature inference
+  - rational analysis

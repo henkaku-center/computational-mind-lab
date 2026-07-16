@@ -1,0 +1,28 @@
+citekey: payton2019
+title: Subjective Randomness in a Non-cooperative Game
+authors:
+  - family: Payton
+    given: M.
+  - family: Zemla
+    given: J. C.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Goel
+    given: A.
+  - family: Seifert
+    given: C.
+  - family: Freksa
+    given: C.
+year: 2019
+type: paper-conference
+venue: Proceedings of the 41st Annual Meeting of the Cognitive Science Society
+pages: xx-xx
+publisher: Cognitive Science Society
+publisherPlace: Montreal, Quebec, Canada
+pdf: /papers/files/Payton2019rps.pdf
+abstract: "Rock, Paper, Scissors (RPS) is a competitive game. There are three actions: rock, paper, and scissors. The game’s rules are simple: scissors beats paper, rock beats scissors and paper beats rock (all signs stalemate against themselves). Over multiple games with the same opponent, optimal play according to a Nash Equilibrium requires subjects to play with genuine randomness. To examine randomness judgments in the context of competition, we tested subjects with identical sequences in two conditions: one produced from a dice roll, one from someone playing rock, paper, scissors. We compared these findings to models of subjective randomness from Falk and Konold (1997) and from Griffiths and Tenenbaum (2001), which explain assessments of randomness as a function of algorithmic complexity and statistical inference, respectively. In both conditions the models fail to adequately describe subjective randomness judgements of ternary outcomes. We also observe that context influences perceptions of randomness such that some isomorphic sequences produced from intentional play are perceived as less random than dice rolls. We discuss this finding in terms of the relation between patterns and opponent modeling."
+tags:
+  - randomness
+  - pattern recognition
+  - opponent modeling

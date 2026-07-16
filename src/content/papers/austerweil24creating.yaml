@@ -1,0 +1,21 @@
+citekey: austerweil24creating
+title: "Creating Something Different: Similarity, Contrast, and Representativeness in Categorization"
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Liew
+    given: S. X.
+  - family: Conway
+    given: N.
+  - family: Kurtz
+    given: K. J.
+year: 2024
+type: article-journal
+venue: Computational Brain and Behavior
+pages: 1-35
+pdf: /papers/files/Austerweiletal2024catgen.pdf
+abstract: "The ability to generate new concepts and ideas is among the most fascinating aspects of human cognition, but we do not have a strong understanding of the cognitive processes and representations underlying concept generation. Previous work in this domain has focused on how the statistical structure of known categories generalizes to generated categories, overlooking whether (and if so, how) contrast between the known and generated categories is a factor. In this paper, we explore a different factor: contrast from known categories. We propose two novel approaches to modeling category contrast: one focused on exemplar dissimilarity and another based on the representativeness heuristic. Across three behavioral experiments, we nd that people generate new categories that contrast from observed categories and distribute exemplars acoss unoccupied regions of stimulus space. The model based on the representativeness heuristic captured human category generation better when the known category was well captured by a Gaussian distribution. Conversely, the exemplar-based mode"
+tags:
+  - categorization
+  - contrast
+  - category learning

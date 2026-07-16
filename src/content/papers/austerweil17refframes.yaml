@@ -1,0 +1,21 @@
+citekey: austerweil17refframes
+title: "Learning to Be (In)variant: Combining Prior Knowledge and Experience to Infer Orientation Invariance in Object Recognition."
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+  - family: Palmer
+    given: S. E.
+year: 2017
+type: article-journal
+venue: Cognitive Science
+volume: "41"
+issue: "5"
+pages: 1183-1201
+pdf: /papers/files/AusterweilRefFrames2017.pdf
+abstract: How does the visual system recognize images of a novel object after a single observation despite possible variations in the viewpoint of that object relative to the observer? One possibility is comparing the image with a prototype for invariance over a relevant transformation set (e.g., translations and dilations). However, invariance over rotations (i.e., orientation invariance) has proven difficult to analyze, because it applies to some objects but not others. We propose that the invariant transformations of an object are learned by incorporating prior expectations with real world evidence. We test this proposal by developing an ideal learner model for learning invariance that predicts better learning of orientation dependence when prior expectations about orientation are weak. This prediction was supported in two behavioral experiments, where participants learned the orientation dependence of novel images using feedback from solving arithmetic problems.
+tags:
+  - perception
+  - bayesian nonparametrics
+  - categorization

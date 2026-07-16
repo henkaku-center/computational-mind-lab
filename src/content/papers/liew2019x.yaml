@@ -1,0 +1,27 @@
+citekey: liew2019x
+title: Novel categories are distinct from "Not"-categories
+authors:
+  - family: Liew
+    given: S. X.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Goel
+    given: A.
+  - family: Seifert
+    given: C.
+  - family: Freksa
+    given: C.
+year: 2019
+type: paper-conference
+venue: Proceedings of the 41st Annual Meeting of the Cognitive Science Society
+pages: xx-xx
+publisher: Cognitive Science Society
+publisherPlace: Montreal, Quebec, Canada
+pdf: /papers/files/LiewAusterweil2019nota.pdf
+abstract: "The categorization literature often considers two types of categories as equivalent: (a) standard categories and (b) negation categories. For example, category learning studies typically conflate learning categories A and B with learning categories A and NOT A. This study represents the first attempt at delineating these two separate types of generated categories. We specifically test for differences in the distributional structure of generated categories, demonstrating that categories identified as not what was known are larger and wider-spread compared to categories that were identified with a specific label. We also observe consistency in distributional structure across multiple generated categories, replicating and extending previous findings. These results are discussed in the context of providing a foundation for future modeling work."
+tags:
+  - categorization
+  - category generation
+  - contrast
+  - category learning

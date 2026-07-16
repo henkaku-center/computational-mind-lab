@@ -1,0 +1,29 @@
+citekey: abbott12
+title: Human memory search as a random walk in a semantic network.
+authors:
+  - family: Abbott
+    given: J. T.
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Pereira
+    given: F.
+  - family: Burges
+    given: C.J.C.
+  - family: Bottou
+    given: L.
+  - family: Weinberger
+    given: K.Q.
+year: 2012
+type: paper-conference
+venue: Advances in neural information processing systems
+pages: 3041-3049
+publisher: Curran Associates, Inc
+publisherPlace: Red Hook, NY
+url: http://papers.nips.cc/paper/4761-human-memory-search-as-a-random-walk-in-a-semantic-network.pdf
+abstract: The human mind has a remarkable ability to store a vast amount of information in memory, and an even more remarkable ability to retrieve these experiences when needed. Understanding the representations and algorithms that underlie human memory search could potentially be useful in other information retrieval settings, including internet search. Psychological studies have revealed clear regularities in how people search their memory, with clusters of semantically related items tending to be retrieved together. These findings have recently been taken as evidence that human memory search is similar to animals foraging for food in patchy environments, with people making a rational decision to switch away from a cluster of related information as it becomes depleted. We demonstrate that the results that were taken as evidence for this account also emerge from a random walk on a semantic network, much like the random web surfer model used in internet search engines. This offers a simpler and more unified account of how people search their memory, postulating a single process rather than one process for exploring a cluster and one process for switching between clusters.
+tags:
+  - networks
+  - fluency

@@ -1,0 +1,31 @@
+citekey: zemla16
+title: "U-INVITE: Estimating individual semantic networks from fluency data."
+authors:
+  - family: Zemla
+    given: J. C.
+  - family: Kenett
+    given: Y. N.
+  - family: Jun
+    given: K.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Papafragou
+    given: A.
+  - family: Grodner
+    given: D.
+  - family: Mirman
+    given: D.
+  - family: Trueswell
+    given: J.
+year: 2016
+type: paper-conference
+venue: Proceedings of the 38th annual meeting of the cognitive science society
+pages: 1907-1912
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/Zemlaetal2016.pdf
+abstract: Semantic networks have been used extensively in psychology to describe how humans organize facts and knowledge in memory. Numerous methods have been proposed to construct semantic networks using data from memory retrieval tasks, such as the semantic fluency task (listing items in a category). However these methods typically generate group-level networks, and sometimes require a very large amount of participant data. We present a novel computational method for estimating an individual’s semantic network using semantic fluency data that requires very little data. We establish its efficacy by examining the semantic relatedness of associations estimated by the model.
+tags:
+  - networks
+  - fluency

@@ -1,0 +1,31 @@
+citekey: cochraneetal2018
+title: "Rapid Learning in Early Attentional Processing: Bayesian Estimation of Trial-by-Trial Updating."
+authors:
+  - family: Cochrane
+    given: A.
+  - family: Simmering
+    given: V.
+  - family: Austerweil
+    given: J. L.
+  - family: Green
+    given: C. S.
+editors:
+  - family: Kalish
+    given: C.
+  - family: Rau
+    given: M.
+  - family: Rogers
+    given: T.
+  - family: Zhu
+    given: J.
+year: 2018
+type: paper-conference
+venue: Proceedings of the 40th Annual Meeting of the Cognitive Science Society
+pages: xx-xx
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/Cochraneetal2018.pdf
+abstract: All agents must constantly learn from dynamic environments to optimize their behaviors. For instance, it is necessary in new environments to learn how to distribute attention – i.e., which stimuli are relevant, and thus should be selected for greater processing, and which are irrelevant, and should be suppressed. Despite this, many experiments implicitly assume that attentional control is a static process (by averaging performance over large blocks of trials). By developing and utilizing new statistical tools, here we demonstrate that the effect of flanking items on response times to a central item (often utilized as an index of attentional control) is systematically and continuously influenced through time by the statistics of the flanking items. We discuss the implications of this finding from the perspective of examining individual differences – where traditional data analysis approaches may confound the rate at which attentional filtering changes through time with the asymptotic ability to filter.
+tags:
+  - perception
+  - statistical methods

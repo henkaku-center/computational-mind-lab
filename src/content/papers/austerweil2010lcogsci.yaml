@@ -1,0 +1,23 @@
+citekey: austerweil2010lcogsci
+title: Learning hypothesis spaces and dimensions through concept learning.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Ohlsson
+    given: S.
+  - family: Catrambone
+    given: R.
+year: 2010
+type: paper-conference
+venue: Proceedings of the 32nd annual conference of the cognitive science society
+pages: 73-78
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+url: http://csjarchive.cogsci.rpi.edu/proceedings/2010/papers/0011/paper0011.pdf
+abstract: Generalizing a property from a set of objects to a new object is a fundamental problem faced by the human cognitive system, and a long-standing topic of investigation in psychology. Classic analyses suggest that the probability with which people generalize a property from one stimulus to another depends on the distance between those stimuli in psychological space. This raises the question of how people identify an appropriate metric for determining the distance between novel stimuli. In particular, how do people determine if two dimensions should be treated as separable, with distance measured along each dimension independently (as in an $L_1$ metric), or integral, supporting Euclidean distance (as in an $L_2$ metric)? We build on an existing Bayesian model of generalization to show that learning a metric can be formalized as a problem of learning a hypothesis space for generalization, and that both ideal and human learners can learn appropriate hypothesis spaces for a novel domain by learning concepts expressed in that domain.
+tags:
+  - categorization
+  - feature inference

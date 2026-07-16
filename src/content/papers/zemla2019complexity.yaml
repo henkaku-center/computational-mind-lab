@@ -1,0 +1,19 @@
+citekey: zemla2019complexity
+title: Analyzing Knowledge Retrieval Impairments Associated with Alzheimer’s Disease Using Network Analyses
+authors:
+  - family: Zemla
+    given: J. C.
+  - family: Austerweil
+    given: J. L.
+year: 2019
+type: article-journal
+venue: Complexity
+volume: "2019"
+pages: 1-12
+pdf: /papers/files/ZemlaAusterweil2019complexity.pdf
+abstract: A defining characteristic of Alzheimer’s disease is difficulty in retrieving semantic memories, or memories encoding facts and knowledge. While it has been suggested that this impairment is caused by a degradation of the semantic store, the precise ways in which the semantic store is degraded are not well understood. Using a longitudinal corpus of semantic fluency data (listing of items in a category), we derive semantic network representations of patients with Alzheimer’s disease and of healthy controls. We contrast our network-based approach with analyzing fluency data with the standard method of counting the total number of items and perseverations in fluency data. We find that the networks of Alzheimer’s patients are more connected and that those connections are more randomly distributed than the connections in networks of healthy individuals. These results suggest that the semantic memory impairment of Alzheimer’s patients can be modeled through the inclusion of spurious associations between unrelated concepts in the semantic store. We also find that information from our network analysis of fluency data improves prediction of patient diagnosis compared to traditional measures of the semantic fluency task.
+tags:
+  - networks
+  - fluency
+  - alzheimers
+  - computational psychiatry

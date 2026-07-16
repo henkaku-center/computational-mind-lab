@@ -1,0 +1,24 @@
+citekey: austerweil10nips
+title: Learning invariant features using the transformed indian buffet process.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Zemel
+    given: R.
+  - family: Shawne-Taylor
+    given: J.
+year: 2010
+type: paper-conference
+venue: Advances in Neural Information Processing Systems
+volume: "23"
+pages: 82-90
+publisher: MIT Press
+publisherPlace: Cambridge, MA
+pdf: /papers/files/AusterweilGriffithsTIBPNIPS2010.pdf
+abstract: "Identifying the features of objects becomes a challenge when those features can change in their appearance. We introduce the Transformed Indian Buffet Process (tIBP), and use it to define a nonparametric Bayesian model that infers features that can transform across instantiations. We show that this model can identify features that are location invariant by modeling a previous experiment on human feature learning. However, allowing features to transform adds new kinds of ambiguity: Are two parts of an object the same feature with different transformations or two unique features? What transformations can features undergo? We present two new experiments in which we explore how people resolve these questions, showing that the tIBP model demonstrates a similar sensitivity to context to that shown by human learners when determining the invariant aspects of features"
+tags:
+  - feature inference
+  - bayesian nonparametrics

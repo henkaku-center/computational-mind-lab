@@ -1,0 +1,24 @@
+citekey: austerweil2008cogsci
+title: A rational analysis of confirmation with deterministic hypotheses.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+editors:
+  - family: Love
+    given: B. C.
+  - family: McRae
+    given: K.
+  - family: Sloutsky
+    given: V. M.
+year: 2008
+type: paper-conference
+venue: Proceedings of the 30th annual conference of the cognitive science society
+pages: 1041-1046
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+url: http://csjarchive.cogsci.rpi.edu/proceedings/2008/pdfs/p1041.pdf
+abstract: Whether scientists test their hypotheses as they ought to has interested both cognitive psychologists and philosophers of science. Classic analyses of hypothesis testing assume that people should pick the test with the largest probability of falsifying their current hypothesis, while experiments have shown that people tend to select tests consistent with that hypothesis. Using two different normative standards, we prove that seeking evidence predicted by your current hypothesis is optimal when the hypotheses in question are deterministic and other reasonable assumptions hold. We test this account with two experiments using a sequential prediction task, in which people guess the next number in a sequence. Experiment 1 shows that people’s predictions can be captured by a simple Bayesian model. Experiment 2 manipulates people’s beliefs about the probabilities of different hypotheses, and shows that they confirm whichever hypothesis they are led to believe is most likely.
+tags:
+  - rational analysis

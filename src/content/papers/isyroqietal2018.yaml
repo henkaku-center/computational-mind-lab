@@ -1,0 +1,31 @@
+citekey: isyroqietal2018
+title: Do Humans Navigate via Random Walks? Modeling Navigation in a Semantic Word Game.
+authors:
+  - family: Fathan
+    given: M. I.
+  - family: Renfro
+    given: E. J.
+  - family: Austerweil
+    given: J. L.
+  - family: Beckage
+    given: N. M.
+editors:
+  - family: Kalish
+    given: C.
+  - family: Rau
+    given: M.
+  - family: Rogers
+    given: T.
+  - family: Zhu
+    given: J.
+year: 2018
+type: paper-conference
+venue: Proceedings of the 40th Annual Meeting of the Cognitive Science Society
+pages: xx-xx
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/Isyroqietal2018.pdf
+abstract: We investigate a method for formulating context and taskspecific computational models of human performance in a constrained semantic memory task. In particular, we assume that memory retrieval can only use a simple process – a random walk – and examine whether the effect of context and task specifications can be captured via a straightforward network estimation method that is sensitive to context and task. We find that a random walk model on the context-specific networks mimics aggregate human performance.
+tags:
+  - networks
+  - reasoning

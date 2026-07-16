@@ -1,0 +1,30 @@
+citekey: malle15
+title: Networks of social and moral norms in human and artificial agents.
+authors:
+  - family: Malle
+    given: B. F.
+  - family: Scheutz
+    given: M.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Ferreira
+    given: M. I. A.
+  - family: Sequeira
+    given: J. S.
+  - family: Mohammad
+    given: O. T.
+  - family: Kadar
+    given: E. E.
+  - family: Virk
+    given: G. S.
+year: 2015
+type: paper-conference
+venue: International conference on robot ethics
+pages: 3-17
+publisher: Springer International Publishing
+publisherPlace: Cham, Switzerland
+pdf: /papers/files/malle-norms-2015.pdf
+abstract: "The most intriguing and ethically challenging roles of robots in society are those of collaborator and social partner. We propose that such robots must have the capacity to learn, represent, activate, and apply social and moral norms—they must have a norm capacity. We offer a theoretical analysis of two parallel questions: what constitutes this norm capacity in humans and how might we implement it in robots? We propose that the human norm system has four properties: flexible learning despite a general logical format, structured representations, context-sensitive activation, and continuous updating. We explore two possible models that describe how norms are cognitively represented and activated in context-specific ways and draw implications for robotic architectures that would implement either model."
+tags:
+  - norms

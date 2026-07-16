@@ -1,0 +1,17 @@
+citekey: austerweil11
+title: A rational model of the effects of distributional information on feature learning.
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Griffiths
+    given: T. L.
+year: 2011
+type: article-journal
+venue: Cognitive Psychology
+volume: "63"
+pages: 173-209
+url: http://www.sciencedirect.com/science/article/pii/S0010028511000661
+abstract: Most psychological theories treat the features of objects as being fixed and immediately available to observers. However, novel objects have an infinite array of properties that could potentially be encoded as features, raising the question of how people learn which features to use in representing those objects. We focus on the effects of distributional information on feature learning, considering how a rational agent should use statistical information about the properties of objects in identifying features. Inspired by previous behavioral results on human feature learning, we present an ideal observer model based on nonparametric Bayesian statistics. This model balances the idea that objects have potentially infinitely many features with the goal of using a relatively small number of features to represent any finite set of objects. We then explore the predictions of this ideal observer model. In particular, we investigate whether people are sensitive to how parts co-vary over objects they observe. In a series of four behavioral experiments (three using visual stimuli, one using conceptual stimuli), we demonstrate that people infer different features to represent the same four objects depending on the distribution of parts over the objects they observe. Additionally in all four experiments, the features people infer have consequences for how they generalize properties to novel objects. We also show that simple models that use the raw sensory data as inputs and standard dimensionality reduction techniques (principal component analysis and independent component analysis) are insufficient to explain our results.
+tags:
+  - rational analysis
+  - feature inference

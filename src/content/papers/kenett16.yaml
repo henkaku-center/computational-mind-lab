@@ -1,0 +1,27 @@
+citekey: kenett16
+title: Examining search processes in low and high creative individuals with random walks.
+authors:
+  - family: Kenett
+    given: Y. N.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Papafragou
+    given: A.
+  - family: Grodner
+    given: D.
+  - family: Mirman
+    given: D.
+  - family: Trueswell
+    given: J.
+year: 2016
+type: paper-conference
+venue: Proceedings of the 38th annual meeting of the cognitive science society
+pages: 313-318
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/Kenett16CreativityRW.pdf
+abstract: The creative process involves several cognitive processes, such as working memory, controlled attention and task switching. One other process is cognitive search over semantic memory. These search processes can be controlled (e.g., problem solving guided by a heuristic), or uncontrolled (e.g., mind wandering). However, the nature of this search in relation to creativity has rarely been examined from a formal perspective. To do this, we use a random walk model to simulate uncontrolled cognitive search over semantic networks of low and high creative individuals with an equal number of nodes and edges. We show that a random walk over the semantic network of high creative individuals “finds” more unique words and moves further through the network for a given number of steps. Our findings are consistent with the associative theory of creativity, which posits that the structure of semantic memory facilitates search processes to find creative solutions.
+tags:
+  - networks
+  - creativity

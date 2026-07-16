@@ -1,0 +1,18 @@
+citekey: zemla18
+title: Estimating semantic networks of groups and individuals from fluency data.
+authors:
+  - family: Zemla
+    given: J. C.
+  - family: Austerweil
+    given: J. L.
+year: 2018
+type: article-journal
+venue: Computational Brain and Behavior
+volume: X
+pages: 1-23
+pdf: /papers/files/ZemlaAusterweil2018.pdf
+abstract: "One popular and classic theory of how the mind encodes knowledge is an associative semantic network, where concepts and associations between concepts correspond to nodes and edges, respectively. A major issue in semantic network research is that there is no consensus among researchers as to the best method for estimating the network of an individual or group. We propose a novel method (U-INVITE) for estimating semantic networks from semantic fluency data (listing items from a category) based on a censored random walk model of memory retrieval. We compare this method to several other methods in the literature for estimating networks from semantic fluency data. In simulations, we find that U-INVITE can recover semantic networks with low error rates given only a moderate amount of data. U-INVITE is the only known method derived from a psychologically plausible process model of memory retrieval and one of two known methods that we found to be consistent estimators of this process: if semantic memory retrieval is consistent with this process, the procedure will eventually estimate the true network (given enough data). We conduct the first exploration of different methods for estimating psychologically-valid semantic networks by comparing people’s similarity judgments of edges estimated by each network estimation method. To encourage best practices, we discuss the merits of each network estimation technique, provide a flow chart that assists with choosing an appropriate method, and supply code for others to employ these techniques on their own data."
+tags:
+  - networks
+  - fluency
+  - statistical methods

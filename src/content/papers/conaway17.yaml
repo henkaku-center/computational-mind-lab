@@ -1,0 +1,27 @@
+citekey: conaway17
+title: "PACKER: An exemplar model of category generation."
+authors:
+  - family: Conaway
+    given: N.
+  - family: Austerweil
+    given: J. L.
+editors:
+  - family: Gunzelmann
+    given: G.
+  - family: Howes
+    given: A.
+  - family: Tenbrink
+    given: T.
+  - family: Davelaar
+    given: E.
+year: 2017
+type: paper-conference
+venue: Proceedings of the 39th annual meeting of the cognitive science society
+pages: X-X
+publisher: Cognitive Science Society
+publisherPlace: Austin, TX
+pdf: /papers/files/PACKERCogSci2017.pdf
+abstract: "Generating new concepts is an intriguing yet understudied topic in cognitive science. In this paper, we present a novel exemplar model of category generation: PACKER (Producing Alike and Contrasting Knowledge using Exemplar Representations). PACKER's core design assumptions are (1) categories are represented as exemplars in a multidimensional psychological space, (2) generated items should be similar to exemplars of the same category, and (3) generated categories should be dissimilar to existing categories. A behavioral study reveals strong effects of contrast and target-class similarity. These effects are novel empirical phenomena, which are directly predicted by the PACKER model but are not explained by existing formal approaches."
+tags:
+  - creativity
+  - categorization
