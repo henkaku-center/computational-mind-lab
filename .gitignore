@@ -1,0 +1,23 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# legacy jekyll output (until teardown)
+_site/
+
+# brand asset archives — extract with scripts/extract-brand.sh, never commit
+*.zip
+
+# logs & env
+npm-debug.log*
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+*~
+*.swp
+.idea/
