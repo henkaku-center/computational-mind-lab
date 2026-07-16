@@ -19,7 +19,6 @@
     "astro": "^5.0.0"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "^0.111.0",
     "@astrojs/check": "^0.9.0",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",

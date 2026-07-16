@@ -36,6 +36,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Collect, draft, apply
         run: |
           node scripts/weekly.mjs \
@@ -43,9 +46,10 @@ jobs:
             ${{ inputs.only && format('--only={0}', inputs.only) || '' }} \
             ${{ inputs.window && format('--window={0}', inputs.window) || '' }}
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Subscription auth: generate once locally with `claude setup-token`
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5' }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'sonnet' }}
           GH_TOKEN: ${{ github.token }}
 
       - name: Validate proposed content

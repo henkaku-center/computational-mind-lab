@@ -1,69 +1,89 @@
 /**
- * Thin Anthropic SDK wrapper for the site automation.
- * - model from CLAUDE_MODEL env (default claude-sonnet-5)
- * - structured JSON output via output_config.format (json_schema)
- * - NO temperature/top_p/top_k (rejected by Sonnet 5)
- * - usage logged per call; totals to GITHUB_STEP_SUMMARY when available
+ * Claude wrapper for the site automation — SUBSCRIPTION EDITION.
+ *
+ * Calls the Claude Code CLI in headless print mode (`claude -p`) instead of
+ * the pay-per-token API, so usage bills against the Claude Pro/Max
+ * subscription. Auth resolution:
+ *   - locally: your normal `claude` login
+ *   - CI: CLAUDE_CODE_OAUTH_TOKEN secret (generate once with `claude setup-token`)
+ *
+ * Structured output is enforced by instruction + local validation + one retry
+ * (the raw json_schema API feature is API-key-only, so we verify ourselves).
  */
-import Anthropic from '@anthropic-ai/sdk';
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 
-export const MODEL = process.env.CLAUDE_MODEL || 'claude-sonnet-5';
+export const MODEL = process.env.CLAUDE_MODEL || 'sonnet';
 
-const client = new Anthropic({ maxRetries: 4 });
+const totals = { calls: 0, ms: 0 };
 
-const totals = { input: 0, output: 0, calls: 0 };
+function extractJson(text) {
+  // tolerate markdown fences or stray prose around the object
+  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+  const candidate = fenced ? fenced[1] : text;
+  const start = candidate.indexOf('{');
+  const end = candidate.lastIndexOf('}');
+  if (start === -1 || end <= start) throw new Error('no JSON object in output');
+  return JSON.parse(candidate.slice(start, end + 1));
+}
+
+function validate(obj, schema) {
+  for (const key of schema.required ?? []) {
+    if (!(key in obj)) throw new Error(`missing required key "${key}"`);
+  }
+  return obj;
+}
+
+async function invokeClaude(system, user) {
+  const args = ['-p', '--output-format', 'json', '--model', MODEL, '--append-system-prompt', system];
+  const stdout = execFileSync('claude', args, {
+    input: user,
+    maxBuffer: 32 * 1024 * 1024,
+    timeout: 600_000,
+    encoding: 'utf8',
+    env: { ...process.env },
+  });
+  const envelope = JSON.parse(stdout);
+  if (envelope.is_error) throw new Error(`claude CLI error: ${envelope.result ?? envelope.subtype}`);
+  totals.calls += 1;
+  totals.ms += envelope.duration_ms ?? 0;
+  console.error(
+    `[claude] ${MODEL} call ${totals.calls}: ${envelope.duration_ms}ms, ${String(envelope.result ?? '').length} chars`
+  );
+  return envelope.result ?? '';
+}
 
 /**
- * One structured-output call. Returns the parsed object.
- * @param {object} opts
- * @param {string} opts.system - system prompt
- * @param {string} opts.user - user message
- * @param {object} opts.schema - JSON schema (objects need additionalProperties:false)
- * @param {'low'|'medium'|'high'} [opts.effort='low']
- * @param {number} [opts.maxTokens=8192]
+ * One structured-output call. Returns the parsed, required-keys-validated object.
+ * `effort`/`maxTokens` kept for interface compatibility (headless CLI manages
+ * its own budgets); effort is passed as a style hint only.
  */
-export async function structuredCall({ system, user, schema, effort = 'low', maxTokens = 8192 }) {
-  const params = {
-    model: MODEL,
-    max_tokens: maxTokens,
+export async function structuredCall({ system, user, schema }) {
+  const sys = [
     system,
-    output_config: {
-      effort,
-      format: { type: 'json_schema', schema },
-    },
-    messages: [{ role: 'user', content: user }],
-  };
+    '',
+    'OUTPUT CONTRACT: Respond with ONLY a single JSON object (no prose, no markdown fences)',
+    'that validates against this JSON Schema:',
+    JSON.stringify(schema),
+    'Do not use any tools. Do not read or write any files.',
+  ].join('\n');
 
-  let response;
-  if (maxTokens > 16000) {
-    const stream = client.messages.stream(params);
-    response = await stream.finalMessage();
-  } else {
-    response = await client.messages.create(params);
+  let text = await invokeClaude(sys, user);
+  try {
+    return validate(extractJson(text), schema);
+  } catch (err) {
+    console.error(`[claude] output invalid (${err.message}), retrying once`);
+    text = await invokeClaude(
+      sys,
+      `${user}\n\nYour previous output was invalid (${err.message}). Return ONLY the corrected JSON object.`
+    );
+    return validate(extractJson(text), schema);
   }
-
-  totals.calls += 1;
-  totals.input += response.usage.input_tokens;
-  totals.output += response.usage.output_tokens;
-  console.error(
-    `[claude] ${MODEL} call ${totals.calls}: in=${response.usage.input_tokens} out=${response.usage.output_tokens} stop=${response.stop_reason}`
-  );
-
-  if (response.stop_reason === 'refusal') {
-    throw new Error('model refused the request');
-  }
-  if (response.stop_reason === 'max_tokens') {
-    throw new Error('output truncated at max_tokens');
-  }
-
-  const text = response.content.find((b) => b.type === 'text')?.text ?? '';
-  return JSON.parse(text);
 }
 
 /** Append usage totals to the GitHub Actions job summary (no-op locally). */
 export function writeUsageSummary(label) {
-  const line = `**${label}** — ${totals.calls} Claude call(s), ${totals.input} in / ${totals.output} out tokens (${MODEL})\n`;
+  const line = `**${label}** — ${totals.calls} Claude Code call(s), ${(totals.ms / 1000).toFixed(1)}s total (${MODEL}, subscription)\n`;
   console.error('[claude] ' + line.trim());
   if (process.env.GITHUB_STEP_SUMMARY) {
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, line);

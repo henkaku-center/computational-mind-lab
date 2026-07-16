@@ -23,6 +23,7 @@ function listFiles(dir, ext) {
 }
 
 // --- paired markdown collections ---
+let awaitingReview = 0;
 for (const kind of ['news', 'projects']) {
   const seen = new Set();
   for (const file of listFiles(`src/content/${kind}`, '.md')) {
@@ -43,11 +44,11 @@ for (const kind of ['news', 'projects']) {
     const pairId = `${key}|${loc}`;
     if (seen.has(pairId)) errors.push(`${kind}: duplicate ${pairId}`);
     seen.add(pairId);
-    if (data.translated === 'auto') {
-      const age = (Date.now() - new Date(data.date).getTime()) / 86400000;
-      if (age > 90) warnings.push(`${kind}/${base}.md: machine translation unreviewed for ${Math.round(age)} days`);
-    }
+    if (data.translated === 'auto') awaitingReview++;
   }
+}
+if (awaitingReview > 0) {
+  warnings.push(`${awaitingReview} machine translation(s) awaiting human review (translated: auto)`);
 }
 
 // --- papers ---

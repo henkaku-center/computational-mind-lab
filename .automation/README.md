@@ -1,7 +1,9 @@
 # Site automation — operations
 
-Two GitHub Actions workflows call Claude (model from the `CLAUDE_MODEL` Actions
-variable, default `claude-sonnet-5`):
+Two GitHub Actions workflows call Claude **via the Claude Code CLI in headless
+mode (`claude -p`), billed against the Claude Pro/Max subscription** — no
+pay-per-token API key. Model from the `CLAUDE_MODEL` Actions variable
+(default `sonnet`):
 
 | Workflow | Trigger | What it does |
 |---|---|---|
@@ -10,12 +12,15 @@ variable, default `claude-sonnet-5`):
 
 ## Secrets & variables (Settings → Secrets and variables → Actions)
 
-- Secret `ANTHROPIC_API_KEY` — console.anthropic.com; set a ~$10/month workspace
-  spend limit there as the hard cost backstop (expected usage ≈ $1–2/month).
+- Secret `CLAUDE_CODE_OAUTH_TOKEN` — subscription auth for CI. Generate once on
+  your machine with `claude setup-token` (requires your Pro/Max login; token is
+  long-lived), then `gh secret set CLAUDE_CODE_OAUTH_TOKEN`. Re-run setup-token
+  and update the secret if it ever expires or is revoked.
+  Note: automation usage shares your personal subscription rate limits.
 - Secret `SLACK_BOT_TOKEN` — Slack app with `channels:history` + `channels:read`
   (or `groups:*` if the channel is private), installed in the JPCCA workspace and
   invited to `#accounthub_joe` (`/invite @lab-site-bot`).
-- Variable `CLAUDE_MODEL` (optional) — model override.
+- Variable `CLAUDE_MODEL` (optional) — model override (default `sonnet`).
 - Repo settings: Actions → General → Workflow permissions: **Read and write** +
   **Allow GitHub Actions to create and approve pull requests**.
 
