@@ -27,6 +27,15 @@ This line of work is led by **[Hongtao Hao](https://hongtaoh.com/)**, who built
 it through his PhD and continues it now. Every model below ships as an installable
 package, because a method nobody can run is not a method.
 
+As far as we are aware, these models are the **state of the art for event-based
+disease progression modeling**. Evaluated across 9,000 synthetic datasets and
+real ADNI data, our stage-aware model significantly outperforms prior
+event-based methods — Gaussian mixture EBM, kernel density EBM, and
+discriminative EBM among them — at both recovering the order of disease events
+and assigning patients to stages. One finding worth stating plainly, since it
+cuts against the usual instinct: the simpler Gaussian-based models consistently
+beat the more complicated KDE-based ones.
+
 ## The models
 
 **Stage-aware modeling (SA-EBM).** Standard event-based models treat every

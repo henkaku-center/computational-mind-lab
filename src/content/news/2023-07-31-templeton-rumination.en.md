@@ -17,6 +17,5 @@ The **John Templeton Foundation**, through Duke University, funded
 
 Rumination is usually treated as a malfunction. The project takes the opposite
 starting point — asking what problem repetitive negative thinking might be
-*solving* — a line of work that continued into Michael Payton's
-[decision-theoretic account of rumination](/en/publications/#payton25rumination)
-at CogSci 2025.
+*solving* — a line of work that continued into Michael Payton's decision-theoretic account
+of rumination, presented at CogSci 2025.

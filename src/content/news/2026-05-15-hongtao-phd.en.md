@@ -1,18 +1,18 @@
 ---
 title: Congratulations to Dr. Hongtao Hao!
 excerpt: >-
-  Hongtao Hao completed his PhD in May 2025, capping it with a run of papers on
+  Hongtao Hao completed his PhD in May 2026, capping it with a run of papers on
   modeling how diseases progress.
-date: 2025-05-15
+date: 2026-05-15
 locale: en
-translationKey: 2025-05-15-hongtao-phd
+translationKey: 2026-05-15-hongtao-phd
 translated: original
 tags:
   - lab
   - disease progression
 ---
 
-Congratulations to **Dr. Hongtao Hao**, who completed his PhD in May 2025.
+Congratulations to **Dr. Hongtao Hao**, who completed his PhD in May 2026.
 
 Hongtao's work built the lab's line of research on
 [disease progression modeling](/en/projects/disease-progression/): stage-aware
