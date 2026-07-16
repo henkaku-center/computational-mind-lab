@@ -1,9 +1,10 @@
 name: Nolan Conaway
-title: Former Postdoctoral Researcher
+title: Postdoctoral Researcher
 group: alumni
 era: uw-madison
 blurb: Nolan now works as a data scientist at Shutterstock.
 image: /img/people/nolanconaway.jpg
 website: https://nolanbconaway.github.io/
-weight: 180
 needsReview: true
+alumniRole: postdoc
+lastActiveYear: 2017

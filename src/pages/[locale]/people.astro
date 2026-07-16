@@ -9,68 +9,112 @@ export function getStaticPaths() {
 const locale = Astro.params.locale as Locale;
 
 const people = await getCollection('people');
-const groups = ['pi', 'members', 'undergrads', 'affiliates', 'alumni'] as const;
-const eras = ['chibatech', 'uw-madison', 'brown'] as const;
+type Person = (typeof people)[number];
 
-function byWeight(a: { data: { weight: number } }, b: { data: { weight: number } }) {
-  return a.data.weight - b.data.weight;
-}
+const currentGroups = ['pi', 'members', 'undergrads', 'affiliates'] as const;
+const alumniRoles = ['postdoc', 'grad', 'undergrad', 'staff'] as const;
 
-function loc(entry: (typeof people)[number], field: 'name' | 'title' | 'blurb'): { text: string; lang?: string } {
+const byWeight = (a: Person, b: Person) => a.data.weight - b.data.weight;
+/** Alumni: most recently in the lab first; unknown years last. */
+const byRecency = (a: Person, b: Person) =>
+  (b.data.lastActiveYear ?? -Infinity) - (a.data.lastActiveYear ?? -Infinity) ||
+  a.data.name.localeCompare(b.data.name);
+
+function loc(entry: Person, field: 'name' | 'title' | 'blurb'): { text: string; lang?: string } {
   const ja = entry.data[`${field}Ja` as 'nameJa' | 'titleJa' | 'blurbJa'];
   if (locale === 'ja' && ja) return { text: ja };
   const en = entry.data[field] ?? '';
   return { text: en, lang: locale === 'ja' ? 'en' : undefined };
 }
+
+const sections = [
+  ...currentGroups
+    .map((group) => ({
+      heading: t(locale, `people.${group}`),
+      list: people.filter((p) => p.data.group === group).sort(byWeight),
+      isAlumni: false,
+    }))
+    .filter((s) => s.list.length),
+];
+
+const alumniSections = alumniRoles
+  .map((role) => ({
+    heading: t(locale, `people.alumni.${role}`),
+    list: people.filter((p) => p.data.group === 'alumni' && p.data.alumniRole === role).sort(byRecency),
+  }))
+  .filter((s) => s.list.length);
 ---
 
 <Base locale={locale} title={t(locale, 'nav.people')}>
   <h1>{t(locale, 'nav.people')}</h1>
+
   {
-    groups.map((group) => {
-      const members = people.filter((p) => p.data.group === group).sort(byWeight);
-      if (!members.length) return null;
-      const grouped =
-        group === 'alumni'
-          ? eras.map((era) => ({ era, list: members.filter((m) => m.data.era === era) })).filter((g) => g.list.length)
-          : [{ era: null, list: members }];
-      return (
-        <section>
-          <h2>{t(locale, `people.${group}`)}</h2>
-          {grouped.map(({ era, list }) => (
-            <>
-              {era && group === 'alumni' && grouped.length > 1 && <h3>{t(locale, `people.era.${era}`)}</h3>}
-              <div class="people-grid">
-                {list.map((p) => {
-                  const name = loc(p, 'name');
-                  const title = loc(p, 'title');
-                  const blurb = loc(p, 'blurb');
-                  return (
-                    <article class="card">
-                      <img src={p.data.image} alt={p.data.name} loading="lazy" width="160" height="160" />
-                      <h3 lang={name.lang}>
-                        {p.data.website ? <a href={p.data.website}>{name.text}</a> : name.text}
-                      </h3>
-                      <p class="role" lang={title.lang}>
-                        {title.text}
-                        {p.data.years && ` · ${p.data.years}`}
-                      </p>
-                      {p.data.currentPosition && <p class="role">{p.data.currentPosition}</p>}
-                      {blurb.text && group !== 'alumni' && <p lang={blurb.lang}>{blurb.text}</p>}
-                      {p.data.email && (
-                        <p class="role">
-                          <a href={`mailto:${p.data.email}`}>{p.data.email}</a>
-                        </p>
-                      )}
-                    </article>
-                  );
-                })}
-              </div>
-            </>
-          ))}
-        </section>
-      );
-    })
+    sections.map((section) => (
+      <section>
+        <h2>{section.heading}</h2>
+        <div class="people-grid">
+          {section.list.map((p) => {
+            const name = loc(p, 'name');
+            const title = loc(p, 'title');
+            const blurb = loc(p, 'blurb');
+            return (
+              <article class="card">
+                <img src={p.data.image} alt={p.data.name} loading="lazy" width="160" height="160" />
+                <h3 lang={name.lang}>{p.data.website ? <a href={p.data.website}>{name.text}</a> : name.text}</h3>
+                <p class="role" lang={title.lang}>
+                  {title.text}
+                </p>
+                {blurb.text && (
+                  <p lang={blurb.lang} class="blurb">
+                    {blurb.text}
+                  </p>
+                )}
+                {p.data.email && (
+                  <p class="role">
+                    <a href={`mailto:${p.data.email}`}>{p.data.email}</a>
+                  </p>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    ))
+  }
+
+  {
+    alumniSections.length > 0 && (
+      <section>
+        <h2>{t(locale, 'people.alumni')}</h2>
+        {alumniSections.map((section) => (
+          <>
+            <h3 class="alumni-role">{section.heading}</h3>
+            <ul class="alumni-list">
+              {section.list.map((p) => {
+                const name = loc(p, 'name');
+                const title = loc(p, 'title');
+                return (
+                  <li>
+                    <span class="alumni-name" lang={name.lang}>
+                      {p.data.website ? <a href={p.data.website}>{name.text}</a> : name.text}
+                    </span>
+                    {p.data.years && <span class="alumni-years"> · {p.data.years}</span>}
+                    {p.data.currentPosition ? (
+                      <span class="alumni-now"> — {p.data.currentPosition}</span>
+                    ) : (
+                      <span class="alumni-now" lang={title.lang}>
+                        {' '}
+                        — {title.text}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </>
+        ))}
+      </section>
+    )
   }
 </Base>
 
@@ -95,9 +139,40 @@ function loc(entry: (typeof people)[number], field: 'name' | 'title' | 'blurb'):
     color: var(--c-dark-grey);
     margin: 0 0 0.3em;
   }
+  .blurb {
+    font-size: calc(var(--text-body) * var(--lang-scale) * 0.94);
+  }
   section h2 {
     border-bottom: 2px solid var(--c-black);
     padding-bottom: 0.2em;
     margin-top: calc(var(--grid) * 1.5);
+  }
+  .alumni-role {
+    margin-top: var(--grid);
+    color: var(--c-dark-grey);
+  }
+  .alumni-list {
+    list-style: none;
+    padding: 0;
+    margin-block: 0.5em var(--grid);
+    columns: 2;
+    column-gap: var(--grid);
+  }
+  @media (max-width: 720px) {
+    .alumni-list {
+      columns: 1;
+    }
+  }
+  .alumni-list li {
+    break-inside: avoid;
+    margin-bottom: 0.4em;
+  }
+  .alumni-name {
+    font-weight: 700;
+  }
+  .alumni-years,
+  .alumni-now {
+    font-size: var(--text-s);
+    color: var(--c-dark-grey);
   }
 </style>

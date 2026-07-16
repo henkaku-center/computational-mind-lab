@@ -7,9 +7,12 @@ authors:
     given: J. L.
 year: 2026
 type: paper-conference
-venue: arXiv preprint
+venue: Conference on Health, Inference, and Learning (CHIL), Proceedings of Machine Learning Research
 url: https://arxiv.org/abs/2604.23368
 abstract: "Event-Based Models (EBMs) infer biomarker progression from cross-sectional data but typically only as ordinal sequences and rely on rigid model assumptions. We propose \\textsc{Tempo}, a Transformer architecture that learns both ordinal and continuous event sequences through simulation-based supervised learning. \\textsc{Tempo} uses two Transformer modules: one treats biomarkers as tokens to infer event sequencing; the other treats patients as tokens, representing each by their per-biomarker abnormality profile, to infer patients'disease stages. On synthetic benchmarks, \\textsc{Tempo} reduces normalized Kendall's Tau distance by 52.89\\% and staging MAE by 25.33\\% compared to state-of-the-art SA-EBM, with larger reductions in high-dimensional settings (58.88\\% and 61.10\\%). Applied to ADNI, \\textsc{Tempo} recovers a biologically plausible Alzheimer's progression: early medial temporal atrophy, followed by amyloid accumulation and cognitive decline, and late-stage tau pathology with terminal acceleration of global neurodegeneration -- broadly consistent with established disease models. \\textsc{Tempo} also eliminates the need to derive custom inference algorithms and enables rapid empirical comparison of generative hypotheses."
 tags:
   - disease progression
   - deep learning
+volume: "333"
+pages: 1-31
+pdf: /papers/files/HaoetalCHIL2026TEMPO.pdf

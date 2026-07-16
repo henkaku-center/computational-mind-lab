@@ -67,8 +67,12 @@ const people = defineCollection({
     title: z.string(),
     titleJa: z.string().optional(),
     group: z.enum(['pi', 'members', 'undergrads', 'affiliates', 'alumni']),
+    /** For alumni: which role they held in the lab (drives grouping). */
+    alumniRole: z.enum(['postdoc', 'grad', 'undergrad', 'staff']).optional(),
     era: z.enum(['brown', 'uw-madison', 'chibatech']).default('chibatech'),
     years: z.string().optional(),
+    /** Last year active in the lab; sorts alumni most-recent-first. */
+    lastActiveYear: z.number().int().optional(),
     currentPosition: z.string().optional(),
     blurb: z.string().optional(),
     blurbJa: z.string().optional(),

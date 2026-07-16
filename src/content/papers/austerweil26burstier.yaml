@@ -1,0 +1,23 @@
+citekey: austerweil26burstier
+title: "Burstier Events: Analysing Human Memory over a Century of Events Using The New York Times"
+authors:
+  - family: Austerweil
+    given: J. L.
+  - family: Pilgrim
+    given: C.
+  - family: Cao
+    given: K.
+editors:
+  - family: Pogrebna
+    given: G.
+  - family: Hills
+    given: T.
+year: 2026
+type: chapter
+venue: Behavioural Data Science
+pages: 675-
+pdf: /papers/files/AusterweilPilgrimCao2026BurstierEvents.pdf
+tags:
+  - memory retrieval
+  - Hawkes process
+  - statistical methods

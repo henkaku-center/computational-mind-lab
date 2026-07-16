@@ -1,0 +1,17 @@
+citekey: zhong26individual
+title: "Individual Differences in Human Teaching of Reinforcement Learning Agents: Evidence from Bayesian Hypothesis Testing"
+authors:
+  - family: Zhong
+    given: Z.
+  - family: Caspar
+    given: L.
+  - family: Austerweil
+    given: J. L.
+year: 2026
+type: paper-conference
+venue: Proceedings of the 48th Annual Meeting of the Cognitive Science Society
+pdf: /papers/files/Zhongetal2026CogScib.pdf
+tags:
+  - pedagogy
+  - reinforcement learning
+  - bayesian modeling

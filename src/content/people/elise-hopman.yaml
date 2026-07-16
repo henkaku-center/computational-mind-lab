@@ -1,8 +1,9 @@
 name: Elise Hopman
-title: Former Graduate Student
+title: Graduate Student
 group: alumni
 era: uw-madison
 blurb: Elise is interested in how language learning works and investigates this question with behavioral as well as computational research.
 image: /img/people/elise.jpg
-weight: 60
 needsReview: true
+alumniRole: grad
+lastActiveYear: 2020

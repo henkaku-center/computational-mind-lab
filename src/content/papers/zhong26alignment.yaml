@@ -1,0 +1,23 @@
+citekey: zhong26alignment
+title: "Interpretational alignment: How agents learn from physical guidance depends on how they interpret it"
+authors:
+  - family: Zhong
+    given: Z.
+  - family: Prystawski
+    given: B.
+  - family: Wu
+    given: S. A.
+  - family: Fascendini
+    given: B.
+  - family: Saeedpour
+    given: S.
+  - family: Austerweil
+    given: J. L.
+year: 2026
+type: paper-conference
+venue: Proceedings of the 48th Annual Meeting of the Cognitive Science Society
+pdf: /papers/files/Zhongetal2026CogScic.pdf
+tags:
+  - pedagogy
+  - reinforcement learning
+  - social learning

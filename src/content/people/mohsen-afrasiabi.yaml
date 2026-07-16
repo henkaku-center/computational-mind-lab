@@ -1,8 +1,9 @@
 name: Mohsen Afrasiabi
-title: Former Assistant Scientist
+title: Assistant Scientist
 group: alumni
 era: uw-madison
 blurb: Mohsen is a data scientist with a PhD in Electrical and Computer Engineering and over 15 years of experience working in industry. He is returning to academia to pursue research in Machine Learning, Deep Learning and their application in Cognitive Psychology and Computational Neuroscience.
 image: /img/people/mohsen.jpeg
-weight: 50
 needsReview: true
+alumniRole: staff
+lastActiveYear: 2019

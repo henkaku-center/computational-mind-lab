@@ -26,16 +26,47 @@ This project asks how people teach through such physical state interventions,
 and what a model-free reinforcement learner should infer when the world keeps
 changing around it in suspiciously helpful ways.
 
-We approach it from both sides:
+## Where the work stands
 
-- **Behavioral experiments.** People teach a simulated agent in a grid world by
-  intervening on its environment. We look at what interventions they choose and
-  how those choices depend on what they believe the learner can learn. A
-  simplified "minimal paradigm" version of the task, developed with students at
-  the COSMOS summer school, makes the design tractable for online experiments.
-- **Multi-agent simulation.** We model the teacher–learner pair computationally
-  to ask when state intervention is an efficient teaching channel, and what
-  goes wrong when the learner does not know it is being taught.
+Three papers appeared at CogSci 2026, led by Zhuolun Zhong:
 
-Code for the minimal-paradigm study is available at
+- [How the Teaching Style and Interpretation Type of State Interventions Shape
+  Multi-Agent Coordination](/papers/files/Zhongetal2026CogScia.pdf) — the
+  computational side: how a teacher's style and a learner's interpretation
+  interact to produce (or destroy) coordination.
+- [Individual Differences in Human Teaching of Reinforcement Learning
+  Agents](/papers/files/Zhongetal2026CogScib.pdf) — people do not all teach
+  alike, and Bayesian hypothesis testing lets us say how they differ.
+- [Interpretational alignment: How agents learn from physical guidance depends
+  on how they interpret it](/papers/files/Zhongetal2026CogScic.pdf) — a
+  simplified grid-world design, with collaborators at Stanford, Princeton, and
+  ENS.
+
+A "minimal paradigm" version of the task, developed with students at the COSMOS
+summer school, made the design tractable for online experiments; the code is at
 [cosmos-state-interventions](https://github.com/benpry/cosmos-state-interventions).
+
+## Background
+
+This line of work grows out of a long collaboration with
+[Mark Ho](http://www.markkho.com/) on what teaching *is*, computationally:
+
+- [Teaching with rewards and punishments: Reinforcement or communication?](/en/publications/#ho15)
+  (CogSci 2015) and its journal successor,
+  [People Teach with Rewards and Punishments as Communication, not
+  Reinforcement](/en/publications/#hoetal2019jep) (JEP: General, 2019) — the
+  finding that people's rewards are messages, not reinforcement signals.
+- [Showing versus doing: Teaching by demonstration](/en/publications/#ho16nips)
+  (NIPS 2016) and [Effectively Learning from Pedagogical
+  Demonstrations](/en/publications/#hoetal2018) (CogSci 2018) — demonstrations
+  chosen to be *informative* differ systematically from demonstrations chosen to
+  be *optimal*.
+- [Teaching by intervention: Working backwards, undoing mistakes, or correcting
+  mistakes?](/en/publications/#ho17) (CogSci 2017) — the most direct ancestor of
+  the current work: teaching by acting on the world itself.
+- [Communication in Action: Belief-directed Planning and Pragmatic Action
+  Interpretation](/en/publications/#ho2021) (JEP: General, 2021).
+
+Interested in the probabilistic machinery behind this work? Our
+[narrative introduction to probability](/en/projects/probability-tutorial/)
+builds it up from scratch.

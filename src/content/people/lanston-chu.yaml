@@ -6,5 +6,6 @@ blurb: Lanston is a graduate student in the Electrical & Computer Engineering De
 image: /img/people/lanston.jpg
 email: hchu34@wisc.edu
 website: https://lanstonchu.wordpress.com/
-weight: 30
 needsReview: true
+alumniRole: grad
+currentPosition: working on a research project in the areas of face recognition and adversarial examples
