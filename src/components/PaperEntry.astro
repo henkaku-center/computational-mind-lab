@@ -1,0 +1,79 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { t, type Locale } from '../i18n';
+import { formatAuthors } from '../lib/papers';
+import tagcolors from '../data/tagcolors.json';
+
+interface Props {
+  paper: CollectionEntry<'papers'>;
+  locale: Locale;
+}
+const { paper, locale } = Astro.props;
+const d = paper.data;
+const colors = tagcolors as Record<string, string>;
+
+const abstract = locale === 'ja' && d.abstractJa ? d.abstractJa : d.abstract;
+const abstractLang = locale === 'ja' && !d.abstractJa && d.abstract ? 'en' : undefined;
+---
+
+<li data-tags={d.tags.join('|')} id={d.citekey}>
+  <span lang={locale === 'ja' ? 'en' : undefined}>
+    {formatAuthors(d.authors)} ({d.year}). {d.title}.
+    {d.venue && <em>{d.venue}</em>}{d.volume && <>, {d.volume}</>}{d.issue && <>({d.issue})</>}{
+      d.pages && <>, {d.pages}</>
+    }.
+    {d.publisher && `${d.publisher}${d.publisherPlace ? `, ${d.publisherPlace}` : ''}.`}
+  </span>
+  <span class="paper-links">
+    {d.pdf && <a href={d.pdf}>[{t(locale, 'papers.pdf')}]</a>}
+    {d.doi && <a href={`https://doi.org/${d.doi}`}>[{t(locale, 'papers.doi')}]</a>}
+    {d.url && !d.pdf && <a href={d.url}>[link]</a>}
+  </span>
+  {
+    d.tags.length > 0 && (
+      <span class="paper-tags">
+        {d.tags.map((tag) => (
+          <span class="tag-chip" style={`background:${colors[tag] ?? '#eee'}`}>
+            {tag}
+          </span>
+        ))}
+      </span>
+    )
+  }
+  {
+    abstract && (
+      <details>
+        <summary>{t(locale, 'papers.showAbstract')}</summary>
+        <p lang={abstractLang}>{abstract}</p>
+      </details>
+    )
+  }
+</li>
+
+<style>
+  li {
+    margin-bottom: var(--grid);
+  }
+  .paper-links a {
+    margin-left: 0.4em;
+    font-weight: 700;
+  }
+  .paper-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    margin-left: 0.6em;
+    vertical-align: middle;
+  }
+  details {
+    margin-top: 0.4em;
+  }
+  details p {
+    margin: 0.4em 0 0;
+    max-width: 60em;
+  }
+  summary {
+    font-size: var(--text-s);
+    color: var(--c-blue);
+  }
+</style>

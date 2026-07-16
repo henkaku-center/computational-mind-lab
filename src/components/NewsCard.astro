@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { t, formatDate, type Locale } from '../i18n';
+
+interface Props {
+  entry: CollectionEntry<'news'>;
+  locale: Locale;
+  isFallback: boolean;
+}
+const { entry, locale, isFallback } = Astro.props;
+const href = `/${locale}/news/${entry.data.translationKey}/`;
+---
+
+<article class="card">
+  <p class="date">{formatDate(entry.data.date, locale)}</p>
+  <h3>
+    <a href={href} lang={isFallback ? entry.data.locale : undefined}>{entry.data.title}</a>
+    {isFallback && <span class="fallback">{t(locale, 'news.englishOnly')}</span>}
+  </h3>
+  <p lang={isFallback ? entry.data.locale : undefined}>{entry.data.excerpt}</p>
+</article>
+
+<style>
+  .date {
+    font-size: var(--text-s);
+    color: var(--c-dark-grey);
+    margin: 0 0 0.4em;
+  }
+  h3 {
+    margin: 0 0 0.4em;
+  }
+  h3 a {
+    color: var(--c-black);
+  }
+  h3 a:hover {
+    color: var(--c-blue);
+  }
+  .fallback {
+    font-weight: 400;
+    font-size: var(--text-s);
+    color: var(--c-dark-grey);
+  }
+  article > p:last-child {
+    margin: 0;
+  }
+</style>

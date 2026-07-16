@@ -1,0 +1,88 @@
+---
+import { t, type Locale } from '../i18n';
+import LanguageToggle from './LanguageToggle.astro';
+import sdsLogo from '../assets/brand/sds-horizontal-black.svg';
+
+interface Props {
+  locale: Locale;
+  alternatePath?: string;
+}
+const { locale, alternatePath } = Astro.props;
+const base = `/${locale}`;
+
+const nav = [
+  { href: `${base}/people/`, label: t(locale, 'nav.people') },
+  { href: `${base}/publications/`, label: t(locale, 'nav.publications') },
+  { href: `${base}/news/`, label: t(locale, 'nav.news') },
+  { href: `${base}/projects/`, label: t(locale, 'nav.projects') },
+  { href: `${base}/join/`, label: t(locale, 'nav.join') },
+  { href: `${base}/contact/`, label: t(locale, 'nav.contact') },
+];
+---
+
+<header>
+  {/* Brand rule: the SDS lockup is always left-aligned. */}
+  <div class="brand-row">
+    <a href="https://www.it-chiba.ac.jp/" class="sds-lockup">
+      <img src={sdsLogo.src} alt="Chiba Tech School of Design & Science" width="300" height="47" />
+    </a>
+    <LanguageToggle locale={locale} alternatePath={alternatePath} />
+  </div>
+  <div class="site-row">
+    <a class="site-name" href={`${base}/`}>{t(locale, 'site.name')}</a>
+    <nav aria-label="main">
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    max-width: var(--content-max);
+    margin-inline: auto;
+    padding: var(--grid) var(--grid) 0;
+  }
+  .brand-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--grid);
+  }
+  .sds-lockup img {
+    width: 300px; /* brand minimum for the horizontal lockup */
+    height: auto;
+  }
+  .site-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5em var(--grid);
+    border-bottom: 4px solid var(--c-black);
+    margin-top: var(--grid);
+    padding-bottom: 0.5em;
+  }
+  .site-name {
+    font-size: calc(var(--text-l) * var(--lang-scale) * 0.72);
+    font-weight: 700;
+    letter-spacing: var(--tracking-heading);
+    color: var(--c-black);
+  }
+  .site-name:hover {
+    text-decoration: none;
+    color: var(--c-blue);
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1em;
+  }
+  nav a {
+    color: var(--c-black);
+    font-weight: 500;
+  }
+  nav a:hover {
+    color: var(--c-blue);
+    text-decoration: none;
+  }
+</style>

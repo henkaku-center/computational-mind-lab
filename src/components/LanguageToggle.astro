@@ -1,0 +1,33 @@
+---
+import { t, otherLocale, swapLocalePath, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  /** Path of the current page in the other locale (defaults to prefix swap). */
+  alternatePath?: string;
+}
+const { locale, alternatePath } = Astro.props;
+const target = alternatePath ?? swapLocalePath(Astro.url.pathname, otherLocale(locale));
+---
+
+<a
+  class="lang-toggle"
+  href={target}
+  lang={otherLocale(locale)}
+  aria-label={t(locale, 'lang.switchLabel')}>{t(locale, 'lang.switch')}</a
+>
+
+<style>
+  .lang-toggle {
+    font-weight: 700;
+    border: 2px solid var(--c-black);
+    padding: 0.2em 0.7em;
+    color: var(--c-black);
+  }
+  .lang-toggle:hover {
+    background: var(--c-blue);
+    border-color: var(--c-blue);
+    color: var(--c-white);
+    text-decoration: none;
+  }
+</style>

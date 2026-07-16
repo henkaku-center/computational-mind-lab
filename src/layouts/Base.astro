@@ -1,0 +1,66 @@
+---
+import '../styles/fonts.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/blocks.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { t, otherLocale, swapLocalePath, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+  /** Path of this page in the other locale, when it differs from a prefix swap. */
+  alternatePath?: string;
+  ogImage?: string;
+  jsonLd?: object;
+}
+const { locale, title, description, alternatePath, ogImage = '/og-default.png', jsonLd } = Astro.props;
+
+const siteName = t(locale, 'site.name');
+const pageTitle = title ? `${title} — ${siteName}` : `${siteName} — ${t(locale, 'site.affiliation')}`;
+const desc = description ?? t(locale, 'site.tagline');
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const altPath = alternatePath ?? swapLocalePath(Astro.url.pathname, otherLocale(locale));
+const altUrl = new URL(altPath, Astro.site);
+const enUrl = locale === 'en' ? canonical : altUrl;
+const jaUrl = locale === 'ja' ? canonical : altUrl;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="ja" href={jaUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={siteName}
+      href={locale === 'ja' ? '/ja/rss.xml' : '/rss.xml'}
+    />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:locale" content={locale === 'ja' ? 'ja_JP' : 'en_US'} />
+    <meta name="generator" content={Astro.generator} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <Header locale={locale} alternatePath={alternatePath} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

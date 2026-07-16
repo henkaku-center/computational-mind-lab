@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { t, localeStaticPaths, type Locale } from '../../../i18n';
+import { getLocalized } from '../../../lib/translations';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+const locale = Astro.params.locale as Locale;
+
+const projects = getLocalized(await getCollection('projects'), locale).sort(
+  (a, b) => (a.entry.data.weight ?? 100) - (b.entry.data.weight ?? 100)
+);
+---
+
+<Base locale={locale} title={t(locale, 'projects.title')}>
+  <h1>{t(locale, 'projects.title')}</h1>
+  <div class="project-list">
+    {
+      projects.map(({ entry, isFallback }) => {
+        const lang = isFallback ? entry.data.locale : undefined;
+        return (
+          <article class="card">
+            <h2 lang={lang}>
+              <a href={`/${locale}/projects/${entry.data.translationKey}/`}>{entry.data.title}</a>
+              {isFallback && <span class="fallback">{t(locale, 'news.englishOnly')}</span>}
+            </h2>
+            <p lang={lang}>{entry.data.excerpt}</p>
+          </article>
+        );
+      })
+    }
+  </div>
+</Base>
+
+<style>
+  .project-list {
+    display: grid;
+    gap: var(--grid);
+    margin-block: var(--grid);
+  }
+  .card h2 {
+    margin: 0 0 0.4em;
+    font-size: calc(var(--text-l) * var(--lang-scale) * 0.75);
+  }
+  .card h2 a {
+    color: var(--c-black);
+  }
+  .card h2 a:hover {
+    color: var(--c-blue);
+  }
+  .fallback {
+    font-size: var(--text-s);
+    font-weight: 400;
+    color: var(--c-dark-grey);
+  }
+  .card p {
+    margin: 0;
+  }
+</style>

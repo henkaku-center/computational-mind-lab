@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import NewsCard from '../../../components/NewsCard.astro';
+import { t, localeStaticPaths, type Locale } from '../../../i18n';
+import { getLocalized } from '../../../lib/translations';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+const locale = Astro.params.locale as Locale;
+
+const news = getLocalized(await getCollection('news'), locale);
+const years = [...new Set(news.map((n) => n.entry.data.date.getFullYear()))].sort((a, b) => b - a);
+---
+
+<Base locale={locale} title={t(locale, 'news.title')}>
+  <h1>{t(locale, 'news.title')}</h1>
+  {
+    years.map((year) => (
+      <section>
+        <h2>{year}</h2>
+        <div class="news-grid">
+          {news
+            .filter((n) => n.entry.data.date.getFullYear() === year)
+            .map(({ entry, isFallback }) => (
+              <NewsCard entry={entry} locale={locale} isFallback={isFallback} />
+            ))}
+        </div>
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--grid);
+    margin-block: var(--grid);
+  }
+  section h2 {
+    border-bottom: 2px solid var(--c-black);
+    padding-bottom: 0.2em;
+  }
+</style>

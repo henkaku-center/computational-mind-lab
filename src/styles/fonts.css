@@ -1,0 +1,26 @@
+/*
+ * Brand typefaces: Finder (EN, Black[Foundry]) and Now Gothic (JP, Typeface).
+ * Until the licensed webfonts arrive, we ship lookalikes: Inter Variable and
+ * Noto Sans JP Variable (imported below, self-hosted via Fontsource).
+ *
+ * WHEN THE LICENSED FONTS ARRIVE: drop the .woff2 files into public/fonts/
+ * and add @font-face blocks here, e.g.
+ *
+ *   @font-face {
+ *     font-family: 'Finder';
+ *     src: url('/fonts/Finder-Variable.woff2') format('woff2');
+ *     font-weight: 100 900;
+ *     font-display: swap;
+ *   }
+ *   @font-face {
+ *     font-family: 'Now Gothic';
+ *     src: url('/fonts/NowGothic-Variable.woff2') format('woff2');
+ *     font-weight: 100 900;
+ *     font-display: swap;
+ *   }
+ *
+ * Nothing else changes: every font stack in tokens.css already lists the
+ * commercial face first.
+ */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/noto-sans-jp';

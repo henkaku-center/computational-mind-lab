@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import { t } from '../i18n';
+---
+
+<Base locale="en" title={t('en', 'notFound.title')}>
+  <h1>404</h1>
+  <p>{t('en', 'notFound.body')} <a href="/en/">Home</a></p>
+  <p lang="ja">{t('ja', 'notFound.body')} <a href="/ja/">ホーム</a></p>
+</Base>

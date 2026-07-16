@@ -1,0 +1,126 @@
+/* Minimal reset + SDS typographic rules. No animations, no transitions,
+ * no gradients, no shadows, no border radii — the brand is flat and still. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-en);
+  font-size: calc(var(--text-body) * var(--lang-scale));
+  line-height: var(--leading-body);
+  color: var(--c-black);
+  background: var(--c-white);
+}
+
+/* EN never in the JP face and vice versa (brand rule).
+ * Pages set html[lang]; inline foreign phrases must carry a lang attribute. */
+:lang(ja) {
+  font-family: var(--font-ja);
+}
+:lang(en) {
+  font-family: var(--font-en);
+}
+html[lang='ja'] [lang='en'] {
+  font-family: var(--font-en);
+  font-size: calc(1em / 0.86);
+}
+html[lang='en'] [lang='ja'] {
+  font-family: var(--font-ja);
+  font-size: 0.86em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  font-weight: 700;
+}
+h1 {
+  font-size: calc(var(--text-xl) * var(--lang-scale));
+}
+h2 {
+  font-size: calc(var(--text-l) * var(--lang-scale));
+}
+h3 {
+  font-size: calc(var(--text-body) * var(--lang-scale));
+}
+
+p,
+ul,
+ol,
+table {
+  margin-block: 0.75em;
+}
+
+a {
+  color: var(--c-blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: calc(var(--grid) * 1.5) var(--grid) calc(var(--grid) * 3);
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid var(--c-black);
+  margin-block: var(--grid);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.4em 0.75em 0.4em 0;
+  vertical-align: top;
+}
+
+code,
+pre {
+  font-family: ui-monospace, 'Cascadia Code', Menlo, monospace;
+  font-size: 0.92em;
+}
+pre {
+  overflow-x: auto;
+  padding: var(--grid);
+  background: var(--c-faded-ink);
+  color: var(--c-white);
+}
+
+details > summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

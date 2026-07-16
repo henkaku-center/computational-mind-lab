@@ -1,0 +1,51 @@
+/*
+ * SDS visual identity tokens (Pentagram guidelines, April 2025).
+ * Brand rules encoded here and in base.css — do not violate:
+ *   - logos/symbol only ever black or white; no gradients anywhere
+ *   - flat & sharp: no shadows, no border radii
+ *   - no motion: no animations, no transitions
+ *   - EN never set in the JP face and vice versa
+ *   - Japanese text sized 0.86x the equivalent English (cap-height match)
+ */
+:root {
+  /* core palette */
+  --c-white: #ffffff;
+  --c-black: #000000;
+  --c-blue: #2c40d3; /* Medium Blue */
+
+  /* secondary palette */
+  --c-light-blue: #bfe2fe;
+  --c-dark-grey: #5a5a5a;
+  --c-rose: #7e6d6d;
+  --c-dark-ocean: #253e4d;
+  --c-faded-ink: #262d3c;
+  --c-midnight: #212337;
+  --c-gold: #c08000;
+  --c-dark-yellow: #876714;
+
+  /* typefaces — commercial faces first; lookalikes ship today (fonts.css) */
+  --font-en: 'Finder', 'Inter Variable', Inter, system-ui, sans-serif;
+  --font-ja: 'Now Gothic', 'Noto Sans JP Variable', 'Noto Sans JP', sans-serif;
+
+  /* type scale: body 17px; headers 2x pattern (34/68) per guidelines */
+  --text-s: 14px;
+  --text-body: 17px;
+  --text-l: 34px;
+  --text-xl: clamp(40px, 7vw, 68px);
+
+  /* body leading = size + 3pt (~4px); heading leading 0.9; kern -5% */
+  --leading-body: calc(1em + 4px);
+  --leading-heading: 0.9;
+  --tracking-heading: -0.05em;
+
+  /* JA content is sized 0.86x EN (cap-height matching) */
+  --lang-scale: 1;
+
+  /* coarse pixel-grid unit for block compositions */
+  --grid: 24px;
+  --content-max: 1080px;
+}
+
+html[lang='ja'] {
+  --lang-scale: 0.86;
+}

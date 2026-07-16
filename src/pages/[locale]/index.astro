@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import SPattern from '../../components/SPattern.astro';
+import { t, localeStaticPaths, type Locale } from '../../i18n';
+import { getLocalized } from '../../lib/translations';
+import { labOrganization } from '../../lib/jsonld';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+const locale = Astro.params.locale as Locale;
+
+const news = getLocalized(await getCollection('news'), locale).slice(0, 5);
+---
+
+<Base locale={locale} jsonLd={labOrganization}>
+  {/* Pixel-grid hero, per the SDS layout system */}
+  <div class="px-grid hero">
+    <div class="span-8 blk-blue blk-pad hero-main">
+      <h1>{t(locale, 'site.name')}</h1>
+      <p class="tagline">{t(locale, 'site.tagline')}</p>
+    </div>
+    <div class="span-4">
+      <SPattern variant="lightblue" height="100%" />
+    </div>
+    <div class="span-4 blk-midnight blk-pad">
+      <p><a href={`/${locale}/publications/`}>{t(locale, 'home.publications')} →</a></p>
+    </div>
+    <div class="span-4 blk-lightblue blk-pad">
+      <p><a href={`/${locale}/people/`}>{t(locale, 'nav.people')} →</a></p>
+    </div>
+    <div class="span-4 blk-black blk-pad">
+      <p><a href={`/${locale}/join/`}>{t(locale, 'nav.join')} →</a></p>
+    </div>
+  </div>
+
+  <section>
+    <h2>{t(locale, 'home.recentNews')}</h2>
+    <div class="news-grid">
+      {news.map(({ entry, isFallback }) => <NewsCard entry={entry} locale={locale} isFallback={isFallback} />)}
+    </div>
+    <p><a href={`/${locale}/news/`}>{t(locale, 'home.allNews')} →</a></p>
+  </section>
+</Base>
+
+<style>
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--grid);
+    margin-block: var(--grid);
+  }
+</style>

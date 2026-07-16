@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { t, localeStaticPaths, type Locale } from '../../i18n';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+const locale = Astro.params.locale as Locale;
+
+const people = await getCollection('people');
+const groups = ['pi', 'members', 'undergrads', 'affiliates', 'alumni'] as const;
+const eras = ['chibatech', 'uw-madison', 'brown'] as const;
+
+function byWeight(a: { data: { weight: number } }, b: { data: { weight: number } }) {
+  return a.data.weight - b.data.weight;
+}
+
+function loc(entry: (typeof people)[number], field: 'name' | 'title' | 'blurb'): { text: string; lang?: string } {
+  const ja = entry.data[`${field}Ja` as 'nameJa' | 'titleJa' | 'blurbJa'];
+  if (locale === 'ja' && ja) return { text: ja };
+  const en = entry.data[field] ?? '';
+  return { text: en, lang: locale === 'ja' ? 'en' : undefined };
+}
+---
+
+<Base locale={locale} title={t(locale, 'nav.people')}>
+  <h1>{t(locale, 'nav.people')}</h1>
+  {
+    groups.map((group) => {
+      const members = people.filter((p) => p.data.group === group).sort(byWeight);
+      if (!members.length) return null;
+      const grouped =
+        group === 'alumni'
+          ? eras.map((era) => ({ era, list: members.filter((m) => m.data.era === era) })).filter((g) => g.list.length)
+          : [{ era: null, list: members }];
+      return (
+        <section>
+          <h2>{t(locale, `people.${group}`)}</h2>
+          {grouped.map(({ era, list }) => (
+            <>
+              {era && group === 'alumni' && grouped.length > 1 && <h3>{t(locale, `people.era.${era}`)}</h3>}
+              <div class="people-grid">
+                {list.map((p) => {
+                  const name = loc(p, 'name');
+                  const title = loc(p, 'title');
+                  const blurb = loc(p, 'blurb');
+                  return (
+                    <article class="card">
+                      <img src={p.data.image} alt={p.data.name} loading="lazy" width="160" height="160" />
+                      <h3 lang={name.lang}>
+                        {p.data.website ? <a href={p.data.website}>{name.text}</a> : name.text}
+                      </h3>
+                      <p class="role" lang={title.lang}>
+                        {title.text}
+                        {p.data.years && ` · ${p.data.years}`}
+                      </p>
+                      {p.data.currentPosition && <p class="role">{p.data.currentPosition}</p>}
+                      {blurb.text && group !== 'alumni' && <p lang={blurb.lang}>{blurb.text}</p>}
+                      {p.data.email && (
+                        <p class="role">
+                          <a href={`mailto:${p.data.email}`}>{p.data.email}</a>
+                        </p>
+                      )}
+                    </article>
+                  );
+                })}
+              </div>
+            </>
+          ))}
+        </section>
+      );
+    })
+  }
+</Base>
+
+<style>
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--grid);
+    margin-block: var(--grid);
+  }
+  .card img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 0.75em;
+  }
+  .card h3 {
+    margin: 0 0 0.3em;
+  }
+  .role {
+    font-size: var(--text-s);
+    color: var(--c-dark-grey);
+    margin: 0 0 0.3em;
+  }
+  section h2 {
+    border-bottom: 2px solid var(--c-black);
+    padding-bottom: 0.2em;
+    margin-top: calc(var(--grid) * 1.5);
+  }
+</style>

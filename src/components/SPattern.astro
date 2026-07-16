@@ -1,0 +1,39 @@
+---
+/**
+ * Tiled SDS S-symbol background band, per the brand book's pattern pages.
+ * Tone-on-tone pairings only; the symbol artwork itself is never recolored
+ * outside these approved pattern treatments.
+ */
+interface Props {
+  variant?: 'lightblue' | 'midnight' | 'blue';
+  height?: string;
+}
+const { variant = 'lightblue', height = 'calc(var(--grid) * 4)' } = Astro.props;
+
+const SYMBOL_PATH =
+  'M200.4,600v-100.2H0v300.6h441.4l158.6-158.6v-82.3l-200.4-200.4v240.9h-199.2ZM441.4,0H0v240.9l200.4,200.4v-241h199.2v100.2h200.4v-141.9L441.4,0Z';
+
+const PAIRINGS: Record<string, { field: string; symbol: string }> = {
+  lightblue: { field: '#d9eeff', symbol: '#bfe2fe' },
+  midnight: { field: '#212337', symbol: '#2a2d47' },
+  blue: { field: '#2c40d3', symbol: '#2537b8' },
+};
+const { field, symbol } = PAIRINGS[variant];
+
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800.4"><path fill="${symbol}" d="${SYMBOL_PATH}"/></svg>`;
+const uri = `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+---
+
+<div
+  class="s-pattern"
+  aria-hidden="true"
+  style={`background-color:${field};background-image:${uri};height:${height};`}
+>
+</div>
+
+<style>
+  .s-pattern {
+    background-repeat: repeat;
+    background-size: calc(var(--grid) * 2) auto;
+  }
+</style>

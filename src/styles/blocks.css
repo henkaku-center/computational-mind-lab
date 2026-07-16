@@ -1,0 +1,76 @@
+/* SDS pixel-grid block compositions: flat rectangular color blocks snapped
+ * to a coarse grid, per the Pentagram layout system. Sharp corners only. */
+
+.px-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0;
+}
+
+/* column spans */
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+.span-4 { grid-column: span 4; }
+.span-5 { grid-column: span 5; }
+.span-6 { grid-column: span 6; }
+.span-7 { grid-column: span 7; }
+.span-8 { grid-column: span 8; }
+.span-9 { grid-column: span 9; }
+.span-12 { grid-column: span 12; }
+
+@media (max-width: 720px) {
+  .px-grid > [class*='span-'] {
+    grid-column: span 12;
+  }
+}
+
+/* flat block fills — text colors paired per brand book */
+.blk-white { background: var(--c-white); color: var(--c-black); }
+.blk-black { background: var(--c-black); color: var(--c-white); }
+.blk-blue { background: var(--c-blue); color: var(--c-white); }
+.blk-lightblue { background: var(--c-light-blue); color: var(--c-black); }
+.blk-midnight { background: var(--c-midnight); color: var(--c-white); }
+.blk-fadedink { background: var(--c-faded-ink); color: var(--c-white); }
+.blk-gold { background: var(--c-gold); color: var(--c-white); }
+
+.blk-blue a, .blk-midnight a, .blk-black a, .blk-fadedink a, .blk-gold a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.blk-pad {
+  padding: calc(var(--grid) * 1.5);
+}
+
+/* hero block composition */
+.hero {
+  margin-bottom: calc(var(--grid) * 2);
+}
+.hero .hero-main {
+  min-height: calc(var(--grid) * 12);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.hero h1 {
+  margin: 0;
+}
+.hero .tagline {
+  margin-top: var(--grid);
+  max-width: 32em;
+}
+
+/* tag chips (publications) — flat, sharp */
+.tag-chip {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  font-size: var(--text-s);
+  color: var(--c-black);
+  border: 0;
+}
+
+/* cards are plain bordered blocks */
+.card {
+  border: 2px solid var(--c-black);
+  padding: var(--grid);
+}

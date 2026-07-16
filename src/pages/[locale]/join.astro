@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t, localeStaticPaths, type Locale } from '../../i18n';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+const locale = Astro.params.locale as Locale;
+
+// TODO-review (see TRANSITION.md): confirm current recruiting status and
+// application links once Chiba Tech admissions details are settled.
+const copy = {
+  en: {
+    intro:
+      'The Computational Mind Lab is part of the School of Design & Science at Chiba Institute of Technology. We study how minds build models of the world, combining computational modeling with behavioral experiments.',
+    students: 'Prospective students',
+    studentsBody:
+      'If you are interested in graduate or undergraduate research at the intersection of cognitive science, machine learning, and design, please get in touch. Admissions to the School of Design & Science are handled by Chiba Institute of Technology.',
+    postdocs: 'Postdocs & collaborators',
+    postdocsBody:
+      'We are always happy to hear from potential postdocs and collaborators. Email a CV and a short note about what you would like to work on.',
+  },
+  ja: {
+    intro:
+      '計算マインド研究室は千葉工業大学デザイン＆サイエンス学部に所属しています。計算モデルと行動実験を組み合わせて、心がどのように世界のモデルを構築するかを研究しています。',
+    students: '学生の皆さんへ',
+    studentsBody:
+      '認知科学・機械学習・デザインの交差点での研究（大学院・学部）に興味のある方は、ぜひご連絡ください。デザイン＆サイエンス学部への入学については千葉工業大学の入試情報をご覧ください。',
+    postdocs: 'ポスドク・共同研究者の方へ',
+    postdocsBody:
+      'ポスドクや共同研究のご相談はいつでも歓迎です。履歴書（CV）と取り組みたいテーマを添えてメールでご連絡ください。',
+  },
+}[locale];
+---
+
+<Base locale={locale} title={t(locale, 'join.title')}>
+  <h1>{t(locale, 'join.title')}</h1>
+  <p>{copy.intro}</p>
+  <h2>{copy.students}</h2>
+  <p>{copy.studentsBody}</p>
+  <h2>{copy.postdocs}</h2>
+  <p>{copy.postdocsBody}</p>
+</Base>

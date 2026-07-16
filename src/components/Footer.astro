@@ -1,0 +1,46 @@
+---
+import { t, type Locale } from '../i18n';
+import sdsLogoWhite from '../assets/brand/sds-horizontal-white.svg';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<footer class="blk-midnight">
+  <div class="inner">
+    <img src={sdsLogoWhite.src} alt="Chiba Tech School of Design & Science" width="300" height="47" />
+    <p>{t(locale, 'footer.affiliationLine')}</p>
+    <p class="small">{t(locale, 'footer.pastSupport')}</p>
+    <p class="small links">
+      <a href="https://github.com/AusterweilLab">GitHub</a>
+      <a href={locale === 'ja' ? '/ja/rss.xml' : '/rss.xml'}>{t(locale, 'footer.rss')}</a>
+      <a href="/llms.txt">{t(locale, 'footer.forAI')}</a>
+      <a href="/papers.csl.json">CSL-JSON</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    margin-top: calc(var(--grid) * 3);
+  }
+  .inner {
+    max-width: var(--content-max);
+    margin-inline: auto;
+    padding: calc(var(--grid) * 2) var(--grid);
+  }
+  img {
+    width: 300px;
+    height: auto;
+    margin-bottom: var(--grid);
+  }
+  .small {
+    font-size: var(--text-s);
+    opacity: 0.85;
+  }
+  .links a {
+    margin-right: 1.5em;
+  }
+</style>
