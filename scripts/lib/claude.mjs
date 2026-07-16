@@ -18,13 +18,30 @@ export const MODEL = process.env.CLAUDE_MODEL || 'sonnet';
 const totals = { calls: 0, ms: 0 };
 
 function extractJson(text) {
-  // tolerate markdown fences or stray prose around the object
-  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-  const candidate = fenced ? fenced[1] : text;
-  const start = candidate.indexOf('{');
-  const end = candidate.lastIndexOf('}');
-  if (start === -1 || end <= start) throw new Error('no JSON object in output');
-  return JSON.parse(candidate.slice(start, end + 1));
+  // Try several extractions and return the first that parses. Order matters:
+  // the outermost brace span is tried FIRST because content may itself contain
+  // ``` fences (e.g. a page documenting code) — a non-greedy fence match would
+  // stop at the body's first inner fence and truncate the JSON.
+  const candidates = [];
+
+  const start = text.indexOf('{');
+  const end = text.lastIndexOf('}');
+  if (start !== -1 && end > start) candidates.push(text.slice(start, end + 1));
+
+  const fencedAll = text.match(/```(?:json)?\s*([\s\S]*)```/); // greedy: outermost pair
+  if (fencedAll) candidates.push(fencedAll[1]);
+
+  const fencedFirst = text.match(/```(?:json)?\s*([\s\S]*?)```/); // non-greedy
+  if (fencedFirst) candidates.push(fencedFirst[1]);
+
+  for (const c of candidates) {
+    try {
+      return JSON.parse(c);
+    } catch {
+      /* try next */
+    }
+  }
+  throw new Error('no parseable JSON object in output');
 }
 
 function validate(obj, schema) {
