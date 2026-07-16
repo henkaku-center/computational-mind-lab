@@ -29,5 +29,9 @@ Gaussian mixture, to K-component clustering, to a working Bayesian
 nonparametric model. Six Jupyter notebooks let readers explore the concepts
 interactively rather than only reading about them.
 
+A Japanese machine translation is also being maintained alongside the English —
+fitting for a tutorial written in Tokyo, and a small experiment in whether
+technical exposition survives translation.
+
 The tutorial is a work in progress and feedback is very welcome:
 [josephausterweil.github.io/probintro](https://josephausterweil.github.io/probintro/)
