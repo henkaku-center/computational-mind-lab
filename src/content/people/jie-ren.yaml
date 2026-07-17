@@ -1,9 +1,14 @@
 name: Jie Ren
 title: Visiting Instructor, Brown University; Visiting Professor, McGovern Institute for Brain Research at Beijing Normal University
-group: affiliates
+group: alumni
 era: uw-madison
 blurb: ​Jie's​ research is concerned with the biology and neurology of infant speech ​learning​. The research methods used in ​her​ research include behavioral measures of infant speech perception, functional neuroimaging (fNIRS) and computational modeling with ​machine-learning techniques.
 image: /img/people/jieren.jpg
 website: https://sites.google.com/a/brown.edu/jie-ren/
 weight: 10
 needsReview: true
+titleJa: Brown University 客員講師、McGovern Institute for Brain Research at Beijing Normal University 客員教授
+titleJaHash: efcdd3f246a602bf
+blurbJa: Jieの研究は、乳児の音声学習における生物学的・神経科学的基盤を対象としている。研究手法には、乳児の音声知覚に関する行動指標の測定、機能的近赤外分光法（fNIRS）を用いた神経イメージング法、そして機械学習技術を用いた計算論的モデリングが含まれる。
+blurbJaHash: 0b2c3d04406dac2c
+alumniRole: staff

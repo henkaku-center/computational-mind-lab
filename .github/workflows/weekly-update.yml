@@ -26,12 +26,13 @@ permissions:
 jobs:
   weekly:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - run: npm ci
@@ -58,7 +59,7 @@ jobs:
 
       - name: Open / update proposal PR
         if: ${{ github.event_name == 'schedule' || inputs.dry_run != true }}
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: automation/weekly-proposals
           title: 'Weekly site updates'
