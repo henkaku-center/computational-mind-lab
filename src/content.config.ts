@@ -76,6 +76,9 @@ const people = defineCollection({
     currentPosition: z.string().optional(),
     blurb: z.string().optional(),
     blurbJa: z.string().optional(),
+    // machine-managed staleness hashes for the JA field translations
+    titleJaHash: z.string().optional(),
+    blurbJaHash: z.string().optional(),
     image: z.string().default('/img/people/default.jpg'),
     email: z.string().email().optional(),
     website: z.string().url().optional(),
