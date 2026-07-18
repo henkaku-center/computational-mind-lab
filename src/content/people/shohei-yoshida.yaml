@@ -1,9 +1,11 @@
 # TODO-review: add blurb, photo (public/img/people/), email, website, nameJa (吉田翔平?)
+# Listed as a research collaborator, NOT a student — Joe is not his official
+# supervisor (per Hiroki Kojima, 2026-07). Do not change back to a student title.
 name: Shohei Yoshida
-title: Master's Student
-group: members
+title: Research Collaborator
+group: affiliates
 era: chibatech
 weight: 20
 needsReview: true
-titleJa: 修士課程学生
-titleJaHash: f8ed7c5e88e4b888
+titleJa: 共同研究者
+titleJaHash: 2a62a3e549ae2335

@@ -11,7 +11,7 @@ const locale = Astro.params.locale as Locale;
 const people = await getCollection('people');
 type Person = (typeof people)[number];
 
-const currentGroups = ['pi', 'members', 'undergrads'] as const;
+const currentGroups = ['pi', 'members', 'undergrads', 'affiliates'] as const;
 const alumniRoles = ['postdoc', 'grad', 'undergrad', 'staff'] as const;
 
 const byWeight = (a: Person, b: Person) => a.data.weight - b.data.weight;
