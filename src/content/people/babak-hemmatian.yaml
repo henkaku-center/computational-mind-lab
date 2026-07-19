@@ -1,12 +1,9 @@
 name: Babak Hemmatian
-title: Graduate Student at Brown University
+title: Graduate Student
 group: alumni
-era: uw-madison
-blurb: I am a Ph.D. student of cognitive science, with a background in psychology, but a new-found love for computational modeling. I am most interested in integrating the computational models offered for different kinds of reasoning (inductive, causal, deductive, etc.), offering new such models (with an emphasis on causal reasoning) and comparing the proposals with regards to how well they capture the qualitative and quantitative aspects of human reasoning.
+era: brown
 weight: 30
-needsReview: true
-titleJa: Brown University 大学院生
-titleJaHash: 49e7fc2523176e60
-blurbJa: 私は認知科学の博士課程の学生であり、これまで心理学を専門としてきたが、近年は計算論的モデリングに強い関心を持つようになった。関心の中心は、帰納的推論・因果推論・演繹的推論など様々な推論について提案されている計算モデルを統合すること、そうした新たなモデル（特に因果推論に重点を置いたもの）を提案すること、そして人間の推論の質的・量的側面を、それぞれの提案がどれだけ的確に捉えているかという観点から比較することである。
-blurbJaHash: 2e1afff21e5bd289
+needsReview: false
+titleJa: 大学院生
+titleJaHash: 0337c30e121c7ed7
 alumniRole: grad

@@ -92,20 +92,14 @@ const alumniSections = alumniRoles
             <ul class="alumni-list">
               {section.list.map((p) => {
                 const name = loc(p, 'name');
-                const title = loc(p, 'title');
                 return (
                   <li>
                     <span class="alumni-name" lang={name.lang}>
                       {p.data.website ? <a href={p.data.website}>{name.text}</a> : name.text}
                     </span>
                     {p.data.years && <span class="alumni-years"> · {p.data.years}</span>}
-                    {p.data.currentPosition ? (
+                    {p.data.currentPosition && (
                       <span class="alumni-now"> — {p.data.currentPosition}</span>
-                    ) : (
-                      <span class="alumni-now" lang={title.lang}>
-                        {' '}
-                        — {title.text}
-                      </span>
                     )}
                   </li>
                 );

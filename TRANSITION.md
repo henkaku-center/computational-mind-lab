@@ -19,10 +19,10 @@ list is empty; delete this file when everyone is resolved.
 |---|---|---|---|---|---|
 | `joseph-austerweil.yaml` | Joseph Austerweil | Associate Professor | pi (chibatech) ⚠️ | fill in | fill in |
 | `hongtao-hao.yaml` | Hongtao Hao | Graduate Student | alumni (uw-madison) ⚠️ | fill in | fill in |
-| `michael-payton.yaml` | Michael Payton | Graduate Student | alumni (uw-madison) ⚠️ | fill in | fill in |
+| `michael-payton.yaml` | Michael Payton | Graduate Student | members (uw-madison) ✓ | — | Current Ph.D. student, Psychology, UW-Madison |
 | `jie-ren.yaml` | Jie Ren | Visiting Instructor, Brown University; Visiting Professor, McGovern Institute for Brain Research at Beijing Normal University | affiliates (uw-madison) ⚠️ | fill in | fill in |
-| `boyoung-kim.yaml` | Boyoung Kim | Graduate Student at Brown University | affiliates (uw-madison) ⚠️ | fill in | fill in |
-| `babak-hemmatian.yaml` | Babak Hemmatian | Graduate Student at Brown University | affiliates (uw-madison) ⚠️ | fill in | fill in |
+| `boyoung-kim.yaml` | Boyoung Kim | Graduate Student at Brown University | alumni (brown) ✓ | — | Left empty — no longer at Brown, current affiliation uncertain |
+| `babak-hemmatian.yaml` | Babak Hemmatian | Graduate Student at Brown University | alumni (brown) ✓ | — | Left empty — no longer at Brown, current affiliation uncertain |
 | `kesong-cao.yaml` | Kesong Cao | Former Graduate Student | alumni (uw-madison) ⚠️ | fill in | fill in |
 | `jeff-zemla.yaml` | Jeff Zemla | Assistant Professor at Syracuse University | alumni (uw-madison) ⚠️ | fill in | fill in |
 | `lanston-chu.yaml` | Lanston Chu | Graduate Student | alumni (uw-madison) ⚠️ | fill in | fill in |
@@ -39,7 +39,7 @@ list is empty; delete this file when everyone is resolved.
 | `blake-chambers.yaml` | Blake Chambers | Lab Manager | alumni (uw-madison) ⚠️ | fill in | fill in |
 | `shi-xian-liew.yaml` | Shi Xian Liew | Former Postdoctoral Researcher | alumni (uw-madison) ⚠️ | fill in | fill in |
 | `jacqueline-erens.yaml` | Jacqueline Erens | Former Undergraduate Researcher | alumni (uw-madison) ⚠️ | fill in | fill in |
-| `mark-ho.yaml` | Mark Ho | Former Graduate Student | alumni (uw-madison) ⚠️ | fill in | fill in |
+| `mark-ho.yaml` | Mark Ho | Former Graduate Student | alumni (brown) ✓ | — | Assistant Professor of Psychology, New York University |
 | `nolan-conaway.yaml` | Nolan Conaway | Former Postdoctoral Researcher | alumni (uw-madison) ⚠️ | fill in | fill in |
 | `ting-qian.yaml` | Ting Qian | Former Postdoctoral Scholar | alumni (uw-madison) ⚠️ | fill in | fill in |
 | `yoed-kenett.yaml` | Yoed Kenett | Former Postdoctoral Scholar | alumni (uw-madison) ⚠️ | fill in | fill in |
