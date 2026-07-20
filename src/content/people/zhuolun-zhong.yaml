@@ -1,9 +1,13 @@
-# TODO-review: add blurb, photo (public/img/people/), email, website, nameJa
+# TODO-review: add email, website, nameJa
 name: Zhuolun Zhong
 title: Research Scientist
 group: members
 era: chibatech
+image: /img/people/zhuolun.jpg
+blurb: Zhuolun's main research interest is using computational methods to study interaction — including multi-agent interactions, agent-system interactions, and human-AI interactions.
 weight: 10
 needsReview: true
 titleJa: リサーチサイエンティスト
 titleJaHash: 43c10255e5413c01
+blurbJa: Zhuolunの主な研究関心は、計算論的手法を用いてインタラクションを研究することにある。これにはマルチエージェント間のインタラクション、エージェントとシステムのインタラクション、人間とAIのインタラクションが含まれる。
+blurbJaHash: 0a27abbe3f18c9b2
