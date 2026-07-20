@@ -7,8 +7,7 @@ export function getStaticPaths() {
 }
 const locale = Astro.params.locale as Locale;
 
-// TODO-review (TRANSITION.md): add the public course URL for the Spring 2026
-// course once it is live, and any Chiba Tech syllabus links.
+// TODO-review (TRANSITION.md): add any Chiba Tech syllabus links when available.
 const courses = [
   {
     term: { en: 'Spring 2026 · Chiba Tech SDS', ja: '2026年春学期 · 千葉工業大学 SDS' },
@@ -26,7 +25,7 @@ const courses = [
       en: 'Graduate course on how humans and machines learn — generalization, Monte Carlo approximation, MCMC, and reinforcement learning, with hands-on assignments.',
       ja: '人間と機械がどのように学習するかを扱う大学院科目。汎化、モンテカルロ近似、MCMC、強化学習を、実習課題とともに学びます。',
     },
-    links: [],
+    links: [{ label: 'hml.chibatech.dev', href: 'https://hml.chibatech.dev/' }],
   },
   {
     term: { en: '2025 · COSMOS Summer School', ja: '2025年 · COSMOS サマースクール' },
