@@ -14,7 +14,7 @@ tags:
   - computational psychiatry
 status: active
 repo: https://github.com/jpcca
-weight: 10
+weight: 30
 ---
 
 Chronic diseases such as Alzheimer's unfold over decades, but the data we can

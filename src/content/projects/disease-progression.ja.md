@@ -13,7 +13,7 @@ tags:
   - computational psychiatry
 status: active
 repo: 'https://github.com/jpcca'
-weight: 10
+weight: 30
 sourceHash: c0d527b40675c25b3704fc32f4d82c10c68bcfe5b580c7a4373ad65cdfd1bd23
 ---
 
