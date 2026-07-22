@@ -27,6 +27,26 @@ function loc(entry: Person, field: 'name' | 'title' | 'blurb'): { text: string; 
   return { text: en, lang: locale === 'ja' ? 'en' : undefined };
 }
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/** Renders a blurb as HTML, supporting only `[label](url)` inline links — everything else is escaped. */
+function renderBlurb(text: string): string {
+  return text
+    .split(/(\[[^\]]+\]\([^)]+\))/g)
+    .map((part) => {
+      const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      return m ? `<a href="${escapeHtml(m[2])}">${escapeHtml(m[1])}</a>` : escapeHtml(part);
+    })
+    .join('');
+}
+
 const sections = [
   ...currentGroups
     .map((group) => ({
@@ -65,9 +85,7 @@ const alumniSections = alumniRoles
                   {title.text}
                 </p>
                 {blurb.text && (
-                  <p lang={blurb.lang} class="blurb">
-                    {blurb.text}
-                  </p>
+                  <p lang={blurb.lang} class="blurb" set:html={renderBlurb(blurb.text)} />
                 )}
                 {p.data.email && (
                   <p class="role">
