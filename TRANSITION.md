@@ -19,7 +19,7 @@ list is empty; delete this file when everyone is resolved.
 |---|---|---|---|---|---|
 | `joseph-austerweil.yaml` | Joseph Austerweil | Associate Professor | pi (chibatech) ⚠️ | fill in | fill in |
 | `hongtao-hao.yaml` | Hongtao Hao | Graduate Student | alumni (uw-madison) ⚠️ | fill in | fill in |
-| `michael-payton.yaml` | Michael Payton | Graduate Student | members (uw-madison) ✓ | — | Current Ph.D. student, Psychology, UW-Madison |
+| `michael-payton.yaml` | Michael Payton | Graduate Student | alumni (uw-madison) ✓ | — | Defended Ph.D. in Psychology, UW-Madison, Aug 2026 |
 | `jie-ren.yaml` | Jie Ren | Visiting Instructor, Brown University; Visiting Professor, McGovern Institute for Brain Research at Beijing Normal University | affiliates (uw-madison) ⚠️ | fill in | fill in |
 | `boyoung-kim.yaml` | Boyoung Kim | Graduate Student at Brown University | alumni (brown) ✓ | — | Left empty — no longer at Brown, current affiliation uncertain |
 | `babak-hemmatian.yaml` | Babak Hemmatian | Graduate Student at Brown University | alumni (brown) ✓ | — | Left empty — no longer at Brown, current affiliation uncertain |

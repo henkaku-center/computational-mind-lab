@@ -1,8 +1,10 @@
 name: Michael Payton
 title: Graduate Student
-group: members
+group: alumni
+alumniRole: grad
 era: uw-madison
-blurb: Michael is a Ph.D. student in Psychology at UW-Madison. His work is primarily in Computational Psychiatry where he investigates rational rumination.
+lastActiveYear: 2026
+blurb: Michael defended his Ph.D. in Psychology at UW-Madison in 2026, with a dissertation on a computational framework for perseverative thought. His work is primarily in Computational Psychiatry, where he investigates rational rumination.
 image: /img/people/mpayton1.jpg
 email: mjpayton@wisc.edu
 weight: 20
