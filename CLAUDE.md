@@ -47,7 +47,9 @@ turns notes into properly formatted bilingual content as a reviewable PR.
 
 - `.github/workflows/deploy.yml` — build + deploy Pages on push to master.
 - `.github/workflows/translate.yml` — on content push: generates missing/stale locale
-  counterparts, commits with `[skip-translate]`, re-dispatches deploy.
+  counterparts for news/projects (`translate.mjs`) **and** the `*Ja` fields on people
+  (`translate-people.mjs`), commits with `[skip-translate]`, re-dispatches deploy.
+  Papers' `*Ja` fields have no script yet — still hand-written.
 - `.github/workflows/weekly-update.yml` — Monday cron: processes `_inbox/` + Slack +
   publication APIs + freshness audit into ONE proposal PR (branch `automation/weekly-proposals`).
 - State lives in `.automation/state.json` — never edit by hand.

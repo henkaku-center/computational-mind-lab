@@ -9,6 +9,9 @@
  * JA site. currentPosition stays in English (institutions/proper nouns).
  *
  * Idempotent: a per-field sourceHash is stored; unchanged fields are skipped.
+ *
+ * Usage:
+ *   node scripts/translate-people.mjs [--dry-run]
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,6 +22,7 @@ import { polishJapanese } from './lib/polish.mjs';
 import { ROOT } from './lib/content.mjs';
 
 const DIR = path.join(ROOT, 'src/content/people');
+const DRY_RUN = process.argv.slice(2).includes('--dry-run');
 
 // Confirmed Japanese renderings only. Family-name-first per JP convention.
 const NAME_JA = {
@@ -65,6 +69,7 @@ for (const f of files) {
 
   const wantName = NAME_JA[slug];
   if (wantName && data.nameJa !== wantName) {
+    if (DRY_RUN) console.log(`[dry-run] would-set: ${slug} nameJa`);
     data.nameJa = wantName;
     touched = true;
   }
@@ -77,6 +82,12 @@ for (const f of files) {
     if (!data[src]) continue;
     const hkey = `${dst}Hash`;
     if (data[hkey] === hash(data[src])) continue; // in sync
+    if (DRY_RUN) {
+      // Report intent without spending a model call, mirroring translate.mjs.
+      console.log(`[dry-run] would-${data[dst] ? 'regenerate' : 'create'}: ${slug} ${dst}`);
+      touched = true;
+      continue;
+    }
     console.error(`  ${slug}: translating ${src}`);
     data[dst] = await translateField(data[src], kind);
     data[hkey] = hash(data[src]);
@@ -84,9 +95,11 @@ for (const f of files) {
   }
 
   if (touched) {
-    fs.writeFileSync(path.join(DIR, f), lead + new YAML.Document(data).toString({ lineWidth: 0 }));
     changed++;
-    console.log(`updated ${slug}`);
+    if (!DRY_RUN) {
+      fs.writeFileSync(path.join(DIR, f), lead + new YAML.Document(data).toString({ lineWidth: 0 }));
+      console.log(`updated ${slug}`);
+    }
   }
 }
-console.log(`\npeople translated: ${changed}/${files.length}`);
+console.log(`\npeople ${DRY_RUN ? 'needing translation' : 'translated'}: ${changed}/${files.length}`);

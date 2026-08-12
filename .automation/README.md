@@ -7,7 +7,7 @@ pay-per-token API key. Model from the `CLAUDE_MODEL` Actions variable
 
 | Workflow | Trigger | What it does |
 |---|---|---|
-| `translate.yml` | push to master touching content | generates/refreshes locale counterparts, commits directly (`[skip-translate]`), re-dispatches deploy |
+| `translate.yml` | push to master touching news/projects/people | generates/refreshes locale counterparts (`translate.mjs`) and people `*Ja` fields (`translate-people.mjs`), commits directly (`[skip-translate]`), re-dispatches deploy |
 | `weekly-update.yml` | Mondays 09:00 JST + manual | inbox + Slack + publication APIs + audit → ONE proposal PR on `automation/weekly-proposals` |
 
 ## Secrets & variables (Settings → Secrets and variables → Actions)

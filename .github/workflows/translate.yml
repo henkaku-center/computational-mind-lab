@@ -6,6 +6,7 @@ on:
     paths:
       - 'src/content/news/**'
       - 'src/content/projects/**'
+      - 'src/content/people/**'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -70,6 +71,15 @@ jobs:
           fi
         env:
           # Subscription auth: generate once locally with `claude setup-token`
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'sonnet' }}
+
+      # People/papers live in single YAML files with *Ja fields, so translate.mjs
+      # (paired .md only) never touches them. Always full-scans; per-field hashes
+      # make an in-sync run a no-op with zero model calls, so no --changed needed.
+      - name: Translate people fields
+        run: node scripts/translate-people.mjs ${{ inputs.dry_run && '--dry-run' || '' }}
+        env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'sonnet' }}
 
