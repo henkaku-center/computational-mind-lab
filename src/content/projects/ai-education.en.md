@@ -99,3 +99,6 @@ Related: [Make It So Camp](/en/news/2026-07-16-miso-camp/) takes the same premis
 to practitioners outside the university, and the
 [probability tutorial](/en/projects/probability-tutorial/) is what happens when
 this way of thinking about explanation gets applied to a textbook.
+[Grade it like an audit](/en/projects/grade-it-like-an-audit/) is the argument
+turned on our own teaching: a tool built so that the verification work stays
+visible and stays ours.
