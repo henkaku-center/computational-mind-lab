@@ -77,3 +77,11 @@ developed in the open — code and data live on the
 presented at [ML4H and the NeurIPS Time Series for Health
 workshop](/en/news/2025-12-05-ml4h-neurips/), and TEMPO appeared at
 [CHIL 2026](/en/news/2026-06-25-chil-tempo/).
+
+A related, more loosely connected thread with some of the same
+collaborators — Hongtao Hao, Grisha Szep, and JPCCA support — asks a
+neighboring question in a different framework: instead of reconstructing a
+trajectory from a snapshot, how should a system decide what to ask next
+during diagnosis? See [Adaptive Bayesian Active Querying with LLMs for
+Efficient Information Gathering](/en/news/2026-08-30-eig-daih-colm/),
+presented at the DAIH workshop at COLM 2026.

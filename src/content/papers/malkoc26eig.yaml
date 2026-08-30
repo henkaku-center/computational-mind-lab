@@ -1,0 +1,45 @@
+citekey: malkoc26eig
+title: "Adaptive Bayesian Active Querying with LLMs for Efficient Information Gathering"
+authors:
+  - family: Malkoc
+    given: O.
+  - family: Hao
+    given: H.
+  - family: Szep
+    given: G.
+  - family: Saha
+    given: S.
+  - family: Oka
+    given: M.
+  - family: Austerweil
+    given: J. L.
+year: 2026
+type: paper-conference
+venue: Deploying AI in Healthcare (DAIH) Workshop, Conference on Language Modeling (COLM) 2026
+url: https://github.com/gaudiy/rnd_bayesian_eig_colm
+abstract: >-
+  We propose a hybrid framework for cost-aware sequential diagnosis that
+  combines LLM-generated questions with principled Bayesian belief tracking
+  and decision-making. LLMs can generate plausible queries and estimate
+  likelihoods, but lack explicit, calibrated beliefs -- leading to
+  inefficient information gathering and poorly grounded decisions about when
+  to order costly tests. Our hybrid approach uses an LLM to propose candidate
+  questions and estimate conditional probabilities, while a Bayesian decision
+  layer maintains beliefs and selects queries by expected information gain
+  per unit cost. This separation enables cost-sensitive interviewing:
+  low-cost questions narrow the hypothesis space before high-cost tests are
+  recommended, and tests are ordered only when sufficient probability mass
+  concentrates on hypotheses they would confirm or rule out. To handle cases
+  where standard information gain stalls due to redundant questions from the
+  LLM, we introduce an adaptive mechanism that switches to an information
+  metric that focuses on the top candidates. On a medical diagnosis benchmark
+  using locally deployable LLMs, our framework achieves high diagnostic
+  accuracy while reducing unnecessary queries, demonstrating that principled
+  uncertainty tracking enables robust, cost-aware diagnosis.
+tags:
+  - bayesian modeling
+  - natural language processing
+  - decision making
+pdf: /papers/files/MalkocetalDAIH2026EIG.pdf
+featured: false
+draft: false
