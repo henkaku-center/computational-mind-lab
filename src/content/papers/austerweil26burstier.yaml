@@ -14,8 +14,9 @@ editors:
     given: T.
 year: 2026
 type: chapter
-venue: Behavioural Data Science
-pages: 675-
+venue: The Cambridge Handbook of Behavioural Data Science
+publisher: Cambridge University Press
+pages: 675-705
 pdf: /papers/files/AusterweilPilgrimCao2026BurstierEvents.pdf
 tags:
   - memory retrieval
