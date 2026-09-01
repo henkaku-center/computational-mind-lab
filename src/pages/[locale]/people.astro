@@ -79,7 +79,7 @@ const alumniSections = alumniRoles
             const blurb = loc(p, 'blurb');
             return (
               <article class="card">
-                <img src={p.data.image} alt={p.data.name} loading="lazy" width="160" height="160" />
+                <img src={p.data.image} alt={p.data.name} loading="lazy" height="160" />
                 <h3 lang={name.lang}>{p.data.website ? <a href={p.data.website}>{name.text}</a> : name.text}</h3>
                 <p class="role" lang={title.lang}>
                   {title.text}
@@ -138,9 +138,10 @@ const alumniSections = alumniRoles
     margin-block: var(--grid);
   }
   .card img {
-    width: 160px;
     height: 160px;
-    object-fit: cover;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
     margin-bottom: 0.75em;
   }
   .card h3 {

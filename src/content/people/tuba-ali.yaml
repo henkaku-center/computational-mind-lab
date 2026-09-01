@@ -1,6 +1,6 @@
 # TODO-review: add blurb (one-paragraph research description) from Tuba.
 name: Tuba Ali
-title: Research Affiliate
+title: Research Collaborator
 group: affiliates
 era: chibatech
 image: /img/people/tuba.jpg
@@ -8,5 +8,5 @@ email: tuba.ali1998@gmail.com
 website: https://tubaali.github.io/tuba-portfolio/
 weight: 20
 needsReview: true
-titleJa: 客員研究員
-titleJaHash: c6c2efd730be6eaa
+titleJa: 共同研究者
+titleJaHash: 2a62a3e549ae2335
