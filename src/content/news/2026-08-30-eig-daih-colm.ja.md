@@ -6,7 +6,7 @@ excerpt: >-
 date: 2026-08-30T00:00:00.000Z
 locale: ja
 translationKey: 2026-08-30-eig-daih-colm
-translated: auto
+translated: human
 tags:
   - publications
   - natural language processing
@@ -35,7 +35,7 @@ Gathering](/papers/files/MalkocetalDAIH2026EIG.pdf)が、[Conference on Language
 ウィスコンシン大学マディソン校の[Hongtao
 Hao](https://hongtaoh.com/)（ホンタオ・ハオ）氏、[Grisha
 Szep](https://gszep.com/)（グリシャ・シェプ）氏、そして本研究室のJoseph Austerweil
-（ジョセフ・オースターワイル）が加わりました。本研究についても、疾患進行モデリングと
+（オウステウェイル ジョセフ）が加わりました。本研究についても、疾患進行モデリングと
 同様に[JPCCA](https://jpcca.org/)にご支援いただいたことに感謝申し上げます。
 
 [コードとデータはGitHubで公開されています](https://github.com/gaudiy/rnd_bayesian_eig_colm)。

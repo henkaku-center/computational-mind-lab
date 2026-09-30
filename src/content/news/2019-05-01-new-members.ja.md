@@ -1,17 +1,17 @@
 ---
 title: 研究室に新しいメンバーが加わりました！
-excerpt: Austerweil研究室(オースターワイル研究室)に、多くの新しいメンバーが加わりました！
+excerpt: Austerweil研究室(オウステウェイル研究室)に、多くの新しいメンバーが加わりました！
 date: '2019-05-01'
 locale: ja
 translationKey: 2019-05-01-new-members
-translated: auto
+translated: human
 tags:
   - students
   - members
 sourceHash: 827ba17cb9a29ef3ac969a4ed6a78548f3776dbd0fc3ec780cb80277b3899a10
 ---
 
-2019年はAusterweil研究室(オースターワイル研究室)にとってわくわくするような年になりそうです。特に、スタッフと学生メンバーの両方が大幅に増えました。
+2019年はAusterweil研究室(オウステウェイル研究室)にとってわくわくするような年になりそうです。特に、スタッフと学生メンバーの両方が大幅に増えました。
 
 2018年後半より、新しい研究員として、光栄にもMohsen Afrasiabi(モフセン・アフラシアビ)氏をお迎えしました。彼の技術的な専門知識はおそらく他の追随を許しません。彼のユーモアのセンスも*間違いなく*他の追随を許さないと言う人もいます。
 

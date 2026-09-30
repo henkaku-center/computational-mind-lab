@@ -8,7 +8,9 @@ Register and conventions:
   (noun-ending) style is permitted for headings and list items. Never use である調.
 - Bios and project descriptions: plain, neutral, professional register.
 - Personal names stay in their original script, with katakana added in parentheses on
-  first mention, e.g. "Joseph Austerweil（ジョセフ・オースターワイル）".
+  first mention, e.g. "Joseph Austerweil（オウステウェイル ジョセフ）". Always use
+  exactly オウステウェイル for Austerweil (his own preferred katakana) — including in
+  "オウステウェイル研究室" — never オースターワイル or other variants.
 - Established technical terms use the standard Japanese equivalent with the English in
   parentheses on first use, e.g. ベイズ的ノンパラメトリックモデル（Bayesian
   nonparametric models）.

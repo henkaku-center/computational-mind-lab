@@ -1,10 +1,10 @@
 ---
-title: Joseph Austerweil（ジョセフ・オースターワイル）、日本の千葉工業大学に移籍し、デザイン・サイエンス大学院を共同設立
-excerpt: Joseph Austerweil（ジョセフ・オースターワイル）は日本の千葉工業大学に移籍し、デザイン・サイエンスの新大学院を共同設立します。
+title: Joseph Austerweil（オウステウェイル ジョセフ）、日本の千葉工業大学に移籍し、デザイン・サイエンス大学院を共同設立
+excerpt: Joseph Austerweil（オウステウェイル ジョセフ）は日本の千葉工業大学に移籍し、デザイン・サイエンスの新大学院を共同設立します。
 date: '2025-06-09'
 locale: ja
 translationKey: 2025-06-09-move-to-japan
-translated: auto
+translated: human
 tags:
   - members
 sourceHash: 7014e1ace2a0c8fea3d44bedfeb48c615a3eab5dc87b23af177bfdef66a5d22f

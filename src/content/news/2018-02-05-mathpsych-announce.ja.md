@@ -1,12 +1,12 @@
 ---
 title: >-
-  Austerweil（オースターワイル）教授、Math Psych
+  Austerweil（オウステウェイル）教授、Math Psych
   2018(2018年7月21日～24日)を共同主催。アブストラクト締め切りは2018年3月15日。
 excerpt: Austerweil教授、Math Psych 2018(2018年7月21日～24日)を共同主催
 date: '2018-02-05'
 locale: ja
 translationKey: 2018-02-05-mathpsych-announce
-translated: auto
+translated: human
 tags:
   - conference
 sourceHash: 8f5b2c3795111495dfc61083471a57b533bf191054ba8d46c81e5f2d50f27520
