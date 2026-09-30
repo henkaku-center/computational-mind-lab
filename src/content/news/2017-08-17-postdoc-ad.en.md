@@ -1,27 +1,26 @@
 ---
-title: We Are Recruiting a New Postdoctoral Researcher!
+title: We're hiring a new postdoctoral researcher!
 excerpt: >-
-  The Austerweil Lab plans to recruit a postdoctoral researcher to study the
-  behavior of agent-based models of belief updating in large-scale simulations.
+  The Austerweil Lab is planning to hire a postdoctoral researcher examining the
+  behavior of large-scale simulations of agent-based models of belief updating.
 date: '2017-08-17'
 locale: en
 translationKey: 2017-08-17-postdoc-ad
-translated: auto
+translated: original
 tags:
   - Jobs
-sourceHash: cbe824aa39ecdeec89603372676ce61c69a047259605a1b137084640d3908c06
 ---
 
-Postdoctoral Researcher Position in Computational Cognitive Science
+Postdoctoral researcher position in computational cognitive science
 
-The Austerweil Lab at the University of Wisconsin–Madison plans to recruit a postdoctoral researcher to start by early September 2017 (the start date is negotiable). The selected researcher will develop and implement computational agents that form and update beliefs based on their own observations and on the testimony of other agents connected to them through a large-scale network.
+The Austerweil Lab at University of Wisconsin – Madison is planning to hire a postdoctoral researcher to start by the beginning of September 2017 (start date is negotiable). The researcher will develop and implement computational agents that form and update beliefs based on their own observations and testimony of other agents that communicate according to a large-scale network. 
 
-This position is funded as part of a team project that simulates the transmission of information using a family of psychologically motivated statistical models. It offers a valuable opportunity to interact daily with team members who specialize in different modeling paradigms and disciplines, ranging from sociologists and game theorists to computer scientists.
+The position is funded as part of a team project on simulating information transmission over groups of psychologically-motivated statistical models. It would provide a unique opportunity to interact regularly with other members of the team that range different modeling paradigms and disciplines (ranging from sociologists to game-theorists to computer scientists). 
 
-Applicants must hold a Ph.D. in a relevant field (e.g., computer science, psychology, neuroscience, cognitive science, or computational linguistics) and be able to implement models in at least one computational modeling or machine learning paradigm (e.g., Bayesian approaches, deep learning, or logic-based approaches).
+Requirements include a PhD in a relevant discipline (e.g., computer science, psychology, neuroscience, cognitive science, or computational linguistics), and proficiency with implementing models within at least one computational modeling or machine learning paradigm (e.g., Bayesian, deep learning, or logic-based approaches).
 
-Applicants with experience in any of the following skills or tools will be given preference: probabilistic modeling, modern frameworks for efficient machine learning methods (e.g., tensorflow, pymc3), computational network science, and/or agent-based modeling. We also hope that the successful applicant can commit to the position for two years or more.
+Preference will be given to applications that have experience in/with any of the following skills and tools: previous experience with probabilistic modeling, modern frameworks for efficient machine learning methods (e.g., tensorflow, pymc3), computational network science, and/or agent-based modeling. Also, a commitment to the position for two years or more is preferred.  
 
-If you are interested, please contact Professor Austerweil by email at [austerweil@wisc.edu](mailto:austerweil@wisc.edu).
+If interested, please email Prof. Austerweil at [austerweil@wisc.edu](mailto:austerweil@wisc.edu)
 
-For the full position description, please see the following: [pdf](../../../../papers/files/PostdocAdFall2017Fin.pdf).
+Here is a link to the ad: [pdf](../../../../papers/files/PostdocAdFall2017Fin.pdf).

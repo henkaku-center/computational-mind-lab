@@ -13,6 +13,7 @@
  *                                     .automation/refresh-proposals/ (CI opens a PR)
  *   both locales changed same push -> skip pair, list in conflicts output
  *   human edited a translated file -> flip to translated: human, resync sourceHash
+ *                                     (a translated: original counterpart is never overwritten)
  *
  * Loop safety: generated files carry sourceHash of their source's translatable
  * payload; an unchanged hash produces no writes, so re-runs are no-ops.
@@ -120,13 +121,17 @@ async function translatePair(sourceFile) {
   const dstLocale = srcLocale === 'en' ? 'ja' : 'en';
   const hash = sourceHash(src.data, src.body);
 
-  // Case: the changed file is itself a machine translation a human edited ->
-  // take ownership (flip to human) and resync its hash to the current source.
-  if (src.data.translated === 'auto' && fs.existsSync(cpFile)) {
+  // Case: the changed file is itself a translation (auto, or already flipped to
+  // human by hand) whose counterpart is the original -> the original is never
+  // overwritten; take ownership (flip to human) and resync its hash to the source.
+  if (src.data.translated !== 'original' && fs.existsSync(cpFile)) {
     const cp = readEntry(cpFile);
     if (cp.data.translated === 'original') {
       const cpHash = sourceHash(cp.data, cp.body);
-      if (src.data.sourceHash === cpHash) {
+      if (src.data.sourceHash === cpHash && src.data.translated === 'human') {
+        return { action: 'noop', file: repoRel(sourceFile), why: 'human translation in sync' };
+      }
+      if (src.data.sourceHash === cpHash && src.data.translated === 'auto') {
         return { action: 'noop', file: repoRel(sourceFile), why: 'auto translation unchanged vs source' };
       }
       if (!DRY_RUN) {
