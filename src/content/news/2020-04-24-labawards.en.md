@@ -1,21 +1,21 @@
 ---
-title: Multiple awards to kickoff 2020!
+title: Starting 2020 with Multiple Awards!
 excerpt: Congratulations to Elise and Joe on their awards!
 date: '2020-04-24'
 locale: en
 translationKey: 2020-04-24-labawards
-translated: original
+translated: auto
 tags:
   - members
   - awards
+sourceHash: 05cc7ac6ba924fae8a29edf976e33769b07da6d420abe2fb00cf924ef3b0fe0f
 ---
 
-(original post on April 24 2020)
+(Posted April 24, 2020)
 
-Only a few months into 2020 and multiple lab members have recieved awards in recognition of the amazing work!
-Though under the shadow of the current pandemic, this recognition only further highlights the achievements made by these members:
+Although 2020 is only a few months old, several members of the lab have already been recognized for their outstanding accomplishments and have received awards! Even with the shadow of the current pandemic hanging over us, these awards make the members' achievements shine all the more.
 
-- Elise Hopman, [awarded](https://psych.wisc.edu/news/elise-hopman-award/) the Mentoring Undergraduates in Research, Scholarly and Creative Activities Award.
-- Joe Austerweil, [awarded](http://www.mathpsych.org/index.php?option=com_content&view=article&id=10&Itemid=58) the William K. Estes Early Career Award by The Society for Mathematical Psychology
+- Elise Hopman received the Mentoring Undergraduates in Research, Scholarly and Creative Activities Award ([details](https://psych.wisc.edu/news/elise-hopman-award/)).
+- Joe Austerweil received the William K. Estes Early Career Award from the Society for Mathematical Psychology ([details](http://www.mathpsych.org/index.php?option=com_content&view=article&id=10&Itemid=58)).
 
-Congratualions to both Elise and Joe for their achievements!
+Congratulations to Elise and Joe on your achievements!
