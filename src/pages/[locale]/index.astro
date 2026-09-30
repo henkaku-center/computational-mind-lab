@@ -15,7 +15,7 @@ const locale = Astro.params.locale as Locale;
 const news = getLocalized(await getCollection('news'), locale).slice(0, 5);
 ---
 
-<Base locale={locale} jsonLd={labOrganization}>
+<Base locale={locale} description={t(locale, 'meta.home')} jsonLd={labOrganization}>
   {/* Pixel-grid hero, per the SDS layout system */}
   <div class="px-grid hero">
     <div class="span-8 blk-blue blk-pad hero-main">

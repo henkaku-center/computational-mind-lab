@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { t, localeStaticPaths, type Locale } from '../../i18n';
+import { labOrganization, person } from '../../lib/jsonld';
 
 export function getStaticPaths() {
   return localeStaticPaths();
@@ -63,9 +64,15 @@ const alumniSections = alumniRoles
     list: people.filter((p) => p.data.group === 'alumni' && p.data.alumniRole === role).sort(byRecency),
   }))
   .filter((s) => s.list.length);
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [labOrganization, ...people.map((p) => person(p, pageUrl))],
+};
 ---
 
-<Base locale={locale} title={t(locale, 'nav.people')}>
+<Base locale={locale} title={t(locale, 'nav.people')} description={t(locale, 'meta.people')} jsonLd={jsonLd}>
   <h1>{t(locale, 'nav.people')}</h1>
 
   {
@@ -78,7 +85,7 @@ const alumniSections = alumniRoles
             const title = loc(p, 'title');
             const blurb = loc(p, 'blurb');
             return (
-              <article class="card">
+              <article class="card" id={p.id}>
                 <img src={p.data.image} alt={p.data.name} loading="lazy" height="160" />
                 <h3 lang={name.lang}>{p.data.website ? <a href={p.data.website}>{name.text}</a> : name.text}</h3>
                 <p class="role" lang={title.lang}>
@@ -111,7 +118,7 @@ const alumniSections = alumniRoles
               {section.list.map((p) => {
                 const name = loc(p, 'name');
                 return (
-                  <li>
+                  <li id={p.id}>
                     <span class="alumni-name" lang={name.lang}>
                       {p.data.website ? <a href={p.data.website}>{name.text}</a> : name.text}
                     </span>

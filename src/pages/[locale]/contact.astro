@@ -15,14 +15,14 @@ const copy = {
     address: ['School of Design & Science', 'Chiba Institute of Technology', '2-17-1 Tsudanuma, Narashino', 'Chiba 275-0016, Japan'],
   },
   ja: {
-    pi: 'Joseph Austerweil（ジョセフ・オースターワイル）— 教授・デザイン＆サイエンス学部アカデミックディレクター',
+    pi: 'Joseph Austerweil（オウステウェイル ジョセフ）— 教授・デザイン＆サイエンス学部アカデミックディレクター',
     addressLabel: '所在地',
     address: ['〒275-0016', '千葉県習志野市津田沼2-17-1', '千葉工業大学', 'デザイン＆サイエンス学部'],
   },
 }[locale];
 ---
 
-<Base locale={locale} title={t(locale, 'contact.title')}>
+<Base locale={locale} title={t(locale, 'contact.title')} description={t(locale, 'meta.contact')}>
   <h1>{t(locale, 'contact.title')}</h1>
   <p>{copy.pi}</p>
   <h2>{copy.addressLabel}</h2>

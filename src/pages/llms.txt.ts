@@ -23,7 +23,7 @@ The site is bilingual: English under /en/, Japanese under /ja/.
 
 - [Home](https://cml.chibatech.dev/en/)
 - [People](https://cml.chibatech.dev/en/people/)
-- [Publications](https://cml.chibatech.dev/en/publications/)
+- [Publications](https://cml.chibatech.dev/en/publications/) — each paper also has its own page at /en/publications/<citekey>/
 - [News](https://cml.chibatech.dev/en/news/)
 - [Projects](https://cml.chibatech.dev/en/projects/)
 - [Join](https://cml.chibatech.dev/en/join/)

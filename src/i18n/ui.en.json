@@ -45,5 +45,12 @@
   "lang.switch": "日本語",
   "lang.switchLabel": "Switch language to Japanese",
   "notFound.title": "Page not found",
-  "notFound.body": "The page you are looking for does not exist. It may have moved when the site was rebuilt."
+  "notFound.body": "The page you are looking for does not exist. It may have moved when the site was rebuilt.",
+  "meta.home": "The Computational Mind Lab (formerly the Austerweil Lab) at Chiba Institute of Technology studies how minds learn and reason, combining computational models with behavioral experiments.",
+  "meta.people": "Members, affiliates, and alumni of Joseph Austerweil's Computational Mind Lab at Chiba Institute of Technology, including alumni from Brown University and UW–Madison.",
+  "meta.publications": "Papers by Joseph Austerweil and the Computational Mind Lab on categorization, semantic memory search, Bayesian modeling, and reasoning, with PDFs and abstracts.",
+  "meta.news": "News from the Computational Mind Lab: new papers, talks, grants, awards, and lab member milestones.",
+  "meta.projects": "Research projects and open-source software from the Computational Mind Lab, including SNAFU for semantic fluency analysis.",
+  "meta.join": "How to join the Computational Mind Lab at Chiba Institute of Technology as a graduate student, undergraduate researcher, postdoc, or collaborator.",
+  "meta.contact": "Contact Joseph Austerweil and the Computational Mind Lab, School of Design & Science, Chiba Institute of Technology, Narashino, Chiba, Japan."
 }

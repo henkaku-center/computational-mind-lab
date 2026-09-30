@@ -18,7 +18,7 @@ const abstractLang = locale === 'ja' && !d.abstractJa && d.abstract ? 'en' : und
 
 <li data-tags={d.tags.join('|')} id={d.citekey}>
   <span lang={locale === 'ja' ? 'en' : undefined}>
-    {formatAuthors(d.authors)} ({d.year}). {d.title}.
+    {formatAuthors(d.authors)} ({d.year}). <a class="paper-title" href={`/${locale}/publications/${d.citekey}/`}>{d.title}</a>.
     {d.venue && <em>{d.venue}</em>}{d.volume && <>, {d.volume}</>}{d.issue && <>({d.issue})</>}{
       d.pages && <>, {d.pages}</>
     }.
@@ -53,6 +53,9 @@ const abstractLang = locale === 'ja' && !d.abstractJa && d.abstract ? 'en' : und
 <style>
   li {
     margin-bottom: var(--grid);
+  }
+  .paper-title {
+    color: inherit;
   }
   .paper-links a {
     margin-left: 0.4em;

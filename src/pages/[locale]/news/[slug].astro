@@ -1,7 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
-import { t, formatDate, locales, type Locale } from '../../../i18n';
+import { t, formatDate, locales, swapLocalePath, type Locale } from '../../../i18n';
+import { blogPosting } from '../../../lib/jsonld';
 import { allTranslationKeys } from '../../../lib/translations';
 
 export async function getStaticPaths() {
@@ -19,9 +20,23 @@ const entry = exact ?? entries[0];
 const isFallback = !exact;
 const { Content } = await render(entry);
 const contentLang = isFallback ? entry.data.locale : undefined;
+// An untranslated page duplicates the source-locale page, so point search engines there.
+const canonicalPath = isFallback ? swapLocalePath(Astro.url.pathname, entry.data.locale) : undefined;
+const hasTranslation = entries.some((e) => e.data.locale !== locale);
+const jsonLd = isFallback ? undefined : blogPosting(entry, new URL(Astro.url.pathname, Astro.site).href);
 ---
 
-<Base locale={locale} title={entry.data.title} description={entry.data.excerpt}>
+<Base
+  locale={locale}
+  title={entry.data.title}
+  description={entry.data.excerpt}
+  canonicalPath={canonicalPath}
+  hasTranslation={hasTranslation}
+  ogImage={entry.data.heroImage}
+  ogType="article"
+  publishedTime={entry.data.date}
+  jsonLd={jsonLd}
+>
   <article>
     <p class="date">{formatDate(entry.data.date, locale)}</p>
     <h1 lang={contentLang}>

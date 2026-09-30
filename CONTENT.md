@@ -75,6 +75,9 @@ blurbJa: 研究内容の紹介。             # optional
 image: /img/people/jane.jpg          # file in public/img/people/; defaults to default.jpg
 email: jane@example.com              # optional
 website: https://example.com         # optional
+profiles:                            # optional; helps search engines connect the person to their other profiles
+  - https://scholar.google.com/citations?user=XXXX
+  - https://orcid.org/0000-0000-0000-0000
 weight: 20                # sort order within group (low = first)
 needsReview: false        # true = flagged in weekly audit (see TRANSITION.md)
 ```

@@ -82,6 +82,8 @@ const people = defineCollection({
     image: z.string().default('/img/people/default.jpg'),
     email: z.string().email().optional(),
     website: z.string().url().optional(),
+    /** Scholar, ORCID, GitHub, university profile… — emitted as schema.org `sameAs`. */
+    profiles: z.array(z.string().url()).default([]),
     weight: z.number().default(100),
     needsReview: z.boolean().default(false),
   }),

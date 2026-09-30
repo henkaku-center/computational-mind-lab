@@ -14,7 +14,7 @@ const projects = getLocalized(await getCollection('projects'), locale).sort(
 );
 ---
 
-<Base locale={locale} title={t(locale, 'projects.title')}>
+<Base locale={locale} title={t(locale, 'projects.title')} description={t(locale, 'meta.projects')}>
   <h1>{t(locale, 'projects.title')}</h1>
   <div class="project-list">
     {

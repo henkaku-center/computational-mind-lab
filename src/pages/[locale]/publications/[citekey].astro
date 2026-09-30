@@ -1,0 +1,138 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { t, locales, type Locale } from '../../../i18n';
+import { formatAuthors } from '../../../lib/papers';
+import { labOrganization, scholarlyArticle } from '../../../lib/jsonld';
+import tagcolors from '../../../data/tagcolors.json';
+
+export async function getStaticPaths() {
+  const papers = (await getCollection('papers')).filter((p) => !p.data.draft);
+  return locales.flatMap((locale) =>
+    papers.map((paper) => ({ params: { locale, citekey: paper.data.citekey }, props: { paper } })),
+  );
+}
+
+const locale = Astro.params.locale as Locale;
+const { paper } = Astro.props;
+const d = paper.data;
+const colors = tagcolors as Record<string, string>;
+const site = Astro.site!;
+
+// Paper metadata is English-only; without a Japanese abstract the /ja/ page is a
+// duplicate, so it defers to the English page as canonical.
+const hasJa = Boolean(d.abstractJa);
+const canonicalPath = locale === 'ja' && !hasJa ? `/en/publications/${d.citekey}/` : undefined;
+const abstract = locale === 'ja' && d.abstractJa ? d.abstractJa : d.abstract;
+const abstractLang = locale === 'ja' && !d.abstractJa ? 'en' : undefined;
+
+const venueKey = {
+  'article-journal': 'citation_journal_title',
+  'paper-conference': 'citation_conference_title',
+  chapter: 'citation_inbook_title',
+}[d.type];
+const [firstPage, lastPage] = (d.pages ?? '').split(/\s*[-–—]+\s*/);
+
+function truncate(text: string, max = 155): string {
+  if (text.length <= max) return text;
+  return text.slice(0, text.lastIndexOf(' ', max - 1)) + '…';
+}
+const citation = `${formatAuthors(d.authors)} (${d.year}).${d.venue ? ` ${d.venue}.` : ''}`;
+const description = abstract ? truncate(abstract) : truncate(citation);
+
+// Google Scholar reads Highwire Press tags; emit them only on the canonical URL.
+const citationMeta: [string, string][] = canonicalPath
+  ? []
+  : [
+      ['citation_title', d.title],
+      ...d.authors.map((a): [string, string] => ['citation_author', `${a.family}, ${a.given}`]),
+      ['citation_publication_date', String(d.year)],
+      ...(d.venue ? [[venueKey, d.venue] as [string, string]] : []),
+      ...(d.volume ? [['citation_volume', d.volume] as [string, string]] : []),
+      ...(d.issue ? [['citation_issue', d.issue] as [string, string]] : []),
+      ...(firstPage ? [['citation_firstpage', firstPage] as [string, string]] : []),
+      ...(lastPage ? [['citation_lastpage', lastPage] as [string, string]] : []),
+      ...(d.publisher ? [['citation_publisher', d.publisher] as [string, string]] : []),
+      ...(d.doi ? [['citation_doi', d.doi] as [string, string]] : []),
+      ...(d.pdf ? [['citation_pdf_url', new URL(d.pdf, site).href] as [string, string]] : []),
+      ['citation_abstract_html_url', new URL(Astro.url.pathname, site).href],
+    ];
+
+const jsonLd = { '@context': 'https://schema.org', '@graph': [labOrganization, scholarlyArticle(d)] };
+---
+
+<Base
+  locale={locale}
+  title={d.title}
+  description={description}
+  canonicalPath={canonicalPath}
+  hasTranslation={hasJa}
+  ogType="article"
+  jsonLd={canonicalPath ? undefined : jsonLd}
+>
+  <Fragment slot="head">
+    {citationMeta.map(([name, content]) => <meta name={name} content={content} />)}
+  </Fragment>
+
+  <p class="back"><a href={`/${locale}/publications/#${d.citekey}`}>← {t(locale, 'papers.title')}</a></p>
+  <article lang={locale === 'ja' ? 'en' : undefined}>
+    <h1>{d.title}</h1>
+    <p class="authors">{d.authors.map((a) => `${a.given} ${a.family}`).join(', ')}</p>
+    <p class="venue">
+      {d.venue && <em>{d.venue}</em>}{d.volume && <>, {d.volume}</>}{d.issue && <>({d.issue})</>}{
+        d.pages && <>, {d.pages}</>
+      }{d.venue && '. '}
+      {d.publisher && `${d.publisher}${d.publisherPlace ? `, ${d.publisherPlace}` : ''}. `}
+      {d.year}
+    </p>
+    <p class="paper-links">
+      {d.pdf && <a href={d.pdf}>[{t(locale, 'papers.pdf')}]</a>}
+      {d.doi && <a href={`https://doi.org/${d.doi}`}>[{t(locale, 'papers.doi')}]</a>}
+      {d.url && !d.pdf && <a href={d.url}>[link]</a>}
+    </p>
+    {
+      abstract && (
+        <section lang={abstractLang ?? locale}>
+          <h2>{t(locale, 'papers.showAbstract')}</h2>
+          <p class="abstract">{abstract}</p>
+        </section>
+      )
+    }
+    {
+      d.tags.length > 0 && (
+        <p class="paper-tags">
+          {d.tags.map((tag) => (
+            <span class="tag-chip" style={`background:${colors[tag] ?? '#eee'}`}>
+              {tag}
+            </span>
+          ))}
+        </p>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  .back {
+    font-size: var(--text-s);
+  }
+  .authors {
+    font-weight: 700;
+    margin-bottom: 0.3em;
+  }
+  .venue {
+    color: var(--c-dark-grey);
+  }
+  .paper-links a {
+    margin-right: 0.6em;
+    font-weight: 700;
+  }
+  .abstract {
+    max-width: 60em;
+  }
+  .paper-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+  }
+</style>

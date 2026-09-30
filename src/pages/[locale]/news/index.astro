@@ -14,7 +14,7 @@ const news = getLocalized(await getCollection('news'), locale);
 const years = [...new Set(news.map((n) => n.entry.data.date.getFullYear()))].sort((a, b) => b - a);
 ---
 
-<Base locale={locale} title={t(locale, 'news.title')}>
+<Base locale={locale} title={t(locale, 'news.title')} description={t(locale, 'meta.news')}>
   <h1>{t(locale, 'news.title')}</h1>
   {
     years.map((year) => (

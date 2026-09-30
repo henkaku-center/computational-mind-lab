@@ -7,6 +7,7 @@ export async function GET() {
     .sort((a, b) => b.data.year - a.data.year)
     .map((p) => ({
       ...p.data,
+      page: `https://cml.chibatech.dev/en/publications/${p.data.citekey}/`,
       pdf: p.data.pdf ? `https://cml.chibatech.dev${p.data.pdf}` : undefined,
     }));
   return new Response(JSON.stringify(items, null, 2), {

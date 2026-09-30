@@ -15,13 +15,36 @@ interface Props {
   alternatePath?: string;
   ogImage?: string;
   jsonLd?: object;
+  /**
+   * Set when this page only shows fallback content from the other locale:
+   * the canonical then points at the source page and hreflang is omitted.
+   */
+  canonicalPath?: string;
+  /** false when the other-locale version is only a fallback copy (no hreflang pair). */
+  hasTranslation?: boolean;
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  publishedTime?: Date;
 }
-const { locale, title, description, alternatePath, ogImage = '/og-default.png', jsonLd } = Astro.props;
+const {
+  locale,
+  title,
+  description,
+  alternatePath,
+  ogImage = '/og-default.png',
+  jsonLd,
+  canonicalPath,
+  hasTranslation = true,
+  noindex = false,
+  ogType = 'website',
+  publishedTime,
+} = Astro.props;
 
 const siteName = t(locale, 'site.name');
 const pageTitle = title ? `${title} — ${siteName}` : `${siteName} — ${t(locale, 'site.affiliation')}`;
 const desc = description ?? t(locale, 'site.tagline');
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonical = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
+const showAlternates = !canonicalPath && hasTranslation && !noindex;
 const altPath = alternatePath ?? swapLocalePath(Astro.url.pathname, otherLocale(locale));
 const altUrl = new URL(altPath, Astro.site);
 const enUrl = locale === 'en' ? canonical : altUrl;
@@ -35,10 +58,17 @@ const jaUrl = locale === 'ja' ? canonical : altUrl;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={desc} />
-    <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={enUrl} />
-    <link rel="alternate" hreflang="ja" href={jaUrl} />
-    <link rel="alternate" hreflang="x-default" href={enUrl} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {
+      showAlternates && (
+        <>
+          <link rel="alternate" hreflang="en" href={enUrl} />
+          <link rel="alternate" hreflang="ja" href={jaUrl} />
+          <link rel="alternate" hreflang="x-default" href={enUrl} />
+        </>
+      )
+    }
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
     <link
@@ -49,12 +79,17 @@ const jaUrl = locale === 'ja' ? canonical : altUrl;
     />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={desc} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:image" content={new URL(ogImage, Astro.site)} />
     <meta property="og:locale" content={locale === 'ja' ? 'ja_JP' : 'en_US'} />
+    {showAlternates && <meta property="og:locale:alternate" content={locale === 'ja' ? 'en_US' : 'ja_JP'} />}
+    {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="generator" content={Astro.generator} />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <slot name="head" />
   </head>
   <body>
     <Header locale={locale} alternatePath={alternatePath} />
