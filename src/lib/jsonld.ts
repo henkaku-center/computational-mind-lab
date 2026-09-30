@@ -24,6 +24,11 @@ export const labOrganization = {
     '@type': 'Person',
     name: 'Joseph Austerweil',
     jobTitle: 'Professor & Academic Director, School of Design & Science',
+    alternateName: 'オウステウェイル ジョセフ',
+    sameAs: [
+      'https://scholar.google.com/citations?user=Jrn-jxQAAAAJ',
+      'https://orcid.org/0000-0002-1316-4691',
+    ],
   },
 };
 
