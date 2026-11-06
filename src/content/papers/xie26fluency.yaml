@@ -1,0 +1,26 @@
+citekey: xie26fluency
+title: "Longitudinal Semantic Fluency Decline and Lexical Simplification in Preclinical Alzheimer's Disease: Associations with Dementia Conversion and Biomarkers"
+authors:
+  - family: Xie
+    given: W.
+  - family: Mueller
+    given: K. D.
+  - family: Allen
+    given: I. E.
+  - family: Seaman
+    given: C.
+  - family: Austerweil
+    given: J. L.
+  - family: Zemla
+    given: J. C.
+  - family: Vonk
+    given: J. M. J.
+year: 2026
+type: article-journal
+venue: Journal of Alzheimer's Disease
+# In press (accepted 2026-11-04). Add volume/issue/pages/doi, abstract, and
+# pdf once published.
+tags:
+  - fluency
+  - alzheimers
+  - aging
