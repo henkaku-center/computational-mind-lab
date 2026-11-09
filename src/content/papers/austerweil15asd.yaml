@@ -10,5 +10,6 @@ volume: "19"
 issue: "3"
 pages: 367-368
 pdf: /papers/files/austerweil-autism-2015.pdf
+doi: 10.1177/1362361314557165
 tags:
   - computational psychiatry

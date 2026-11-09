@@ -2,12 +2,13 @@ name: Hongtao Hao
 title: Graduate Student
 group: alumni
 era: uw-madison
-blurb: Hongtao is a Ph.D. student in Computer Science at UW-Madison. His work investigates combinatorial stochastic processes for modeling disease progression.
+blurb: Hongtao received his Ph.D. in Computer Science from UW-Madison in 2026. His dissertation built the lab's line of research on disease progression modeling, from stage-aware event-based models to transformer-based inference.
 image: /img/people/hongtao.png
 email: hongtaoh@cs.wisc.edu
 website: https://hongtaoh.com/
-needsReview: true
+needsReview: false
 alumniRole: grad
+currentPosition: Meta
 lastActiveYear: 2026
 titleJa: 大学院生
 titleJaHash: 0337c30e121c7ed7

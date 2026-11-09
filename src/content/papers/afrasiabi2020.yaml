@@ -3,7 +3,7 @@ title: Receptors, circuits and neural dynamics for prediction
 authors:
   - family: Mohanta
     given: S.
-  - family: Afrasiabi,
+  - family: Afrasiabi
     given: M.
   - family: Casey
     given: C.
@@ -11,7 +11,7 @@ authors:
     given: S.
   - family: Redinbaugh
     given: M. J.
-  - family: Kambi,
+  - family: Kambi
     given: N. A.
   - family: Phillips
     given: J. M.
@@ -21,7 +21,7 @@ authors:
     given: W.
   - family: Austerweil
     given: J. L.
-  - family: Sanders,
+  - family: Sanders
     given: R. D.
   - family: Saalmann
     given: Y. B.
@@ -31,6 +31,7 @@ venue: bioRxiv
 pages: xx-xx
 publisher: Cold Spring Harbor Laboratory
 pdf: /papers/files/Afrasiabi2020.pdf
+doi: 10.2139/ssrn.3659396
 abstract: Learned associations between stimuli allow us to model the world and make predictions, crucial for efficient behavior; e.g., hearing a siren, we expect to see an ambulance and quickly make way. While theoretical and computational frameworks for prediction exist, circuit and receptor-level mechanisms are unclear. Using high density EEG and Bayesian modeling, we show that trial history and frontal alpha activity account for reaction times (a proxy for predictions) on a trial by trial basis in an audio visual prediction task. Low dose ketamine, a NMDA receptor blocker, but not the control drug dexmedetomidine perturbed predictions, their representation in frontal cortex, and feedback to posterior cortex. This study suggests predictions depend on frontal alpha activity and NMDA receptors, and ketamine blocks access to learned predictive information.
 tags:
   - reinforcement learning
