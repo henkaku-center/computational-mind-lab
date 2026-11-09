@@ -64,8 +64,8 @@ This line of work grows out of a long collaboration with
 - [Teaching by intervention: Working backwards, undoing mistakes, or correcting
   mistakes?](/en/publications/#ho17) (CogSci 2017) — the most direct ancestor of
   the current work: teaching by acting on the world itself.
-- [Communication in Action: Belief-directed Planning and Pragmatic Action
-  Interpretation](/en/publications/#ho2021) (JEP: General, 2021).
+- [Communication in action: Planning and interpreting communicative
+  demonstrations](/en/publications/#ho2021) (JEP: General, 2021).
 
 Interested in the probabilistic machinery behind this work? Our
 [narrative introduction to probability](/en/projects/probability-tutorial/)

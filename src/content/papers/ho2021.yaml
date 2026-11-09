@@ -1,5 +1,5 @@
 citekey: ho2021
-title: "Communication in Action: Belief-directed Planning and Pragmatic Action Interpretation in Communicative Demonstrations"
+title: "Communication in action: Planning and interpreting communicative demonstrations"
 authors:
   - family: Ho
     given: M. K.
@@ -13,6 +13,7 @@ year: 2021
 type: article-journal
 venue: "Journal of Experimental Psychology: General"
 volume: "150"
+issue: "11"
 pages: 2246-2272
 pdf: /papers/files/HoCommunicativeDemonstrations2020.pdf
 doi: 10.1037/xge0001035
