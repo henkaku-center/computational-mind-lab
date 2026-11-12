@@ -17,7 +17,7 @@ tags:
 
 [Longitudinal Semantic Fluency Decline and Lexical Simplification in
 Preclinical Alzheimer's Disease: Associations with Dementia Conversion and
-Biomarkers](/en/publications/xie26fluency) has been accepted for publication
+Biomarkers](/en/publications/xie26fluency/) has been accepted for publication
 in the *Journal of Alzheimer's Disease*.
 
 The study follows people's performance on a semantic fluency task (listing

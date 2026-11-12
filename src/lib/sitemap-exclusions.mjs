@@ -1,5 +1,7 @@
-// Pages that exist only as fallback copies of another locale's page. They set a
-// canonical pointing at the source page, so the sitemap should leave them out.
+// Pages the sitemap should leave out: the root (a meta-refresh redirect to /en/ —
+// listing it makes Search Console report "Page with redirect"), 404, and pages that
+// exist only as fallback copies of another locale's page (their canonical points at
+// the source page).
 // Plain .mjs (not a content-collection query) because astro.config runs before content loads.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -13,7 +15,7 @@ function list(dir, ext) {
 }
 
 export function sitemapExclusions(root, site) {
-  const excluded = new Set(['/404/']);
+  const excluded = new Set(['/', '/404/']);
 
   for (const kind of ['news', 'projects']) {
     const dir = path.join(root, 'src/content', kind);
