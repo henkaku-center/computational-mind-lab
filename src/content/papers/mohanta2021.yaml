@@ -1,0 +1,38 @@
+citekey: mohanta2021
+title: Predictive Feedback, Early Sensory Representations, and Fast Responses to Predicted Stimuli Depend on NMDA Receptors
+authors:
+  - family: Mohanta
+    given: S.
+  - family: Afrasiabi
+    given: M.
+  - family: Casey
+    given: C.
+  - family: Tanabe
+    given: S.
+  - family: Redinbaugh
+    given: M. J.
+  - family: Kambi
+    given: N. A.
+  - family: Phillips
+    given: J. M.
+  - family: Polyakov
+    given: D.
+  - family: Filbey
+    given: W.
+  - family: Austerweil
+    given: J. L.
+  - family: Sanders
+    given: R. D.
+  - family: Saalmann
+    given: Y. B.
+year: 2021
+type: article-journal
+venue: Journal of Neuroscience
+volume: "41"
+issue: "49"
+pages: 10130-10147
+pdf: /papers/files/Mohanta2021.pdf
+doi: 10.1523/JNEUROSCI.1311-21.2021
+abstract: Learned associations between stimuli allow us to model the world and make predictions, crucial for efficient behavior (e.g., hearing a siren, we expect to see an ambulance and quickly make way). While there are theoretical and computational frameworks for prediction, the circuit and receptor-level mechanisms are unclear. Using high-density EEG, Bayesian modeling, and machine learning, we show that inferred “causal” relationships between stimuli and frontal alpha activity account for reaction times (a proxy for predictions) on a trial-by-trial basis in an audiovisual delayed match-to-sample task which elicited predictions. Predictive β feedback activated sensory representations in advance of predicted stimuli. Low-dose ketamine, an NMDAR blocker, but not the control drug dexmedetomidine, perturbed behavioral indices of predictions, their representation in higher-order cortex, feedback to posterior cortex, and pre-activation of sensory templates in higher-order sensory cortex. This study suggests that predictions depend on alpha activity in higher-order cortex, β feedback, and NMDARs, and ketamine blocks access to learned predictive information.
+tags:
+  - reinforcement learning
